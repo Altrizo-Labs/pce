@@ -1,0 +1,6 @@
+touch src/components/homepage/.gitkeep  -- same for all pages --
+touch src/organisms/.gitkeep
+touch src/app/about-us/.gitkeep  -- same for all pages --
+touch src/data/.gitkeep
+touch src/types/.gitkeep
+

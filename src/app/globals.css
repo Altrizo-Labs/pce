@@ -76,3 +76,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.footer-background {
+  background: radial-gradient(circle at 100% 102%, #b7192188, transparent 25%);
+  background-blend-mode: overlay; /* Optional: Blend the gradients */
+  background-size: cover; /* Ensure gradients cover the element */
+}

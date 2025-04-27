@@ -1,155 +1,169 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Image from "next/image";
 import { footerLinks } from "@/data/footer";
+import { Mail, Phone, MapPin } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+
+import arrow from "../../public/images/arrow.png";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  // Show "Go to Top" button after scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Scroll to top functionality
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <footer className="geist-satoshi footer-background max-w-[2304px] mx-auto text-white relative pb-7 md:pb-o">
-      <div className="py-12 md:py-24 mx-4 md:mx-14">
-        <div className=" mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* First Column */}
-            <div className="flex flex-col items-start">
-              <Image
-                src="/footer-logo.png"
-                alt="Footer Logo"
-                width={350}
-                height={70}
-                className="ml-[-10px]"
-              />
-              <p className="mt-4 text-sm md:text-lg font-light geist-gtflexa tracking-widest">
-                Transforming Data into
-                <br />
-                Growth, Insights, and
-                <br />
-                Innovation.
-              </p>
-            </div>
+    <footer className="mx-4 md:mx-6 lg:mx-8 rounded-[32px] text-white relative py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-14 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/70 to-primary z-0" />
 
-            {/* Second Column (Empty for spacing) */}
-            <div className="hidden md:block"></div>
+      {/* Dot pattern overlay */}
+      <div
+        className="absolute inset-0 z-[1] opacity-10"
+        style={{
+          backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
+          backgroundSize: "20px 20px",
+        }}
+      />
 
-            {/* Third Column */}
-            <div className="flex flex-col space-y-8">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <h3 className="font-light text-lg mb-2 geist-gtflexa">
-                    Quick Links
-                  </h3>
-                  <ul className="text-[#949494] space-y-2 text-sm geist-satoshi">
-                    {footerLinks.quickLinks.map((link) => (
-                      <li key={link.name}>
-                        <a href={link.href} className="hover:underline">
-                          {link.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-light mb-2 geist-gtflexa">Follow Us</h3>
-                  <ul className="text-[#949494] text-sm geist-satoshi">
-                    {footerLinks.follow.map((link) => (
-                      <li key={link.name}>
-                        <a href={link.href} className="hover:underline">
-                          {link.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h3 className="font-light text-lg mb-2 geist-gtflexa">
-                  Contact Us
-                </h3>
-                <ul className="text-[#949494] space-y-2 text-sm geist-satoshi">
-                  {footerLinks.contactUs.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="hover:underline">
-                        {link.display}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+      {/* Background decoration (optional) */}
+      <div className="absolute right-0 top-0 opacity-10 w-60 h-60 rounded-full bg-white blur-3xl -translate-y-1/2 translate-x-1/2 z-[1]" />
+
+      {/* Main content */}
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Top section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
+          {/* Left column */}
+          <div className="flex flex-col gap-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-lato leading-tight">
+              Empower Learning with Edusight
+            </h2>
+
+            {/* Newsletter signup */}
+            <div className="mt-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-transparent p-3 md:p-4 rounded-full border-white border flex-grow"
+                  aria-label="Email for newsletter"
+                />
+                <button className="bg-secondary text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
+                  <Image
+                    src={arrow}
+                    alt="arrow icon"
+                    className="w-5 h-5 md:w-6 md:h-6"
+                  />
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Second Row */}
-          <div className="mt-24 grid grid-cols-1 md:grid-cols-2 geist-satoshi gap-4 font-light text-sm text-[#949494] text-center md:text-left">
+          {/* Right column */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
+            {/* Quick Links */}
             <div>
-              <p>
-                © {currentYear} Cinnamon Digital Solutions. All rights reserved.
-              </p>
+              <h3 className="font-medium text-lg mb-4">Quick Links</h3>
+              <ul className="space-y-3">
+                {footerLinks.quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-300 hover:text-white transition duration-200 hover:translate-x-1 inline-block"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="md:text-right">
-              <p>Designed and Developed by Axle Global</p>
+
+            {/* Follow Us */}
+            <div>
+              <h3 className="font-medium text-lg mb-4">Follow Us</h3>
+              <ul className="space-y-3">
+                {footerLinks.follow.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-300 hover:text-white transition duration-200 flex items-center gap-2"
+                    >
+                      <span className="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                        {/* This would ideally be an icon based on social media type */}
+                      </span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Go to Top Button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-5 right-8 bg-red-600 hover:bg-red-500 text-white rounded-full p-4 shadow-lg transition-all duration-300 z-50 "
-          style={{
-            transition: 'transform 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.2)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-          aria-label="Scroll to top"
-        >
-          {/* Upward Arrow */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 15l7-7 7 7"
-            />
-          </svg>
-        </button>
-      )}
+        {/* Middle section - Social and Contact */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32 mt-12">
+          {/* Social Links */}
+          <div>
+            <h3 className="font-medium text-lg mb-4">Connect With Us</h3>
+            <div className="flex flex-wrap gap-4">
+              {["Facebook", "Twitter", "LinkedIn", "Instagram"].map(
+                (platform) => (
+                  <a
+                    key={platform}
+                    href="#"
+                    aria-label={platform}
+                    className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition"
+                  >
+                    {/* Icons would go here */}
+                  </a>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h3 className="font-medium text-lg mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              {footerLinks.contactUs.map((contact) => (
+                <li key={contact.name} className="flex items-start gap-3">
+                  {contact.name === "email" && (
+                    <Mail className="w-5 h-5 mt-1 text-gray-300" />
+                  )}
+                  {contact.name === "phone" && (
+                    <Phone className="w-5 h-5 mt-1 text-gray-300" />
+                  )}
+                  {contact.name === "address" && (
+                    <MapPin className="w-5 h-5 mt-1 text-gray-300" />
+                  )}
+                  <a
+                    href={contact.href}
+                    className="text-gray-300 hover:text-white transition"
+                  >
+                    {contact.display}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <hr className="w-full h-px bg-white bg-opacity-30 my-8 md:my-12" />
+
+        {/* Bottom section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="w-32 h-10 bg-white bg-opacity-20 rounded flex items-center justify-center">
+              {/* Replace with actual logo */}
+              <span className="font-bold text-lg">EDUSIGHT</span>
+            </div>
+          </div>
+
+          {/* Tagline */}
+          <div className="md:max-w-md text-sm md:text-base">
+            <p>
+              Transform your institution with intelligent AI solutions that
+              drive engagement, efficiency, and student success.
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

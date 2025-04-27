@@ -1,3 +1,9 @@
+import TransformEducationSection from "@/components/home/TransformEducationSection";
+
 export default function Home() {
-  return <main className="mx-4 min-h-[50vh]"></main>;
+  return (
+    <main>
+      <TransformEducationSection />
+    </main>
+  );
 }

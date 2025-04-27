@@ -4,15 +4,26 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const lato = localFont({
+  src: [
+    {
+      path: "./fonts/lato/lato-v24-latin-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/lato/lato-v24-latin-700.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/lato/lato-v24-latin-900.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lato.variable} antialiased`}
       >
         <Header />
         {children}

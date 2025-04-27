@@ -5,8 +5,8 @@ import { gsap } from "gsap";
 import { RippleButtonProps } from "@/types/types";
 import Link from "next/link";
 
-// import arrow_icon from "@/public/arrow-icon.png";
-// import Image from "next/image";
+import arrow from "../../public/images/arrow.png";
+import Image from "next/image";
 
 const RippleButton: React.FC<RippleButtonProps> = ({
   text,
@@ -73,7 +73,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       <button
         ref={buttonRef}
         onClick={onclick}
-        className={`relative border-[1px] border-solid px-5 py-2 rounded-full flex items-center justify-center gap-3 text-white overflow-hidden z-0  ${className} `}
+        className={`relative border-[1px] border-solid px-5 py-2 rounded-full flex items-center justify-center gap-3 overflow-hidden z-0  ${className} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={(e) => {
@@ -82,21 +82,21 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       >
         <div
           ref={divRef}
-          className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement  -z-10 pointer-events-none rounded-full ${hoverColor}`}
+          className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${hoverColor}`}
         ></div>
-        <span className="z-10 geist-satoshi text-[14px] sm:text-lg">
+        <span className="z-10 font-dmSans text-[10px] lg:text-[14px]">
           {text}
         </span>
 
-        {/* {icon && (
+        {icon && (
           <Image
-            src={arrow_icon}
+            src={arrow}
             alt="arrow icon"
-            className={`w-2 lg:w-3.5 h-2 lg:h-3.5 transition-transform duration-300 ${
+            className={`w-4 lg:w-6 h-4 lg:h-6 transition-transform duration-300 ${
               hovering && "rotate-45"
             } `}
           />
-        )} */}
+        )}
       </button>
     </Link>
   );

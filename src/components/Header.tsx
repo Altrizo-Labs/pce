@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { FiMenu, FiX } from "react-icons/fi";
+import logo from "../../public/images/logo.png"
 
-// import Image from "next/image";
+import Image from "next/image";
 import { HEADER } from "@/data/header";
 import RippleButton from "./RippleButton";
 
@@ -132,7 +133,7 @@ const Header = () => {
 
     if (isMobileMenuOpen) {
       gsap.to(mobileMenu, {
-        y: "-100%",
+        y: "-150%",
         duration: 0.4,
         ease: "power2.inOut",
         onComplete: () => {
@@ -165,27 +166,24 @@ const Header = () => {
     <>
       <nav
         ref={headerRef}
-        className={`${
-          isMobileMenuOpen && "bg-primary"
-        } px-4 lg:px-10 py-4 lg:py-8 flex items-center justify-between fixed w-full mx-auto max-w-[1540px] top-0 left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-in-out z-50 ${
+        className={`fixed w-[97.5%] max-w-[1500px] mx-auto font-lato px-4 lg:px-6 py-3 lg:py-5 flex bg-white rounded-[8px] items-center justify-between mt-6 left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-50 ${
           isHeaderHidden ? "-translate-y-full" : "translate-y-0"
-        } `}
+        } ${isMobileMenuOpen ? "bg-secondary" : ""}`}
       >
         {/* Logo */}
         <Link href="/">
-          {/* <Image
+          <Image
             src={logo}
             alt="logo"
             width={isMobile ? 40 : 50}
             height={isMobile ? 40 : 50}
-            className="relative z-40 bg-black"
-          /> */}
-          <h1>LOGO</h1>
+            className="relative w-52 z-40 bg-black"
+          />
         </Link>
 
         {/* Desktop Navigation */}
         {!isMobile ? (
-          <div className="flex space-x-2 geist-satoshi" ref={navLinksRef}>
+          <div className="flex space-x-2" ref={navLinksRef}>
             {HEADER.map((item, index) => {
               const isActive = pathname === item.href;
 
@@ -199,16 +197,16 @@ const Header = () => {
                   {item.title === "Contact Us" ? (
                     <RippleButton
                       text="Contact Us"
-                      hoverColor="bg-blue-500"
-                      className="bg-primary border border-primary w-full lg:w-auto py-3 lg:py-4 md:px-8 lg:px-8 whitespace-nowrap"
+                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black"
                       url={item.href}
+                      icon
                     />
                   ) : (
                     <Link
                       href={item.href}
-                      className={`p-2 lg:p-4 inline-block text-[16px] lg:text-[18px] ${
+                      className={`p-2 lg:p-4 inline-block text-[10px] lg:text-[14px] ${
                         item.title === "Contact Us"
-                          ? "rounded-full bg-primary text-white hover:bg-opacity-90 px-6 lg:px-14"
+                          ? "rounded-full bg-secondary text-white hover:bg-opacity-90 px-6 lg:px-14"
                           : "px-3 lg:px-6"
                       }`}
                     >
@@ -246,16 +244,15 @@ const Header = () => {
       {isMobile && (
         <div
           id="mobile-menu"
-          className="fixed top-0 left-0 w-full h-full bg-[#B71920] z-40 transform -translate-y-full shadow-lg"
+          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg"
         >
           <div className="flex flex-col p-4 gap-4">
-            {HEADER.map((item, index) =>
+            {HEADER.map((item) =>
               item.title === "Contact Us" ? (
                 <RippleButton
                   key={item.href}
                   text="Contact Us"
-                  hoverColor="bg-secondary"
-                  className="bg-secondary border border-primary w-full lg:w-auto py-3 lg:py-4 px-14 whitespace-nowrap mt-4"
+                  className="bg-accent border border-black rounded-[12px] w-full lg:w-auto py-3 lg:py-4 px-14 whitespace-nowrap mt-4"
                   url={item.href}
                   onclick={toggleMobileMenu}
                 />
@@ -264,8 +261,8 @@ const Header = () => {
                   key={item.href}
                   href={item.href}
                   onClick={toggleMobileMenu}
-                  className={`p-3 text-lg geist-satoshi px-4 ${
-                    pathname === item.href ? "bg-primary/10" : ""
+                  className={`p-3 text-lg px-4 ${
+                    pathname === item.href ? "bg-secondary/10" : ""
                   }`}
                 >
                   {item.title}

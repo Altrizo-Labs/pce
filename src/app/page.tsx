@@ -1,5 +1,6 @@
 import CompanyOverview from "@/components/home/company-overview";
 import Hero from "@/components/home/hero";
+import Testimonials from "@/components/home/Testimonials"; // Import Testimonials
 import TransformEducationSection from "@/components/home/TransformEducationSection";
 
 export default function Home() {
@@ -7,5 +8,7 @@ export default function Home() {
     <Hero />
     <CompanyOverview />
     <TransformEducationSection />
+    <Testimonials />
+
   </main>;
 }

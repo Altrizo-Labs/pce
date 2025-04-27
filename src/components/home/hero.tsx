@@ -3,7 +3,7 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function Hero() {
   return (
-    <div className="rounded-t-[32px] h-[800px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-12 relative overflow-hidden">
+    <div className="rounded-t-[32px] h-[800px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-10"
@@ -14,13 +14,13 @@ export default function Hero() {
       />
       
       {/* Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 relative z-10">
-        <p className="text-[#F3F4F6] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-tight font-lato font-bold">
-          Smart Education Driven by Innovation Shaping Student Success
+      <div className="flex gap-6 lg:gap-12 relative z-10">
+        <p className="text-[#F3F4F6] flex-[0.55] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-tight font-lato font-bold">
+          Smart Education <br className="hidden lg:block" /> Driven by Innovation Shaping Student Success
         </p>
 
-        <div>
-          <p className="text-xs sm:text-sm md:text-[16px] text-[#F3F4F6] mb-8 leading-normal md:leading-relaxed">
+        <div className="flex-[0.45]">
+          <p className="text-xs sm:text-sm md:text-[16px] text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
             administration, and personalize learning—helping institutions stay
             ahead in today's fast-paced education landscape.

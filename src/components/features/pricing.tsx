@@ -43,7 +43,7 @@ const Pricing = () => {
             <div>
               <div className="flex items-center gap-2 mb-2"> {/* Added flex container for title and badge */} 
                 <h3 className="text-xl font-semibold">Pro</h3>
-                <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full flex items-center gap-1"> {/* Moved badge inline, adjusted styles */} 
+                <span className="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full flex items-center gap-1"> {/* Adjusted background opacity, ensured text is opaque */} 
                   🔥 
                   Popular
                 </span>

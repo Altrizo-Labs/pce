@@ -50,7 +50,7 @@ const testimonials: TestimonialData[] = [
     name: "Raj Patel",
     school: "@Pine Ridge",
     quote:
-      "Being able to see my child's performance trends helps me have more productive conversations ",
+      "Being able to see my child&apos;s performance trends helps me have more productive conversations ",
     imageUrl: "",
   },
   {
@@ -179,7 +179,7 @@ export default function Testimonials() {
                   {testimonial.school}
                 </p>
                 <p className="text-gray-700 text-sm italic">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
               </div>
             </SwiperSlide>

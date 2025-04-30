@@ -23,7 +23,7 @@ export default function Hero() {
           <p className="text-xs sm:text-sm md:text-[16px] text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
             administration, and personalize learning—helping institutions stay
-            ahead in today's fast-paced education landscape.
+            ahead in today&#39;s fast-paced education landscape.
           </p>
           <RippleButton
             text="Book a Demo"

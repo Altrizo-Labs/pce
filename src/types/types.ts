@@ -8,6 +8,6 @@ export interface RippleButtonProps {
 }
 
 export interface HeroBannerProps {
-  video: string; 
+  video?: string; 
   description: string;
 }

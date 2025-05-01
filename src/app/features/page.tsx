@@ -7,7 +7,7 @@ export default function FeaturesPage() {
     <div className="pt-32 mx-4">
       <HeroBanner
         video=""
-        description="Driving the Next Wave of Student Engagement and Enrollment Through AI Innovation"
+        description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
       />
       <Pricing />
       <FeaturesGrid />

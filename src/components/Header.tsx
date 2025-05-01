@@ -94,7 +94,7 @@ const Header = () => {
     if (!hasMounted) return;
 
     const activeLinkIndex = HEADER.findIndex((item) => pathname === item.href);
-    if (indicatorRefs.current[activeLinkIndex]) {
+    if (activeLinkIndex >= 0 && indicatorRefs.current[activeLinkIndex]) {
       gsap.to(indicatorRefs.current[activeLinkIndex], {
         width: "10px",
         duration: 0.3,
@@ -130,6 +130,7 @@ const Header = () => {
   // Toggle mobile menu with animation and freeze screen
   const toggleMobileMenu = () => {
     const mobileMenu = document.getElementById("mobile-menu");
+    if (!mobileMenu) return;
 
     if (isMobileMenuOpen) {
       gsap.to(mobileMenu, {
@@ -244,7 +245,8 @@ const Header = () => {
       {isMobile && (
         <div
           id="mobile-menu"
-          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg"
+          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
+          style={{ display: hasMounted ? 'block' : 'none' }}
         >
           <div className="flex flex-col p-4 gap-4">
             {HEADER.map((item) =>

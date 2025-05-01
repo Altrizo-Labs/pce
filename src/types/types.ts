@@ -6,3 +6,8 @@ export interface RippleButtonProps {
   icon?: React.ReactNode;
   onclick?: () => void;
 }
+
+export interface HeroBannerProps {
+  video?: string; 
+  description: string;
+}

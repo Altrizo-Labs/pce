@@ -7,7 +7,7 @@ import arrow from "../../public/images/arrow.png";
 
 const Footer = () => {
   return (
-    <footer className="mx-4 md:mx-6 lg:mx-8 rounded-[32px] text-white relative py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-14 overflow-hidden mt-12">
+    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-14 overflow-hidden mt-12">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/70 to-primary z-0" />
 

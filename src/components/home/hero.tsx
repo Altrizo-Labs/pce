@@ -1,3 +1,4 @@
+import Image from "next/image";
 import RippleButton from "../RippleButton";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 
@@ -37,7 +38,7 @@ export default function Hero() {
       {/* Container Scroll positioned absolutely to be "in" the background */}
       <div className="absolute inset-0 top-[180px] md:top-[150px] lg:top-[120px] w-full h-full mt-16">
         <ContainerScroll>
-          <img
+          <Image
             src={`/linear.webp`}
             alt="hero"
             height={720}

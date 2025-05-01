@@ -34,7 +34,7 @@ const WhyChooseUs: React.FC = () => {
         </h2>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
           {/* Left Features */}
-          <div className="w-full lg:w-1/4 space-y-8">
+          <div className="w-full lg:w-[40%] space-y-8">
             {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -61,14 +61,14 @@ const WhyChooseUs: React.FC = () => {
             <Image
               src="/images/mobile-simulator.png"
               alt="Edusight mobile app preview"
-              width={240}
+              width={300}
               height={500}
               className="object-contain"
             />
           </div>
 
           {/* Right Features */}
-          <div className="w-full lg:w-1/4 space-y-8">
+          <div className="w-full lg:w-[40%] space-y-8">
             {features.slice(2, 4).map((feature, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="flex items-center justify-center rounded-full border border-[#E9EBF1]">

@@ -1,7 +1,7 @@
 import { HeroBannerProps } from '@/types/types';
 import RippleButton from './RippleButton';
 
-const HeroBanner: React.FC<HeroBannerProps> = ({ video, description }) => {
+const HeroBanner: React.FC<HeroBannerProps> = ({ description }) => {
   return (
     <div className="relative w-full min-h-[600px] md:min-h-[700px] lg:min-h-[800px] rounded-[24px]">
       {/* <video 

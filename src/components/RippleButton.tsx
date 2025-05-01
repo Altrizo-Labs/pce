@@ -84,7 +84,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           ref={divRef}
           className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${hoverColor}`}
         ></div>
-        <span className="z-10 font-dmSans text-[10px] lg:text-[14px]">
+        <span className="z-10 font-ibm text-[10px] lg:text-[14px]">
           {text}
         </span>
 

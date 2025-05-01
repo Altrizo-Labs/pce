@@ -3,6 +3,6 @@ export interface RippleButtonProps {
   url?: string;
   className?: string;
   hoverColor?: string;
-  icon?: any;
+  icon?: React.ReactNode;
   onclick?: () => void;
 }

@@ -1,88 +1,198 @@
-import React from 'react';
-import { Check } from 'lucide-react';
+"use client";
+
+import React, { useState } from "react";
+import { Check } from "lucide-react";
+import clsx from "clsx";
+
+const pricingData = {
+  monthly: [
+    {
+      name: "Free",
+      price: "$0",
+      subText: "Per user/month, billed monthly",
+      description: "For your hobby projects",
+      features: [
+        "Free e-mail alerts",
+        "3-minute checks",
+        "Automatic data enrichment",
+        "10 monitors",
+        "Up to 3 seats",
+      ],
+    },
+    {
+      name: "Pro",
+      price: "$45",
+      subText: "Per user/month, billed monthly",
+      badge: "Popular",
+      description: "For multiple teams",
+      features: [
+        "Everything in Free",
+        "Up to 5 team members",
+        "100 monitors",
+        "15 status pages",
+        "200+ integrations",
+      ],
+    },
+    {
+      name: "Pro 02",
+      price: "$85",
+      subText: "Per user/month, billed monthly",
+      description: "Great for small businesses",
+      features: [
+        "Unlimited phone calls",
+        "30 second checks",
+        "Single-user account",
+        "20 monitors",
+        "Up to 6 seats",
+      ],
+    },
+  ],
+  annual: [
+    {
+      name: "Free",
+      price: "$0",
+      subText: "Per user/month, billed annually",
+      description: "For your hobby projects",
+      features: [
+        "Free e-mail alerts",
+        "3-minute checks",
+        "Automatic data enrichment",
+        "10 monitors",
+        "Up to 3 seats",
+      ],
+    },
+    {
+      name: "Pro",
+      price: "$39",
+      subText: "Per user/month, billed annually",
+      badge: "Popular",
+      description: "For multiple teams",
+      features: [
+        "Everything in Free",
+        "Up to 5 team members",
+        "100 monitors",
+        "15 status pages",
+        "200+ integrations",
+      ],
+    },
+    {
+      name: "Pro 02",
+      price: "$75",
+      subText: "Per user/month, billed annually",
+      description: "Great for small businesses",
+      features: [
+        "Unlimited phone calls",
+        "30 second checks",
+        "Single-user account",
+        "20 monitors",
+        "Up to 6 seats",
+      ],
+    },
+  ],
+};
 
 const Pricing = () => {
+  const [activePlan, setActivePlan] = useState<"monthly" | "annual">("monthly");
+
+  const cards = pricingData[activePlan];
+
   return (
-    <div className="bg-white text-black py-20 px-4 sm:px-6 lg:px-8"> {/* Increased py, changed bg to white, text to black */}
+    <div className="bg-white text-black py-20 px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div className="max-w-6xl mx-auto">
-        {/* Toggle Buttons */}
+        {/* Toggle */}
         <div className="flex justify-center mb-10 space-x-4">
-          <button className="bg-[#1E3A8A] text-white px-6 py-2 rounded-full font-semibold"> {/* Keep blue for active */}
+          <button
+            onClick={() => setActivePlan("monthly")}
+            className={clsx(
+              "px-6 py-2 rounded-full font-semibold transition",
+              activePlan === "monthly"
+                ? "bg-[#1E3A8A] text-white"
+                : "border border-gray-300 text-gray-500 hover:text-black"
+            )}
+          >
             Monthly
           </button>
-          <button className="border border-gray-300 text-gray-500 px-6 py-2 rounded-full font-semibold hover:border-gray-500 hover:text-black transition"> {/* Adjusted for white bg */}
+          <button
+            onClick={() => setActivePlan("annual")}
+            className={clsx(
+              "px-6 py-2 rounded-full font-semibold transition",
+              activePlan === "annual"
+                ? "bg-[#1E3A8A] text-white"
+                : "border border-gray-300 text-gray-500 hover:text-black"
+            )}
+          >
             Annually
           </button>
         </div>
 
-        {/* Pricing Cards */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Free Card */}
-          <div className="bg-white text-black rounded-xl p-6 flex flex-col justify-between border border-gray-200 shadow-lg min-h-[560px]"> {/* Added min-height */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Free</h3>
-              <p className="text-4xl font-bold mb-1">$0</p>
-              <p className="text-sm text-gray-500 mb-4">Per user/month, billed annually</p>
-              <p className="font-semibold mb-4">For your hobby projects</p>
-              <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Free e-mail alerts</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> 3-minute checks</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Automatic data enrichment</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> 10 monitors</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Up to 3 seats</li>
-              </ul>
-            </div>
-            <button className="bg-gray-100 text-black py-2 px-4 rounded-full font-semibold hover:bg-gray-200 transition w-full">
-              Get started for free
-            </button>
-          </div>
-
-          {/* Pro Card (Popular) */}
-          <div className="bg-[#1E3A8A] text-white rounded-xl p-6 flex flex-col justify-between border border-blue-800 shadow-lg relative min-h-[560px]"> {/* Changed bg to #1E3A8A, added min-height */}
-            {/* Removed absolute positioning span from here */}
-            <div>
-              <div className="flex items-center gap-2 mb-2"> {/* Added flex container for title and badge */} 
-                <h3 className="text-xl font-semibold">Pro</h3>
-                <span className="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full flex items-center gap-1"> {/* Adjusted background opacity, ensured text is opaque */} 
-                  🔥 
-                  Popular
-                </span>
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className={clsx(
+                "rounded-xl p-6 flex flex-col justify-between min-h-[560px] shadow-lg border",
+                card.name === "Pro"
+                  ? "bg-[#1E3A8A] text-white border-blue-800"
+                  : "bg-white text-black border-gray-200"
+              )}
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-xl font-semibold">{card.name}</h3>
+                  {card.badge && (
+                    <span className="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      🔥 {card.badge}
+                    </span>
+                  )}
+                </div>
+                <p className="text-4xl font-bold mb-1">{card.price}</p>
+                <p
+                  className={clsx(
+                    "text-sm mb-4",
+                    card.name === "Pro" ? "text-blue-200" : "text-gray-500"
+                  )}
+                >
+                  {card.subText}
+                </p>
+                <p className="font-semibold mb-4">{card.description}</p>
+                <ul
+                  className={clsx(
+                    "space-y-2 text-sm mb-6",
+                    card.name === "Pro" ? "text-blue-100" : "text-gray-700"
+                  )}
+                >
+                  {card.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center">
+                      <span
+                        className={clsx(
+                          "p-1 rounded-md mr-2 inline-flex items-center justify-center",
+                          card.name === "Pro"
+                            ? "bg-white/20 text-white"
+                            : "bg-gray-100 text-gray-600"
+                        )}
+                      >
+                        <Check className="h-3 w-3" />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-4xl font-bold mb-1">$45</p>
-              <p className="text-sm text-blue-200 mb-4">Per user/month, billed annually</p>
-              <p className="font-semibold mb-4">For multiple teams</p>
-              <ul className="space-y-2 text-sm text-blue-100 mb-6">
-                <li className="flex items-center"><span className="bg-white/20 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-white" /></span> Everything in <span className="font-bold ml-1">Free</span></li> {/* Corrected feature reference */}
-                <li className="flex items-center"><span className="bg-white/20 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-white" /></span> Up to 5 team members</li>
-                <li className="flex items-center"><span className="bg-white/20 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-white" /></span> 100 monitors</li>
-                <li className="flex items-center"><span className="bg-white/20 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-white" /></span> 15 status pages</li>
-                <li className="flex items-center"><span className="bg-white/20 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-white" /></span> 200+ integrations</li>
-              </ul>
+              <button
+                className={clsx(
+                  "py-2 px-4 rounded-full font-semibold transition w-full",
+                  card.name === "Pro"
+                    ? "bg-white text-[#1E3A8A] hover:bg-gray-100"
+                    : "bg-gray-100 text-black hover:bg-gray-200"
+                )}
+              >
+                {card.name === "Free"
+                  ? "Get started for free"
+                  : `Get started with ${card.name}`}
+              </button>
             </div>
-            <button className="bg-white text-[#1E3A8A] py-2 px-4 rounded-full font-semibold hover:bg-gray-100 transition w-full"> {/* Changed text color */}
-              Get started with Pro
-            </button>
-          </div>
-
-          {/* Pro 02 Card */}
-          <div className="bg-white text-black rounded-xl p-6 flex flex-col justify-between border border-gray-200 shadow-lg min-h-[560px]"> {/* Added min-height */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Pro 02</h3>
-              <p className="text-4xl font-bold mb-1">$85</p>
-              <p className="text-sm text-gray-500 mb-4">Per user/month, billed annually</p>
-              <p className="font-semibold mb-4">Great for small businesses</p>
-              <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Unlimited phone calls</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> 30 second checks</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Single-user account</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> 20 monitors</li>
-                <li className="flex items-center"><span className="bg-gray-100 p-1 rounded-md mr-2 inline-flex items-center justify-center"><Check className="h-3 w-3 text-gray-600" /></span> Up to 6 seats</li>
-              </ul>
-            </div>
-            <button className="bg-gray-100 text-black py-2 px-4 rounded-full font-semibold hover:bg-gray-200 transition w-full">
-              Get started with Pro
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </div>

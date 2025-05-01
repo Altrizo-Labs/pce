@@ -174,7 +174,7 @@ function Contact_Us() {
   }, [messageSent]);
 
   return (
-    <div className="geist-satoshi contactus-background">
+    <div className="contactus-background">
       <Toaster position="bottom-right" reverseOrder={false} />
       <div className="relative lg:pt-24 pt-20 mx-4 md:mx-14 lg:mx-20 pb-12">
         <div className="min-h-screen text-white flex flex-col justify-center items-center">
@@ -183,7 +183,7 @@ function Contact_Us() {
             {/* Heading */}
             <h1
               ref={headingRef}
-              className="text-6xl opacity-0 font-bold text-[#1E3A8A] leading-tight mb-4"
+              className="text-6xl font-lato font-bold text-[#1E3A8A] leading-tight mb-4"
             >
               Contact Us
             </h1>
@@ -207,7 +207,7 @@ function Contact_Us() {
               className="flex flex-col justify-start space-y-10 opacity-0 text-[#181D27]"
             >
               {/* New Heading */}
-              <h2 className="text-5xl text-[#181D27] font-bold leading-tight mb-4 max-w-sm">
+              <h2 className="text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-4 max-w-sm">
                 We are always ready to help you and answer your questions.
               </h2>
 

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { TanStackProvider } from "@/providers/TanStackProvider";
 
 const lato = localFont({
   src: [
@@ -58,12 +59,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lato.variable} ${ibm.variable} antialiased max-w-[1540px] mx-auto`}
-      >
-        <Header />
-        {children}
-        <Footer/>
+      <body className={`${lato.variable} ${ibm.variable} antialiased max-w-[1540px] mx-auto`}>
+        <TanStackProvider>
+          <Header />
+          {children}
+          <Footer />
+        </TanStackProvider>
       </body>
     </html>
   );

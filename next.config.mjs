@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    images: {
+        domains: ['demo.ghost.io'],
+    },
+
   webpack(config, { isServer }) {
     // File loader for .mp4 files
     config.module.rules.push({

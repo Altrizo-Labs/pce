@@ -11,6 +11,5 @@ export default function Home() {
     <WhyChooseUs />
     <TransformEducationSection />
     <Testimonials />
-
   </main>;
 }

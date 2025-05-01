@@ -87,4 +87,7 @@ body {
   .font-lato {
     font-family: var(--font-lato), sans-serif;
   }
+  .font-ibm {
+    font-family: var(--font-ibm), sans-serif;
+  }
 }

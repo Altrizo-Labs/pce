@@ -8,17 +8,14 @@ export const ContainerScroll = ({
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Adjust the scroll trigger to start 500px before the container reaches the top
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start 500px", "start 0px"], // Starts when the container reaches 500px from the top
   });
-  const [isMobile, setIsMobile] = React.useState(false);
 
-  // Preserve scroll state and set it to 1 (state B) on page load
-  React.useEffect(() => {
-    if (scrollYProgress.get() === 0) {
-      scrollYProgress.set(1); // Set initial scroll position to 1 (state B)
-    }
-  }, []);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -32,37 +29,33 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [0.6, 0.9] : [0.8, 1];
+    return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 
-  // Reverse the transition: card starts tilted and straightens as you scroll
-  const rotateY = useTransform(scrollYProgress, [0, 20.5, 1], [0, 40, 60]);
-  const rotateX = useTransform(scrollYProgress, [0, 2.5, 1], [-0, 50, -40]);
-
-  // Apply scale throughout the scroll
-  const scale = useTransform(scrollYProgress, [1, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
-  // Increase opacity slightly in first half, then more dramatically in second half
-  // const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 0.7, 1]);
+  // 3D transforms with tilt, only during the first 15% of the scroll
+  const rotateX = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Forward-back tilt
+  const rotateY = useTransform(scrollYProgress, [0, 1], [-10, 0]);   // Left-right tilt
+  const rotateZ = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Sideways twist
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const translateX = useTransform(scrollYProgress, [0, 1], [-50, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
 
   return (
     <div
-      className="h-[60rem] flex items-center justify-center relative p-2 md:p-20"
+      className="h-[60rem] flex items-center mt-4 justify-center relative p-2 md:p-20"
       ref={containerRef}
     >
       <div
         className="py-10 md:py-40 w-full relative"
-        style={{
-          perspective: "1000px",
-        }}
+        style={{ perspective: "1000px" }}
       >
         <Card
           rotateX={rotateX}
           rotateY={rotateY}
-          translate={translate}
+          rotateZ={rotateZ}
+          translateX={translateX}
+          translateY={translateY}
           scale={scale}
-          // opacity={opacity}
         >
           {children}
         </Card>
@@ -74,15 +67,18 @@ export const ContainerScroll = ({
 export const Card = ({
   rotateX,
   rotateY,
+  rotateZ,
+  translateX,
+  translateY,
   scale,
-  // opacity,
   children,
 }: {
   rotateX: MotionValue<number>;
   rotateY: MotionValue<number>;
+  rotateZ: MotionValue<number>;
+  translateX: MotionValue<number>;
+  translateY: MotionValue<number>;
   scale: MotionValue<number>;
-  translate: MotionValue<number>;
-  // opacity: MotionValue<number>;
   children: React.ReactNode;
 }) => {
   return (
@@ -90,12 +86,14 @@ export const Card = ({
       style={{
         rotateX,
         rotateY,
+        rotateZ,
+        translateX,
+        translateY,
         scale,
-        // opacity,
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl origin-left"
+      className="max-w-[1088px] -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
         {children}

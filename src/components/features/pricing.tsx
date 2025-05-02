@@ -98,11 +98,11 @@ const Pricing = () => {
 
   return (
     <div className="bg-white text-black py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 transition-all duration-300 font-ibm-plex">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-lato font-bold text-center mb-8 md:mb-10">
+        Affordable Plans to Power Your Institution’s Growth
+      </h2>
       <div className="max-w-[60rem] mx-auto">
         {/* Section Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-lato font-bold text-center mb-8 md:mb-10">
-          Affordable Plans to Power Your Institution’s Growth
-        </h2>
 
         {/* Toggle */}
         <div className="flex justify-center mb-8 md:mb-10 space-x-4">
@@ -144,14 +144,18 @@ const Pricing = () => {
             >
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-lg sm:text-xl font-medium">{card.name}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium">
+                    {card.name}
+                  </h3>
                   {card.badge && (
                     <span className="bg-white/20 text-white text-xs font-medium px-2 py-0.5 rounded-full">
                       🔥 {card.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-3xl sm:text-4xl font-medium mb-1 font-lato">{card.price}</p>
+                <p className="text-3xl sm:text-4xl font-medium mb-1 font-lato">
+                  {card.price}
+                </p>
                 <p
                   className={clsx(
                     "text-sm mb-4",

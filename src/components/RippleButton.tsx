@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import arrow from "../../public/images/arrow.png";
 import Image from "next/image";
+import { FaPlay } from "react-icons/fa";
 
 const RippleButton: React.FC<RippleButtonProps> = ({
   text,
@@ -14,6 +15,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   className,
   hoverColor,
   icon,
+  play,
   onclick,
 }) => {
   const xTo = useRef<(value: number) => void>();
@@ -73,7 +75,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       <button
         ref={buttonRef}
         onClick={onclick}
-        className={`relative border-[1px] border-solid px-5 py-2 rounded-full flex items-center justify-center gap-3 overflow-hidden z-0  ${className} `}
+        className={`relative px-5 py-2 flex items-center justify-center gap-3 overflow-hidden z-0  ${className} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={(e) => {
@@ -84,6 +86,15 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           ref={divRef}
           className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${hoverColor}`}
         ></div>
+
+      {play && (
+        <FaPlay
+          className={`w-4 h-4 transition-colors duration-300 ${
+            hovering ? "text-black" : "text-white"
+          }`}
+        />
+      )}
+
         <span className="z-10 font-ibm text-[10px] lg:text-[14px]">
           {text}
         </span>

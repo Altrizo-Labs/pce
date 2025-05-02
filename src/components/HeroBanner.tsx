@@ -21,13 +21,14 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, description }) => {
         <div className="flex gap-4">
           <RippleButton
             text="Start your Journey"
-            className="bg-white text-black hover:text-white py-3 sm:py-4 px-6 sm:px-8 rounded font-ibm text-sm sm:text-base"
+            className="bg-white text-black hover:text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full font-ibm text-sm sm:text-base"
             hoverColor="bg-black"
           />
           <RippleButton
             text="Watch Demo Video"
-            className="text-white hover:text-black py-3 sm:py-4 px-6 sm:px-8 rounded font-ibm text-sm sm:text-base"
+            className="text-white hover:text-black py-3 sm:py-4 px-6 sm:px-8 rounded-full border border-white font-ibm text-sm sm:text-base"
             hoverColor="bg-white"
+            play
           />
         </div>
       </div>

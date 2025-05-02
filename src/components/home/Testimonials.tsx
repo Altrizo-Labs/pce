@@ -84,10 +84,11 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white font-ibm-plex-sans">
       <div className="xl:max-w-screen-2xl lg:max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-left">
+          {/* Updated section title: font, size */}
+          <h2 className="text-3xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
             What Educators & Students Say
           </h2>
           <div className="flex items-center space-x-2">
@@ -170,16 +171,17 @@ export default function Testimonials() {
                     </span>
                   )}
                 </div>
-                {/* Content */}
-                <h3 className="font-semibold text-gray-900 mt-2">
+
+                <h3 className="font-lato font-semibold text-xl text-gray-900 mt-2">
                   {testimonial.name}
                 </h3>
 
-                <p className="text-gray-500 text-xs mb-4">
+                <p className="font-ibm-plex-sans font-medium text-base text-gray-500 mb-4">
                   {testimonial.school}
                 </p>
-                <p className="text-gray-700 text-sm italic">
-                  &quot;{testimonial.quote}&quot;
+
+                <p className="font-ibm-plex-sans font-normal text-gray-700 text-sm">
+                  "{testimonial.quote}"
                 </p>
               </div>
             </SwiperSlide>

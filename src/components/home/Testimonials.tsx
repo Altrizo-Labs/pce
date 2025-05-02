@@ -88,7 +88,7 @@ export default function Testimonials() {
       <div className="xl:max-w-screen-2xl lg:max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center mb-8">
           {/* Updated section title: font, size */}
-          <h2 className="text-3xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
+          <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
             What Educators & Students Say
           </h2>
           <div className="flex items-center space-x-2">

@@ -47,9 +47,15 @@ const CTASection: React.FC<CTASectionProps> = ({
             {description}
           </p>
           <Link href={buttonLink} legacyBehavior>
-            <a className="inline-flex items-center gap-2 bg-white text-[#0B2A8C] font-lato font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+            {/* Add group class to the link */}
+            <a className="group inline-flex items-center gap-2 bg-white text-[#0B2A8C] font-lato font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
               {buttonText}
-              <ArrowRight color="#FCCF37" size={20} />{" "}
+              {/* Add transition and hover transform classes to the icon */}
+              <ArrowRight
+                color="#FCCF37"
+                size={20}
+                className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+              />{" "}
             </a>
           </Link>
         </div>

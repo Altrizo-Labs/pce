@@ -42,7 +42,7 @@ const Footer = () => {
                   className="bg-transparent p-3 md:p-4 rounded-full border-white border flex-grow"
                   aria-label="Email for newsletter"
                 />
-                <button className="bg-secondary text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
+                <button className="bg-secondary hover:rotate-45 duration-300 text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
                   <Image
                     src={arrow}
                     alt="arrow icon"

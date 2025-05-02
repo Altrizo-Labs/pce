@@ -30,7 +30,7 @@ export default function Hero() {
             text="Book a Demo"
             className="bg-white rounded-full font-lato text-primary font-bold w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
             url=""
-            icon
+            yellowIcon
           />
         </div>
       </div>

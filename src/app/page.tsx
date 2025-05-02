@@ -7,7 +7,7 @@ import BrandLogosMarquee from "@/components/BrandLogosMarquee";
 import CTASection from "@/components/CTASection";
 
 export default function Home() {
-  return <main className="mx-4 pt-32">
+  return <main className="mx-4 pt-24">
     <Hero />
     <CompanyOverview />
     <WhyChooseUs />

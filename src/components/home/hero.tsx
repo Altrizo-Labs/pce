@@ -21,14 +21,14 @@ export default function Hero() {
         </p>
 
         <div className="flex-[0.45]">
-          <p className="text-xs sm:text-sm md:text-[16px] text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-[16px] font-ibm text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
             administration, and personalize learning—helping institutions stay
             ahead in today&#39;s fast-paced education landscape.
           </p>
           <RippleButton
             text="Book a Demo"
-            className="bg-white font-lato rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
+            className="bg-white rounded-full font-lato text-primary font-bold w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
             url=""
             icon
           />

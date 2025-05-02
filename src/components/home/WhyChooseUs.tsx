@@ -27,7 +27,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 text-white">
+    <section className="py-16 text-white lg:w-[80%] mx-auto">
       <div className="container mx-auto px-4">
         <h2 className="text-[45px] font-bold text-[#181D27] text-center mb-12">
           Why choose Edusight

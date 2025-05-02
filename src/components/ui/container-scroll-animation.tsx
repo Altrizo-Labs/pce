@@ -36,13 +36,13 @@ export const ContainerScroll = ({
   const rotateX = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Forward-back tilt
   const rotateY = useTransform(scrollYProgress, [0, 1], [-10, 0]);   // Left-right tilt
   const rotateZ = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Sideways twist
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const translateX = useTransform(scrollYProgress, [0, 1], [-50, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
 
   return (
     <div
-      className="h-[60rem] flex items-center mt-4 justify-center relative p-2 md:p-20"
+      className="h-[60rem] flex items-center justify-center relative p-2 md:p-20"
       ref={containerRef}
     >
       <div

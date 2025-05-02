@@ -4,7 +4,7 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function Hero() {
   return (
-    <div className="rounded-t-[32px] h-[800px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
+    <div className="rounded-t-[32px] h-[875px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-10"

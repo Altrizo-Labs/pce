@@ -26,7 +26,7 @@ const CTASection: React.FC<CTASectionProps> = ({
 
           // Increased width to scale image further
           "inset-y-0 w-[750px] md:w-[700px]",
-          imagePosition === "left" ? "-left-48  bg-left" : "-right-48 bg-right"
+          imagePosition === "left" ? "-left-48  bg-left" : "right-0 bg-right"
         )}
       />
 
@@ -39,7 +39,8 @@ const CTASection: React.FC<CTASectionProps> = ({
         )}
       >
         <div className="w-full md:w-[60%] lg:w-[65%] items-start justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-lato">
+          {/* Added max-w-3xl to the title */}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-lato max-w-[45rem]">
             {title}
           </h2>
           <p className="text-sm md:text-base text-white/75 mb-8 font-ibm-plex-sans max-w-xl">

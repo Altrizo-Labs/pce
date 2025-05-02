@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { ArrowRight } from 'lucide-react'; // Import ArrowRight
+import { ArrowRight } from "lucide-react"; // Import ArrowRight
 
 type CTASectionProps = {
   title: string;
@@ -16,37 +16,40 @@ const CTASection: React.FC<CTASectionProps> = ({
   description,
   buttonText,
   buttonLink,
-  imagePosition = "right", // Re-add default value
+  imagePosition = "right", // Default value
 }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A]/80 to-[#1E3A8A]/50 text-white rounded-[32px] px-6 md:px-12 py-20">
+    <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A]/80 to-[#1E3A8A]/50 text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[480px] overflow-hidden">
+      <div
+        className={clsx(
+          "absolute z-0 bg-[url('/images/wireframe.png')] bg-contain bg-no-repeat",
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center">
-        {/* Text Column: Order changes based on imagePosition */}
-        <div className={clsx("order-2", imagePosition === 'left' ? 'md:order-2' : 'md:order-1')}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-sm md:text-base text-[#CBD5E1] mb-8 max-w-lg">{description}</p>
+          "inset-y-0 w-[600px] md:w-[550px]", // Changed inset-0 to inset-y-0
+          imagePosition === "left" ? "-left-20  bg-left" : "-right-20  bg-right"
+        )}
+      />
+
+      {/* Content container: using flex to align text - Simplified alignment */}
+      <div
+        className={clsx(
+          "relative z-10 max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center",
+          // Align text opposite to image position
+          imagePosition === "left" ? "justify-end" : "justify-start"
+        )}
+      >
+        <div className="w-full md:w-[60%] lg:w-[65%] items-start justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-lato">
+            {title}
+          </h2>
+          <p className="text-sm md:text-base text-white/75 mb-8 font-ibm-plex-sans max-w-xl">
+            {description}
+          </p>
           <Link href={buttonLink} legacyBehavior>
-            <a className="inline-flex items-center gap-2 bg-white text-[#0B2A8C] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+            <a className="inline-flex items-center gap-2 bg-white text-[#0B2A8C] font-lato font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
               {buttonText}
-              <ArrowRight color="#FCCF37" size={20} /> {/* Replace span with ArrowRight icon */}
+              <ArrowRight color="#FCCF37" size={20} />{" "}
             </a>
           </Link>
-        </div>
-
-        {/* Image Column: Order changes based on imagePosition */}
-        <div className={clsx("order-1", imagePosition === 'left' ? 'md:order-1' : 'md:order-2')}>
-          <div className="w-full h-full">
-            {/* Decorative background using wireframe grid */}
-            <div className="w-full h-full">
-              <div
-                className={clsx(
-                  "aspect-[16/9] w-full bg-[url('/images/wireframe.png')] bg-contain bg-no-repeat ",
-                  imagePosition === 'left' ? 'bg-left' : 'bg-right'
-                )}
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>

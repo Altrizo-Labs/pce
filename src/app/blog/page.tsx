@@ -4,7 +4,7 @@ import { LatestBlogsSection } from "@/components/blog/latest-blogs-section";
 
 export default function Blog() {
   return (
-    <>
+    <div className="mx-4 pt-24">
       <BlogHero />
       <Suspense
         fallback={
@@ -15,6 +15,6 @@ export default function Blog() {
       >
         <LatestBlogsSection />
       </Suspense>
-    </>
+    </div>
   );
 }

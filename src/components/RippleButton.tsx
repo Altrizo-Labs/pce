@@ -8,6 +8,7 @@ import Link from "next/link";
 import arrow from "../../public/images/arrow.png";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 
 const RippleButton: React.FC<RippleButtonProps> = ({
   text,
@@ -15,6 +16,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   className,
   hoverColor,
   icon,
+  yellowIcon,
   play,
   onclick,
 }) => {
@@ -87,17 +89,15 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${hoverColor}`}
         ></div>
 
-      {play && (
-        <FaPlay
-          className={`w-4 h-4 transition-colors duration-300 ${
-            hovering ? "text-black" : "text-white"
-          }`}
-        />
-      )}
+        {play && (
+          <FaPlay
+            className={`w-4 h-4 transition-colors duration-300 ${
+              hovering ? "text-black" : "text-white"
+            }`}
+          />
+        )}
 
-        <span className="z-10 font-ibm text-[10px] lg:text-[14px]">
-          {text}
-        </span>
+        <span className="z-10 font-ibm text-[10px] lg:text-[14px]">{text}</span>
 
         {icon && (
           <Image
@@ -107,6 +107,18 @@ const RippleButton: React.FC<RippleButtonProps> = ({
               hovering && "rotate-45"
             } `}
           />
+        )}
+
+        {yellowIcon && (
+          <span className="relative w-4 lg:w-6 h-4 lg:h-6">
+            <ArrowRight
+              color="#FCCF37"
+              size={20}
+              className={`absolute top-0 left-0 transition-transform duration-300 ${
+                hovering ? "translate-x-2" : "translate-x-0"
+              }`}
+            />
+          </span>
         )}
       </button>
     </Link>

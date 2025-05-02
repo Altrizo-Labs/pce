@@ -10,7 +10,6 @@ export default function FeaturesPage() {
         video="/test.mp4"
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
       />
-      <Pricing />
       <FeaturesGrid />
       <CTASection
       title="Get to Know the Team Behind EduSight and Our Vision for Transforming Education"
@@ -19,6 +18,7 @@ export default function FeaturesPage() {
       buttonLink="#careers"
       imagePosition="right"
     />
+    <Pricing />
     </div>
   );
 }

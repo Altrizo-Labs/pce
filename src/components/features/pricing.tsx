@@ -97,17 +97,22 @@ const Pricing = () => {
   const cards = pricingData[activePlan];
 
   return (
-    <div className="bg-white text-black py-20 px-4 sm:px-6 lg:px-8 transition-all duration-300">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-white text-black py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 transition-all duration-300 font-ibm-plex">
+      <div className="max-w-[60rem] mx-auto">
+        {/* Section Title */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-lato font-bold text-center mb-8 md:mb-10">
+          Affordable Plans to Power Your Institution’s Growth
+        </h2>
+
         {/* Toggle */}
-        <div className="flex justify-center mb-10 space-x-4">
+        <div className="flex justify-center mb-8 md:mb-10 space-x-4">
           <button
             onClick={() => setActivePlan("monthly")}
             className={clsx(
-              "px-6 py-2 rounded-full font-semibold transition",
+              "px-6 py-2 rounded-full font-normal transition",
               activePlan === "monthly"
                 ? "bg-[#1E3A8A] text-white"
-                : "border border-gray-300 text-gray-500 hover:text-black"
+                : "border border-[#1E3A8A] text-primary "
             )}
           >
             Monthly
@@ -115,10 +120,10 @@ const Pricing = () => {
           <button
             onClick={() => setActivePlan("annual")}
             className={clsx(
-              "px-6 py-2 rounded-full font-semibold transition",
+              "px-6 py-2 rounded-full font-normal transition",
               activePlan === "annual"
                 ? "bg-[#1E3A8A] text-white"
-                : "border border-gray-300 text-gray-500 hover:text-black"
+                : "border border-[#1E3A8A] text-[#1E3A8A]"
             )}
           >
             Annually
@@ -126,12 +131,12 @@ const Pricing = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 justify-items-center">
           {cards.map((card, index) => (
             <div
               key={index}
               className={clsx(
-                "rounded-xl p-6 flex flex-col justify-between min-h-[560px] shadow-lg border",
+                "rounded-xl p-4 sm:p-6 flex flex-col justify-between min-h-[500px] sm:min-h-[530px] md:min-h-[560px] w-full max-w-sm md:max-w-[275px] lg:max-w-xs shadow-lg border",
                 card.name === "Pro"
                   ? "bg-[#1E3A8A] text-white border-blue-800"
                   : "bg-white text-black border-gray-200"
@@ -139,14 +144,14 @@ const Pricing = () => {
             >
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-xl font-semibold">{card.name}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium">{card.name}</h3>
                   {card.badge && (
-                    <span className="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                    <span className="bg-white/20 text-white text-xs font-medium px-2 py-0.5 rounded-full">
                       🔥 {card.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-4xl font-bold mb-1">{card.price}</p>
+                <p className="text-3xl sm:text-4xl font-medium mb-1 font-lato">{card.price}</p>
                 <p
                   className={clsx(
                     "text-sm mb-4",
@@ -155,10 +160,10 @@ const Pricing = () => {
                 >
                   {card.subText}
                 </p>
-                <p className="font-semibold mb-4">{card.description}</p>
+                <p className="font-medium mb-4">{card.description}</p>
                 <ul
                   className={clsx(
-                    "space-y-2 text-sm mb-6",
+                    "space-y-2 text-sm mb-4 sm:mb-6",
                     card.name === "Pro" ? "text-blue-100" : "text-gray-700"
                   )}
                 >
@@ -166,9 +171,9 @@ const Pricing = () => {
                     <li key={idx} className="flex items-center">
                       <span
                         className={clsx(
-                          "p-1 rounded-md mr-2 inline-flex items-center justify-center",
+                          "p-1 rounded-md mr-1 sm:mr-2 inline-flex items-center justify-center",
                           card.name === "Pro"
-                            ? "bg-white/20 text-white"
+                            ? "bg-white/20 text-white/70"
                             : "bg-gray-100 text-gray-600"
                         )}
                       >
@@ -181,9 +186,9 @@ const Pricing = () => {
               </div>
               <button
                 className={clsx(
-                  "py-2 px-4 rounded-full font-semibold transition w-full",
+                  "py-2 px-4 rounded-full font-semibold transition w-full font-lato",
                   card.name === "Pro"
-                    ? "bg-white text-[#1E3A8A] hover:bg-gray-100"
+                    ? "bg-white text-primary hover:bg-gray-100"
                     : "bg-gray-100 text-black hover:bg-gray-200"
                 )}
               >

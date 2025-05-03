@@ -181,7 +181,7 @@ export default function Testimonials() {
                 </p>
 
                 <p className="font-ibm-plex-sans font-normal text-gray-700 text-sm">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </div>
             </SwiperSlide>

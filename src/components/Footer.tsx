@@ -1,16 +1,20 @@
 import { footerLinks } from "@/data/footer";
-import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-import arrow from "../../public/images/arrow.png";
+import arrow from "../../public/images/arrow.png";;
+
+import fb from "../../public/images/facebook.png"
+import instagram from "../../public/images/instagram.png"
+import twitter from "../../public/images/twitter.png"
+
+import logo from "../../public/images/footer_logo.png"
 
 const Footer = () => {
   return (
-    <footer className="mx-4 md:mx-6 lg:mx-8 rounded-[32px] text-white relative py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-14 overflow-hidden mt-12">
+    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-14 overflow-hidden mt-12">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/70 to-primary z-0" />
-
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0" />
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-10"
@@ -19,9 +23,6 @@ const Footer = () => {
           backgroundSize: "20px 20px",
         }}
       />
-
-      {/* Background decoration (optional) */}
-      <div className="absolute right-0 top-0 opacity-10 w-60 h-60 rounded-full bg-white blur-3xl -translate-y-1/2 translate-x-1/2 z-[1]" />
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -38,11 +39,10 @@ const Footer = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
-                  placeholder="Enter your email"
                   className="bg-transparent p-3 md:p-4 rounded-full border-white border flex-grow"
                   aria-label="Email for newsletter"
                 />
-                <button className="bg-secondary text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
+                <button className="bg-secondary hover:rotate-45 duration-300 text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
                   <Image
                     src={arrow}
                     alt="arrow icon"
@@ -54,43 +54,34 @@ const Footer = () => {
           </div>
 
           {/* Right column */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-medium text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-3">
-                {footerLinks.quickLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-300 hover:text-white transition duration-200 hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Follow Us */}
-            <div>
-              <h3 className="font-medium text-lg mb-4">Follow Us</h3>
-              <ul className="space-y-3">
-                {footerLinks.follow.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-300 hover:text-white transition duration-200 flex items-center gap-2"
-                    >
-                      <span className="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                        {/* This would ideally be an icon based on social media type */}
-                      </span>
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0">
+            {footerLinks
+              .filter((section) =>
+                ["QUICK LINKS", "COMPLIANCE"].includes(section.title)
+              )
+              .map((section) => (
+                <div key={section.title}>
+                  <h3 className="font-medium text-[16px] mb-4 font-lato">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-3 text-[14px] font-ibm">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        {link.href ? (
+                          <Link
+                            href={link.href}
+                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
+                          >
+                            {link.name}
+                          </Link>
+                        ) : (
+                          <span className="text-gray-300/50">{link.name}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
           </div>
         </div>
 
@@ -98,47 +89,57 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32 mt-12">
           {/* Social Links */}
           <div>
-            <h3 className="font-medium text-lg mb-4">Connect With Us</h3>
             <div className="flex flex-wrap gap-4">
-              {["Facebook", "Twitter", "LinkedIn", "Instagram"].map(
-                (platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    aria-label={platform}
-                    className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition"
-                  >
-                    {/* Icons would go here */}
-                  </a>
-                )
-              )}
+              {["Facebook", "Instagram", "Twitter"].map((platform) => (
+                <a
+                  key={platform}
+                  href="#"
+                  aria-label={platform}
+                  className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"
+                >
+                  {platform === "Facebook" && ( 
+                    <Image src={fb} className="w-6 h-6 text-white" alt="Facebook icon" />
+                  )}
+                  {platform === "Instagram" && (
+                    <Image src={instagram} className="w-6 h-6 text-white" alt="Instagram icon" />
+                  )}
+                  {platform === "Twitter" && (
+                    <Image src={twitter} className="w-6 h-6 text-white" alt="Twitter icon" />
+                  )}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Contact Us */}
-          <div>
-            <h3 className="font-medium text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              {footerLinks.contactUs.map((contact) => (
-                <li key={contact.name} className="flex items-start gap-3">
-                  {contact.name === "email" && (
-                    <Mail className="w-5 h-5 mt-1 text-gray-300" />
-                  )}
-                  {contact.name === "phone" && (
-                    <Phone className="w-5 h-5 mt-1 text-gray-300" />
-                  )}
-                  {contact.name === "address" && (
-                    <MapPin className="w-5 h-5 mt-1 text-gray-300" />
-                  )}
-                  <a
-                    href={contact.href}
-                    className="text-gray-300 hover:text-white transition"
-                  >
-                    {contact.display}
-                  </a>
-                </li>
+          <div className="gap-8 lg:gap-32">
+            {footerLinks
+              .filter((section) => section.title === "CONTACT")
+              .map((section) => (
+                <div key={section.title}>
+                  <h3 className="font-medium text-[16px] mb-4 font-lato">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-3 grid grid-cols-3 gap-12 text-[14px] font-ibm">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        {link.href ? (
+                          <a
+                            href={link.href}
+                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
+                          >
+                            {link.name}
+                          </a>
+                        ) : (
+                          <span className="text-gray-300/50 hover:text-gray-300">
+                            {link.name}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
           </div>
         </div>
 
@@ -149,14 +150,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-32 h-10 bg-white bg-opacity-20 rounded flex items-center justify-center">
-              {/* Replace with actual logo */}
-              <span className="font-bold text-lg">EDUSIGHT</span>
-            </div>
-          </div>
+              <Image src={logo} alt="EduSight Logo" loading="lazy" />
+           </div>
 
           {/* Tagline */}
-          <div className="md:max-w-md text-sm md:text-base">
+          <div className="text-sm md:text-[16px] leading-6 font-ibm">
             <p>
               Transform your institution with intelligent AI solutions that
               drive engagement, efficiency, and student success.

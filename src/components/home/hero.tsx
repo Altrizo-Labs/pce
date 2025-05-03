@@ -1,9 +1,10 @@
+import Image from "next/image";
 import RippleButton from "../RippleButton";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function Hero() {
   return (
-    <div className="rounded-t-[32px] h-[800px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
+    <div className="rounded-t-[32px] h-[875px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-10"
@@ -20,16 +21,16 @@ export default function Hero() {
         </p>
 
         <div className="flex-[0.45]">
-          <p className="text-xs sm:text-sm md:text-[16px] text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-[16px] font-ibm text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
             administration, and personalize learning—helping institutions stay
             ahead in today&#39;s fast-paced education landscape.
           </p>
           <RippleButton
             text="Book a Demo"
-            className="bg-white font-lato rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
+            className="bg-white rounded-full font-lato text-primary font-bold w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
             url=""
-            icon
+            yellowIcon
           />
         </div>
       </div>
@@ -37,7 +38,7 @@ export default function Hero() {
       {/* Container Scroll positioned absolutely to be "in" the background */}
       <div className="absolute inset-0 top-[180px] md:top-[150px] lg:top-[120px] w-full h-full mt-16">
         <ContainerScroll>
-          <img
+          <Image
             src={`/linear.webp`}
             alt="hero"
             height={720}

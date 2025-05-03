@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../../public/images/logo.png"
+import logo from "../../public/images/logo.png";
 
 import Image from "next/image";
 import { HEADER } from "@/data/header";
@@ -19,6 +19,7 @@ const Header = () => {
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // new state for scroll position
 
   // Scroll tracking variables
   const lastScrollY = useRef(0);
@@ -51,6 +52,12 @@ const Header = () => {
 
       // Determine scroll direction and amount
       const scrollDiff = currentScrollY - lastScrollY.current;
+
+      if (currentScrollY > 50) {
+        setIsScrolled(true); // Add mx-12 when scrolled more than 50px
+      } else {
+        setIsScrolled(false);
+      }
 
       if (scrollDiff > 10 && currentScrollY > scrollThreshold) {
         // Scrolling down significantly
@@ -94,7 +101,7 @@ const Header = () => {
     if (!hasMounted) return;
 
     const activeLinkIndex = HEADER.findIndex((item) => pathname === item.href);
-    if (indicatorRefs.current[activeLinkIndex]) {
+    if (activeLinkIndex >= 0 && indicatorRefs.current[activeLinkIndex]) {
       gsap.to(indicatorRefs.current[activeLinkIndex], {
         width: "10px",
         duration: 0.3,
@@ -130,6 +137,7 @@ const Header = () => {
   // Toggle mobile menu with animation and freeze screen
   const toggleMobileMenu = () => {
     const mobileMenu = document.getElementById("mobile-menu");
+    if (!mobileMenu) return;
 
     if (isMobileMenuOpen) {
       gsap.to(mobileMenu, {
@@ -166,9 +174,11 @@ const Header = () => {
     <>
       <nav
         ref={headerRef}
-        className={`fixed w-[97.5%] max-w-[1500px] mx-auto font-lato py-3 lg:py-5 flex bg-white rounded-[8px] items-center justify-between mt-6 left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-50 ${
+        className={`fixed w-[97.5%] max-w-[1500px] mx-auto font-lato py-3 lg:py-5 flex bg-white bg-opacity-75 backdrop-blur-lg rounded-[8px] items-center justify-between mt-[1px] left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
           isHeaderHidden ? "-translate-y-full" : "translate-y-0"
-        } ${isMobileMenuOpen ? "bg-secondary" : ""}`}
+        } ${isMobileMenuOpen ? "bg-secondary" : ""} ${
+          isScrolled ? "px-6" : ""
+        }`}
       >
         {/* Logo */}
         <Link href="/">
@@ -177,7 +187,7 @@ const Header = () => {
             alt="logo"
             width={isMobile ? 40 : 50}
             height={isMobile ? 40 : 50}
-            className="relative w-52 z-40 bg-black"
+            className="relative w-52 z-40"
           />
         </Link>
 
@@ -197,7 +207,7 @@ const Header = () => {
                   {item.title === "Contact Us" ? (
                     <RippleButton
                       text="Contact Us"
-                      className="bg-secondary rounded-[10px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black"
+                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black"
                       url={item.href}
                       icon
                     />
@@ -244,7 +254,8 @@ const Header = () => {
       {isMobile && (
         <div
           id="mobile-menu"
-          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg"
+          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
+          style={{ display: hasMounted ? "block" : "none" }}
         >
           <div className="flex flex-col p-4 gap-4">
             {HEADER.map((item) =>

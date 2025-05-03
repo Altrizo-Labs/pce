@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { FaLinkedin, FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import axios from "axios";
@@ -19,8 +20,9 @@ function Contact() {
 function Contact_Us() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [university, setUniversity] = useState("");
+  const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
   const [messageSent, setMessageSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -77,8 +79,9 @@ function Contact_Us() {
       const formData = {
         name,
         email,
+        university,
+        role,
         message,
-        phone,
       };
 
       const response = await axios({
@@ -95,8 +98,9 @@ function Contact_Us() {
         toast.success("Message sent successfully");
         setName("");
         setEmail("");
+        setUniversity("");
+        setRole("");
         setMessage("");
-        setPhone("");
         setMessageSent(true);
       }
     } catch (error) {
@@ -179,11 +183,11 @@ function Contact_Us() {
       <div className="relative lg:pt-24 pt-20 mx-4 md:mx-14 lg:mx-20 pb-12">
         <div className="min-h-screen text-white flex flex-col justify-center items-center">
           {/* Top Container */}
-          <div className="container mx-auto px-6 flex flex-col items-center text-center mb-24">
+          <div className="container mx-auto px-6 flex flex-col items-center text-center mb-24 lg:mb-36">
             {/* Heading */}
             <h1
               ref={headingRef}
-              className="text-6xl font-lato font-bold text-[#1E3A8A] leading-tight mb-4"
+              className="text-6xl font-lato font-[700] text-[#1E3A8A] leading-tight mb-4"
             >
               Contact Us
             </h1>
@@ -200,7 +204,7 @@ function Contact_Us() {
           </div>
 
           {/* Bottom Container */}
-          <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left Column: Contact Details */}
             <div
               ref={contactDetailsRef}
@@ -217,24 +221,23 @@ function Contact_Us() {
               </p>
 
               {/* Email */}
-              <div className="mb-4">
+              <div className="mb-12">
                 <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
               </div>
 
               {/* Schedule a Call */}
-              <div className="mb-6">
+              <div className="mb-12">
                 <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
               </div>
 
               {/* Social Icons */}
               <div className="mb-6">
                 <p className="mb-4 text-[#535862] text-xl font-semibold">Social Network.</p>
-                <div className="flex space-x-4 text-2xl text-gray-700">
+                <div className="flex space-x-4 text-2xl text-[#1E3A8A]">
                   <a
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-blue-600"
                     aria-label="Follow us on Facebook"
                   >
                     <FaFacebook />
@@ -243,16 +246,6 @@ function Contact_Us() {
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-pink-600"
-                    aria-label="Follow us on Instagram"
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-black"
                     aria-label="Follow us on X"
                   >
                     <FaXTwitter />
@@ -261,7 +254,6 @@ function Contact_Us() {
                     href="https://www.linkedin.com/company/cinnamon-digital-solutions"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-blue-700"
                     aria-label="Follow us on LinkedIn"
                   >
                     <FaLinkedin />
@@ -271,88 +263,86 @@ function Contact_Us() {
             </div>
 
             {/* Right Column: Form */}
-            <div ref={formContainerRef} className="opacity-0">
+            <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px] shadow-lg">
+              <h3 className="text-3xl font-semibold text-[#181D27] mb-4">Get in Touch</h3>
+              <p className="text-gray-600 text-xl mb-8">Fill out the form—we'll be in touch soon.</p>
+
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
-                {/* Name and Email in the Same Line */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Name */}
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-gray-100 mb-2 font-semibold"
-                    >
-                      My Name is
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full p-3 rounded-lg bg-black border border-red-600 focus:ring-2 focus:ring-red-600 focus:outline-none"
-                    />
-                  </div>
-                  {/* Phone */}
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-gray-100 mb-2 font-semibold"
-                    >
-                      My Phone Number is
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="text"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full p-3 rounded-lg bg-black border border-red-600 focus:ring-2 focus:ring-red-600 focus:outline-none"
-                    />
-                  </div>
+                {/* Full Name */}
+                <div>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
+                    required
+                  />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-gray-100 mb-2 font-semibold"
-                  >
-                    My Email is
-                  </label>
                   <input
                     id="email"
                     name="email"
                     type="email"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-3 rounded-lg bg-black border border-red-600 focus:ring-2 focus:ring-red-600 focus:outline-none"
+                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
+                    required
+                  />
+                </div>
+
+                {/* University / Organisation */}
+                <div>
+                  <input
+                    id="university"
+                    name="university"
+                    type="text"
+                    placeholder="University / Organisation"
+                    value={university}
+                    onChange={(e) => setUniversity(e.target.value)}
+                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
+                  />
+                </div>
+
+                {/* Role */}
+                <div>
+                  <input
+                    id="role"
+                    name="role"
+                    type="text"
+                    placeholder="Role"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-gray-100 mb-2 font-semibold"
-                  >
-                    Message
-                  </label>
                   <textarea
                     id="message"
                     name="message"
+                    placeholder="Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full p-3 rounded-lg bg-black border border-red-600 focus:ring-2 focus:ring-red-600 focus:outline-none"
+                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
                     rows={4}
+                    required
                   ></textarea>
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3 bg-red-600 rounded-lg hover:bg-red-700 text-white"
+                  className="inline-flex items-center px-6 py-3 bg-[#3B5998] rounded-lg hover:bg-[#2d4373] text-white"
                 >
-                  Submit →
+                  Send a Message
+                  <FiArrowUpRight className="ml-2 h-7 w-7 text-[#FCCF37]" />
                 </button>
               </form>
             </div>

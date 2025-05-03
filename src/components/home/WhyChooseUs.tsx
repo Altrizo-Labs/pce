@@ -35,7 +35,7 @@ const WhyChooseUs: React.FC = () => {
           Why choose Edusight
         </h2>
         {/* Adjusted vertical alignment for lg screens */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-8 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
           {/* Left Features */}
           {/* Adjusted space-y for responsiveness */}
           {/* Left Features - Added lg:items-end for right alignment on large screens */}

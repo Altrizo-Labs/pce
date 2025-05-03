@@ -32,6 +32,7 @@ export function useMediaQuery(query: string): boolean {
         mediaQueryList.addEventListener('change', updateMatches);
     } catch (e1) {
         // Fallback for older browsers
+        console.error("Error adding media query listener:", e1);
         try {
             mediaQueryList.addListener(updateMatches);
         } catch (e2) {
@@ -46,6 +47,7 @@ export function useMediaQuery(query: string): boolean {
             mediaQueryList.removeEventListener('change', updateMatches);
         } catch (e1) {
             // Fallback for older browsers
+            console.error("Error removing media query listener:", e1);
             try {
                 mediaQueryList.removeListener(updateMatches);
             } catch (e2) {

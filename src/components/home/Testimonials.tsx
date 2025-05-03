@@ -91,7 +91,7 @@ export default function Testimonials() {
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
             What Educators & Students Say
           </h2>
-          <div className="flex items-center space-x-2">
+          <div className="md:flex items-center space-x-2 hidden">
             <button
               ref={prevRef}
               className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-200 ease-in-out ${

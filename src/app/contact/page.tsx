@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { FaLinkedin, FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -265,7 +265,7 @@ function Contact_Us() {
             {/* Right Column: Form */}
             <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px] shadow-lg">
               <h3 className="text-3xl font-semibold text-[#181D27] mb-4">Get in Touch</h3>
-              <p className="text-gray-600 text-xl mb-8">Fill out the form—we'll be in touch soon.</p>
+              <p className="text-gray-600 text-xl mb-8">Fill out the form—we&apos;ll be in touch soon.</p>
 
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 {/* Full Name */}

@@ -2,6 +2,7 @@ import CTASection from "@/components/CTASection";
 import FeaturesGrid from "@/components/features/FeaturesGrid";
 import Pricing from "@/components/features/pricing";
 import HeroBanner from "@/components/HeroBanner";
+import SmartRecruitment from "@/components/features/SmartRecruitment";
 
 export default function FeaturesPage() {
   return (
@@ -10,6 +11,7 @@ export default function FeaturesPage() {
         video="/test.mp4"
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
       />
+      <SmartRecruitment />
       <FeaturesGrid />
       <CTASection
       title="Get to Know the Team Behind EduSight and Our Vision for Transforming Education"

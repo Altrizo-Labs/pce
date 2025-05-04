@@ -1,56 +1,47 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+"use client";
+
+import { ChevronRight } from "lucide-react";
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
-  basePath: string;
+  onPageChange: (page: number) => void;
+  nextPage: number | null;
 }
 
-export function Pagination({
+export default function Pagination({
   currentPage,
   totalPages,
-  basePath,
+  onPageChange,
+  nextPage,
 }: PaginationProps) {
-  // Only show up to 5 page links
-  const pageNumbers = [];
-  const maxPagesToShow = 5;
-
-  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-  const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
-
-  if (endPage - startPage + 1 < maxPagesToShow) {
-    startPage = Math.max(1, endPage - maxPagesToShow + 1);
-  }
-
-  for (let i = startPage; i <= endPage; i++) {
-    pageNumbers.push(i);
-  }
+  if (totalPages <= 1) return null;
 
   return (
-    <div className="flex items-center justify-center space-x-2 mt-8">
-      {pageNumbers.map((page) => (
-        <Link
-          key={page}
-          href={`${basePath}${page === 1 ? "" : `?page=${page}`}`}
-          className={`inline-flex items-center justify-center w-8 h-8 text-sm ${
-            currentPage === page
-              ? "font-bold text-blue-600"
-              : "text-gray-600 hover:text-blue-600"
-          }`}
-        >
-          {page}
-        </Link>
-      ))}
-
-      {currentPage < totalPages && (
-        <Link
-          href={`${basePath}?page=${currentPage + 1}`}
-          className="inline-flex items-center justify-center w-8 h-8 text-yellow-400"
-        >
-          <ArrowRight className="w-5 h-5" />
-        </Link>
-      )}
+    <div className="flex justify-center mt-12">
+      <div className="flex items-center gap-2">
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={`w-8 h-8 flex items-center justify-center rounded-full ${
+              currentPage === page
+                ? "bg-[#ECEFF1] text-black"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+        {nextPage && (
+          <button
+            onClick={() => onPageChange(nextPage)}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-[#1E3A8A]"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        )}
+      </div>
     </div>
   );
 }

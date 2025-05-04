@@ -1,8 +1,6 @@
 import React from "react";
 
-interface CustomArrowRightProps extends React.SVGProps<SVGSVGElement> {}
-
-const CustomArrowRight: React.FC<CustomArrowRightProps> = (props) => {
+const CustomArrowRight: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

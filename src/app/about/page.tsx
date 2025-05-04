@@ -1,7 +1,6 @@
 import CTASection from "@/components/CTASection";
 import HeroBanner from "@/components/HeroBanner";
-import WhatDrivesUs from "@/components/about/WhatDrivesUs"; // Import the new component
-import AboutUsSection from "@/components/about/about-us";
+import WhatDrivesUs from "@/components/about/WhatDrivesUs";
 import TeamSection from "@/components/about/team-section";
 
 export default function AboutPage() {

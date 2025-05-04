@@ -4,8 +4,8 @@ import {
   Headset,
   BookMinus,
   Link as LinkIcon,
-  ArrowRight,
 } from "lucide-react";
+import CustomArrowRight from "../icons/CustomArrowRight"; 
 
 const features = [
   {
@@ -43,22 +43,22 @@ export default function TransformEducationSection() {
           providing real-time support, course assistance, and seamless LMS
           integration—making learning smarter and more efficient.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 rounded-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10  mx-auto "> 
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative flex flex-col p-6 rounded-lg shadow-md border border-gray-200 transition duration-300 ease-in-out bg-white hover:bg-[linear-gradient(135deg,_#1E3A8A_0%,_#1E3A8A_100%)] hover:bg-opacity-[0.9] hover:text-white lg:min-h-[360px]"
+              className="group relative flex flex-col mx-auto p-6 rounded-[20px] shadow-md border border-gray-200 transition duration-300 ease-in-out bg-white hover:bg-[linear-gradient(135deg,_#1E3A8A_0%,_#1E3A8ABF_100%)] hover:text-white lg:w-[336px] lg:min-h-[413px]"
             >
               <div className="flex-grow">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20">
+                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-[#F3F2F8] rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20">
                   <feature.icon
-                    className={`h-6 w-6 transition-colors duration-300 ease-in-out ${feature.textColor} group-hover:text-white`}
+                    className={`h-6 w-6 lg:w-[36px] lg:h-[36px] transition-colors duration-300 ease-in-out ${feature.textColor} group-hover:text-white`} // Added lg icon sizes
                   />
                 </div>
-                <h3 className="text-[24px] md:text-[32px] font-bold mb-2 text-[#181D27] max-w-42 group-hover:text-white font-lato">
+                <h3 className="text-[24px] md:text-[32px] font-bold mb-2 text-[#181D27] max-w-40 group-hover:text-white font-lato">
                   {feature.title}
                 </h3>
-                <p className="text-[18px] md:text-[20px] text-gray-600 group-hover:text-gray-100 font-ibm-plex-sans">
+                <p className="text-[18px] md:text-[20px] max-w-[250px] text-gray-600 group-hover:text-gray-100 font-ibm-plex-sans">
                   {feature.description}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function TransformEducationSection() {
                 href={feature.url}
                 className="absolute bottom-6 right-6 mt-auto"
               >
-                <ArrowRight className="w-8 h-8 text-[#FCCF37] group-hover:text-[#FEDC69] duration-300 ease-in-out" />
+                <CustomArrowRight className="w-8 h-8 text-[#FCCF37] group-hover:text-[#FEDC69] duration-300 ease-in-out" /> 
               </Link>
             </div>
           ))}

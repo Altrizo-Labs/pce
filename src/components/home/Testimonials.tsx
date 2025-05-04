@@ -85,7 +85,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-16 bg-white font-ibm-plex-sans">
-      <div className="xl:max-w-screen-2xl lg:max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="xl:max-w-screen-2xl lg:max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center mb-8">
           {/* Updated section title: font, size */}
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
@@ -151,9 +151,10 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="pb-10">
-              <div className="relative bg-gray-50 p-6 pt-12 rounded-lg shadow-sm flex flex-col items-center text-center h-full">
+              {/* Added lg: prefix to min-w and min-h */}
+              <div className="relative bg-[#EDEFF1] p-6 pt-12 rounded-[20px] shadow-sm flex flex-col items-center text-center h-full lg:min-w-[379px] lg:min-h-[285px]">
                 {/* Avatar */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gray-300 rounded-full border-4 border-white overflow-hidden">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[67px] h-[67px] bg-[#D9D9D9] rounded-full border-4 border-white overflow-hidden">
                   {testimonial.imageUrl ? (
                     <Image
                       src={testimonial.imageUrl}
@@ -180,7 +181,7 @@ export default function Testimonials() {
                   {testimonial.school}
                 </p>
 
-                <p className="font-ibm-plex-sans font-normal text-gray-700 text-sm">
+                <p className="font-ibm-plex-sans font-normal text-[#535862] text-base">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </div>

@@ -23,7 +23,7 @@ const lato = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-dm-sans",
+  variable: "--font-lato", // Corrected variable name
 });
 
 const ibm = localFont({

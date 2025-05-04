@@ -8,7 +8,8 @@ export default function CompanyOverview() {
         operations, and support student success.
       </p>
 
-      <p className="mb-6 text-[16px] text-[#535862] font-ibm lg:w-[41%]">
+      {/* Corrected font class */}
+      <p className="mb-6 text-[16px] text-[#535862] font-ibm-plex-sans lg:w-[41%]">
         With a deep understanding of academia and the power of artificial
         intelligence, we create tools that bridge gaps, boost efficiency, and
         elevate every touchpoint in the student journey.

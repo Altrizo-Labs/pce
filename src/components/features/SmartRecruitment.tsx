@@ -10,7 +10,8 @@ const SmartRecruitment = () => {
                 <h1 className="text-4xl lg:text-5xl font-bold font-lato mb-6 leading-tight">
                     Smarter Recruitment, Seamless Engagement
                 </h1>
-                <p className="text-base text-[16px] text-[#535862] font-ibm mb-6">
+                {/* Corrected font class */}
+                <p className="text-base text-[16px] text-[#535862] font-ibm-plex-sans mb-6">
                     EduSight.ai offers an intelligent AI recruitment chatbot integrated seamlessly
                     with university websites to answer prospective student queries accurately and
                     effectively, coupled with a powerful analytics dashboard for staff.

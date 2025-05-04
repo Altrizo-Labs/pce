@@ -64,7 +64,8 @@ const Footer = () => {
                   <h3 className="font-medium text-[16px] mb-4 font-lato">
                     {section.title}
                   </h3>
-                  <ul className="space-y-3 text-[14px] font-ibm">
+                  {/* Corrected font class */}
+                  <ul className="space-y-3 text-[14px] font-ibm-plex-sans">
                     {section.links.map((link) => (
                       <li key={link.name}>
                         {link.href ? (
@@ -120,7 +121,8 @@ const Footer = () => {
                   <h3 className="font-medium text-[16px] mb-4 font-lato">
                     {section.title}
                   </h3>
-                  <ul className="space-y-3 grid grid-cols-3 gap-12 text-[14px] font-ibm">
+                  {/* Corrected font class */}
+                  <ul className="space-y-3 grid grid-cols-3 gap-12 text-[14px] font-ibm-plex-sans">
                     {section.links.map((link) => (
                       <li key={link.name}>
                         {link.href ? (
@@ -154,7 +156,8 @@ const Footer = () => {
            </div>
 
           {/* Tagline */}
-          <div className="text-sm md:text-[16px] leading-6 font-ibm">
+          {/* Corrected font class */}
+          <div className="text-sm md:text-[16px] leading-6 font-ibm-plex-sans">
             <p>
               Transform your institution with intelligent AI solutions that
               drive engagement, efficiency, and student success.

@@ -97,7 +97,8 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           />
         )}
 
-        <span className="z-10 font-ibm text-[10px] lg:text-[14px]">{text}</span>
+        {/* Corrected font class */}
+        <span className="z-10 font-ibm-plex-sans text-[10px] lg:text-[14px]">{text}</span>
 
         {icon && (
           <Image

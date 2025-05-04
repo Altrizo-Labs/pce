@@ -54,9 +54,14 @@ const config: Config = {
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+  sm: 'calc(var(--radius) - 4px)'
+  },
+  // Added fontFamily extension
+  fontFamily: {
+    lato: ['var(--font-lato)', 'sans-serif'], // Map lato to the CSS variable
+    'ibm-plex-sans': ['var(--font-ibm)', 'sans-serif'] // Map ibm-plex-sans to the CSS variable
+  }
+  }
   },
   plugins: [require("tailwindcss-animate")],
 };

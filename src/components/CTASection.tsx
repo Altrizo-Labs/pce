@@ -19,7 +19,7 @@ const CTASection: React.FC<CTASectionProps> = ({
   imagePosition = "right", // Default value
 }) => {
   return (
-    <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A]/80 to-[#1E3A8A]/50 text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[460px] xl:min-h-[500px] overflow-hidden">
+    <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A]/80 to-[#1E3A8A]/50 text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[460px] xl:min-h-[500px] overflow-hidden my-12">
       <div
         className={clsx(
           "absolute z-0 bg-[url('/images/cta-vector.png')] bg-cover bg-no-repeat", // Changed bg-contain to bg-cover

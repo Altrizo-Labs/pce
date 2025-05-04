@@ -2,13 +2,11 @@ import { footerLinks } from "@/data/footer";
 import Link from "next/link";
 import Image from "next/image";
 
-import arrow from "../../public/images/arrow.png";;
+import fb from "../../public/images/facebook.png";
+import instagram from "../../public/images/instagram.png";
+import twitter from "../../public/images/twitter.png";
 
-import fb from "../../public/images/facebook.png"
-import instagram from "../../public/images/instagram.png"
-import twitter from "../../public/images/twitter.png"
-
-import logo from "../../public/images/footer_logo.png"
+import logo from "../../public/images/footer_logo.png";
 
 const Footer = () => {
   return (
@@ -17,10 +15,10 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0" />
       {/* Dot pattern overlay */}
       <div
-        className="absolute inset-0 z-[1] opacity-10"
+        className="absolute inset-0 z-[1] opacity-15"
         style={{
           backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
+          backgroundSize: "40px 40px",
         }}
       />
 
@@ -30,27 +28,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
           {/* Left column */}
           <div className="flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-lato leading-tight">
-              Empower Learning with Edusight
-            </h2>
+            <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
 
-            {/* Newsletter signup */}
-            <div className="mt-4 mb-8">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  className="bg-transparent p-3 md:p-4 rounded-full border-white border flex-grow"
-                  aria-label="Email for newsletter"
-                />
-                <button className="bg-secondary hover:rotate-45 duration-300 text-primary font-medium p-3 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-opacity-90 transition">
-                  <Image
-                    src={arrow}
-                    alt="arrow icon"
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
-                </button>
-              </div>
-            </div>
+            <h2 className="text-[16px] font-lato">
+              Transform your institution with intelligent AI solutions that
+              drive engagement, efficiency, and student success.
+            </h2>
           </div>
 
           {/* Right column */}
@@ -98,14 +81,26 @@ const Footer = () => {
                   aria-label={platform}
                   className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"
                 >
-                  {platform === "Facebook" && ( 
-                    <Image src={fb} className="w-6 h-6 text-white" alt="Facebook icon" />
+                  {platform === "Facebook" && (
+                    <Image
+                      src={fb}
+                      className="w-6 h-6 text-white"
+                      alt="Facebook icon"
+                    />
                   )}
                   {platform === "Instagram" && (
-                    <Image src={instagram} className="w-6 h-6 text-white" alt="Instagram icon" />
+                    <Image
+                      src={instagram}
+                      className="w-6 h-6 text-white"
+                      alt="Instagram icon"
+                    />
                   )}
                   {platform === "Twitter" && (
-                    <Image src={twitter} className="w-6 h-6 text-white" alt="Twitter icon" />
+                    <Image
+                      src={twitter}
+                      className="w-6 h-6 text-white"
+                      alt="Twitter icon"
+                    />
                   )}
                 </a>
               ))}
@@ -142,26 +137,6 @@ const Footer = () => {
                   </ul>
                 </div>
               ))}
-          </div>
-        </div>
-
-        {/* Divider */}
-        <hr className="w-full h-px bg-white bg-opacity-30 my-8 md:my-12" />
-
-        {/* Bottom section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
-          {/* Logo */}
-          <div className="flex items-center">
-              <Image src={logo} alt="EduSight Logo" loading="lazy" />
-           </div>
-
-          {/* Tagline */}
-          {/* Corrected font class */}
-          <div className="text-sm md:text-[16px] leading-6 font-ibm-plex-sans">
-            <p>
-              Transform your institution with intelligent AI solutions that
-              drive engagement, efficiency, and student success.
-            </p>
           </div>
         </div>
       </div>

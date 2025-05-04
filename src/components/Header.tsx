@@ -182,13 +182,7 @@ const Header = () => {
       >
         {/* Logo */}
         <Link href="/">
-          <Image
-            src={logo}
-            alt="logo"
-            width={isMobile ? 40 : 50}
-            height={isMobile ? 40 : 50}
-            className="relative w-52 z-40"
-          />
+          <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -213,15 +207,20 @@ const Header = () => {
                     />
                   ) : (
                     <Link
-                      href={item.href}
-                      className={`p-2 lg:p-4 inline-block text-[10px] lg:text-[14px] ${
-                        item.title === "Contact Us"
-                          ? "rounded-full bg-secondary text-white hover:bg-opacity-90 px-6 lg:px-14"
-                          : "px-3 lg:px-6"
-                      }`}
-                    >
+                    href={item.href}
+                    className={`relative p-2 lg:p-4 inline-block text-[10px] lg:text-[14px] px-3 lg:px-5
+                      ${pathname === item.href ? "font-bold text-primary" : ""}
+                    `}
+                  >
+                    <span className="relative inline-block">
                       {item.title}
-                    </Link>
+                      {pathname === item.href && (
+                        <span className="absolute -bottom-1 left-0 right-0 h-[1px] bg-primary rounded-md" />
+                      )}
+                    </span>
+                  </Link>
+                  
+                  
                   )}
 
                   {/* Active Indicator */}
@@ -273,7 +272,9 @@ const Header = () => {
                   href={item.href}
                   onClick={toggleMobileMenu}
                   className={`p-3 text-lg px-4 ${
-                    pathname === item.href ? "bg-secondary/10" : ""
+                    pathname === item.href
+                      ? "font-bold underline text-primary bg-secondary/10"
+                      : ""
                   }`}
                 >
                   {item.title}

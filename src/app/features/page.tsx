@@ -3,12 +3,13 @@ import FeaturesGrid from "@/components/features/FeaturesGrid";
 import Pricing from "@/components/features/pricing";
 import HeroBanner from "@/components/HeroBanner";
 import SmartRecruitment from "@/components/features/SmartRecruitment";
+import FeatureHero from "../../../public/images/feature_hero.png"
 
 export default function FeaturesPage() {
   return (
     <div className="mx-4 pt-24">
       <HeroBanner
-        video="/test.mp4"
+        image={FeatureHero}
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
       />
       <SmartRecruitment />

@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface RippleButtonProps {
   text: string;
   url?: string;
@@ -11,5 +13,6 @@ export interface RippleButtonProps {
 
 export interface HeroBannerProps {
   video?: string; 
+  image?: StaticImageData;
   description: string;
 }

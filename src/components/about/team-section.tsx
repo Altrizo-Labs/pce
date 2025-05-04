@@ -23,7 +23,7 @@ export default function TeamSection() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, _index) => (
+        {teamMembers.map((member) => (
           <div key={member.id} className="flex flex-col ">
             <div className={`relative rounded-lg overflow-hidden`}>
               <Image

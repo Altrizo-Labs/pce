@@ -103,7 +103,7 @@ const WhatDrivesUs: React.FC = () => {
                         </div>
 
                         {/* Right column: Image */}
-                        <div className="relative rounded-2xl overflow-hidden w-full h-full lg:h-[520px]">
+                        <div className="relative rounded-2xl overflow-hidden w-full h-auto lg:h-[520px]">
                           <Image
                             src={item.image}
                             alt={item.title}

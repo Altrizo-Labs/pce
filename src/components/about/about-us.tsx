@@ -45,7 +45,7 @@ export default function AboutUsSection() {
         <div>
         <p className="text-gray-700 mb-2">What we value</p>
         <h3 className="text-3xl md:text-4xl font-bold text-[#4a63a9]">
-          Our Company's Values
+          Our Company&apos;s Values
         </h3>
         </div>
       </div>

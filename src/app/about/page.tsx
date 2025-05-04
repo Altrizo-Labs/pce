@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
 import HeroBanner from "@/components/HeroBanner";
 import WhatDrivesUs from "@/components/about/WhatDrivesUs"; // Import the new component
+import TeamSection from "@/components/about/team-section";
 
 export default function AboutPage() {
   return (
@@ -14,6 +15,7 @@ export default function AboutPage() {
       buttonLink="#careers"
       imagePosition="right"
     />
+    <TeamSection />
     </div>
   );
 }

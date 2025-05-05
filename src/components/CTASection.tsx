@@ -19,14 +19,14 @@ const CTASection: React.FC<CTASectionProps> = ({
   imagePosition = "right", // Default value
 }) => {
   return (
-    <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A]/80 to-[#1E3A8A]/50 text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[460px] xl:min-h-[500px] overflow-hidden my-12">
+    <section className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[460px] xl:min-h-[500px] overflow-hidden my-12">
       <div
         className={clsx(
           "absolute z-0 bg-[url('/images/cta-vector.png')] bg-cover bg-no-repeat", // Changed bg-contain to bg-cover
 
           // Increased width to scale image further
-          "inset-y-0 w-[750px] md:w-[700px]",
-          imagePosition === "left" ? "-left-48  bg-left" : "right-0 bg-right"
+          "inset-y-0 w-[600px] md:w-[700px]",
+          imagePosition === "left" ? "-left-60  bg-left" : "-right-60 bg-right"
         )}
       />
 
@@ -38,12 +38,13 @@ const CTASection: React.FC<CTASectionProps> = ({
           imagePosition === "left" ? "justify-end" : "justify-start"
         )}
       >
-        <div className="w-full md:w-[60%] lg:w-[65%] items-start justify-center">
+        {/* Added flex flex-col to enable vertical centering with justify-center */}
+        <div className="w-full md:w-[40%] lg:w-[70%] flex flex-col items-start justify-center">
           {/* Added max-w-3xl to the title */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-lato max-w-[45rem]">
+          <h2 className="text-3xl md:text-[45px] font-bold leading-tight mb-4 font-lato">
             {title}
           </h2>
-          <p className="text-sm md:text-base text-white/75 mb-8 font-ibm-plex-sans max-w-xl">
+          <p className="text-sm md:text-base text-white/75 mb-10 font-ibm-plex-sans max-w-xl">
             {description}
           </p>
           <Link href={buttonLink} legacyBehavior>

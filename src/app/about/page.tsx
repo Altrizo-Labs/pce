@@ -1,3 +1,4 @@
+import BrandLogosMarquee from "@/components/BrandLogosMarquee";
 import CTASection from "@/components/CTASection";
 import HeroBanner from "@/components/HeroBanner";
 import WhatDrivesUs from "@/components/about/WhatDrivesUs";
@@ -14,6 +15,11 @@ export default function AboutPage() {
         buttonText="Browse Insights"
         buttonLink="#careers"
         imagePosition="right"
+      />
+      <BrandLogosMarquee
+      title="Trusted by Leading Educational Institutions"
+      description="Partnering with universities and educational organizations that are redefining student engagement through technology."
+      rows={2}
       />
       <WhatDrivesUs />
       <TeamSection />

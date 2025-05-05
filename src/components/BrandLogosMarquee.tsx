@@ -25,19 +25,26 @@ export const BrandLogosMarquee: React.FC<BrandLogosProps> = ({
   description,
 }) => {
   return (
-    <div className="py-10">
-      {title && <h2 className="text-3xl font-bold text-center mb-2">{title}</h2>}
-      {description && (
-        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">{description}</p>
-      )}
-      <div className="space-y-6">
+    // Added overflow-hidden to contain the full-width marquee
+    <div className="py-10 overflow-hidden">
+      {/* Wrapper to keep title/description centered */}
+      <div className="mx-auto text-center mb-6">
+        {/* Updated title styles: Lato Bold 45px */}
+        {title && <h2 className="font-lato font-bold text-[45px] mb-2">{title}</h2>}
+        {/* Updated description styles: IBM Plex Sans Regular 20px */}
+        {description && (
+          <p className="font-ibm-plex-sans text-[20px] text-gray-600">{description}</p>
+        )}
+      </div>
+      {/* Container for marquees, made full-width */}
+      <div className="space-y-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         {[...Array(rows)].map((_, rowIndex) => (
           <Marquee
             key={rowIndex}
             gradient={false}
             speed={40}
             direction={rowIndex % 2 === 1 ? "right" : "left"}
-            className="flex items-center space-x-6"
+            className="flex items-center space-x-6 py-9"
           >
             {placeholderLogos.map((logo, idx) => (
               <Image

@@ -2,16 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-const placeholderLogos = [
-  "https://placehold.co/240x50?text=Logo1.png",
-  "https://placehold.co/240x50?text=Logo2.png",
-  "https://placehold.co/240x50?text=Logo3.png",
-  "https://placehold.co/240x50?text=Logo4.png",
-  "https://placehold.co/240x50?text=Logo5.png",
-  "https://placehold.co/240x50?text=Logo6.png",
-  "https://placehold.co/240x50?text=Logo7.png",
-  "https://placehold.co/240x50?text=Logo8.png"
-];
+import fs from "fs";
+import path from "path";
+
+const clientsFolder = path.join(process.cwd(), "public/images/clients");
+const clientLogos = fs
+  .readdirSync(clientsFolder)
+  .filter((file) => file.endsWith(".svg"))
+  .map((file) => `/images/clients/${file}`);
 
 interface BrandLogosProps {
   rows?: number;
@@ -28,7 +26,7 @@ export const BrandLogosMarquee: React.FC<BrandLogosProps> = ({
     // Added overflow-hidden to contain the full-width marquee
     <div className="py-10 overflow-hidden">
       {/* Wrapper to keep title/description centered */}
-      <div className="mx-auto text-center mb-6">
+      <div className="mx-auto text-center mb-10">
         {/* Updated title styles: Lato Bold 45px */}
         {title && <h2 className="font-lato font-bold text-[45px] mb-2">{title}</h2>}
         {/* Updated description styles: IBM Plex Sans Regular 20px */}
@@ -46,14 +44,14 @@ export const BrandLogosMarquee: React.FC<BrandLogosProps> = ({
             direction={rowIndex % 2 === 1 ? "right" : "left"}
             className="flex items-center space-x-6 py-9"
           >
-            {placeholderLogos.map((logo, idx) => (
+            {clientLogos.map((logo, idx) => (
               <Image
                 key={idx}
                 src={logo}
                 alt={`Logo ${idx}`}
                 width={100}
                 height={50}
-                className="object-contain h-12 w-auto mx-4"
+                className="object-contain h-12 w-auto mx-12"
               />
             ))}
           </Marquee>

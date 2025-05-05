@@ -22,7 +22,7 @@ const CTASection: React.FC<CTASectionProps> = ({
     <section className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-12 py-20 min-h-[460px] xl:min-h-[500px] overflow-hidden my-12">
       <div
         className={clsx(
-          "absolute z-0 bg-[url('/images/cta-vector.png')] bg-cover bg-no-repeat", // Changed bg-contain to bg-cover
+          "absolute z-0 bg-[url('/images/cta-vector.svg')] bg-cover bg-no-repeat", // Changed bg-contain to bg-cover
 
           // Increased width to scale image further
           "inset-y-0 w-[600px] md:w-[700px]",

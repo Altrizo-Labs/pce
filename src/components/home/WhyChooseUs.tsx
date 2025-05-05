@@ -60,7 +60,7 @@ const WhyChooseUs: React.FC = () => {
           {/* Phone Mockup: Centered, order changes responsively */}
           <div className="w-full max-w-[240px] md:max-w-xs lg:w-1/3 flex justify-center my-8 lg:my-0 order-1 lg:order-2">
             <Image
-              src="/images/mobile-simulator.png"
+              src="/images/phone-mockup.svg"
               alt="Edusight mobile app preview"
               width={300}
               height={500}

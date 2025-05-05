@@ -49,7 +49,7 @@ interface DriveItemProps {
 
 const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveIndex, isMobile }) => {
   const { ref, inView } = useInView({
-    threshold: 0.6, // Adjust threshold back for fixed height
+    threshold: 0.9, // Adjust threshold back for fixed height
     triggerOnce: false,
   });
 

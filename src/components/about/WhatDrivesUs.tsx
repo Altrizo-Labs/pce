@@ -106,7 +106,8 @@ const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveI
           >
             {/* Apply fixed height conditionally */}
             <div className={clsx(
-              "grid md:grid-cols-[1.5fr_4.5fr]",
+              // Adjust grid layout for mobile when image is hidden
+              isMobile ? "grid grid-cols-1" : "grid md:grid-cols-[1.5fr_4.5fr]",
               // Use fixed height on lg screens, fallback to min-height
               isActive ? "lg:h-[530px] md:h-[450px] min-h-[350px]" : "min-h-[350px]"
             )}>
@@ -114,27 +115,34 @@ const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveI
               {/* Keep justify-center */}
               <div className="flex flex-col justify-between px-8 py-6">
                 <div className="text-[#1E3A8A] font-semibold text-base md:text-lg leading-tight mb-4">
-                  <span className="block">
-                    {item.titleExpanded[0]}
-                    <br />
-                    {item.titleExpanded[1]}
-                  </span>
+                  {/* Conditionally render title based on isMobile */}
+                  {isMobile ? (
+                    <span className="block">{item.title}</span>
+                  ) : (
+                    <span className="block">
+                      {item.titleExpanded[0]}
+                      <br />
+                      {item.titleExpanded[1]}
+                    </span>
+                  )}
                 </div>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {item.text}
                 </p>
               </div>
 
-              {/* Right column: Image */}
+              {/* Right column: Image - Conditionally render based on isMobile */}
               {/* Keep h-full */}
-              <div className="relative rounded-2xl overflow-hidden w-full h-full">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
+              {!isMobile && (
+                <div className="relative rounded-2xl overflow-hidden w-full h-full">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         )}

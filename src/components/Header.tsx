@@ -273,7 +273,7 @@ const Header = () => {
                   onClick={toggleMobileMenu}
                   className={`p-3 text-lg px-4 ${
                     pathname === item.href
-                      ? "font-bold underline text-primary bg-secondary/10"
+                      ? "font-bold underline text-primary bg-primary/10 rounded-md"
                       : ""
                   }`}
                 >

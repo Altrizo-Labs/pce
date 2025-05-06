@@ -6,7 +6,7 @@ import TeamSection from "@/components/about/team-section";
 
 export default function AboutPage() {
   return (
-    <div className="mx-4 pt-24">
+    <div className="mx-4 pt-20 lg:pt-24">
       <HeroBanner video="/test.mp4" description="Driving the Next Wave of Student Engagement and Enrollment Through AI Innovation" />
 
       <CTASection

@@ -7,7 +7,7 @@ import FeatureHero from "../../../public/images/feature_hero.png"
 
 export default function FeaturesPage() {
   return (
-    <div className="mx-4 pt-24">
+    <div className="mx-4 pt-20 lg:pt-24">
       <HeroBanner
         image={FeatureHero}
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"

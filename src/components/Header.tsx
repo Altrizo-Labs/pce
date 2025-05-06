@@ -155,7 +155,7 @@ const Header = () => {
         mobileMenu,
         { y: "-100%" },
         {
-          y: "7.5%",
+          y: "0%",
           duration: 0.4,
           ease: "power2.inOut",
           onStart: () => {
@@ -174,7 +174,7 @@ const Header = () => {
     <>
       <nav
         ref={headerRef}
-        className={`fixed w-[97.5%] max-w-[1500px] mx-auto font-lato py-3 lg:py-5 flex bg-white bg-opacity-75 backdrop-blur-lg rounded-[8px] items-center justify-between mt-[1px] left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
+        className={`fixed w-[95%] lg:w-[97.5%] max-w-[1500px] mx-auto font-lato py-5 flex bg-white bg-opacity-75 backdrop-blur-lg rounded-[8px] items-center justify-between mt-[1px] left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
           isHeaderHidden ? "-translate-y-full" : "translate-y-0"
         } ${isMobileMenuOpen ? "bg-secondary" : ""} ${
           isScrolled ? "px-6" : ""
@@ -182,7 +182,7 @@ const Header = () => {
       >
         {/* Logo */}
         <Link href="/">
-          <Image src={logo} alt="logo" className="relative w-24 lg:w-44 z-[999]" />
+          <Image src={logo} alt="logo" className="relative w-32 lg:w-44 z-[999]" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -253,7 +253,7 @@ const Header = () => {
       {isMobile && (
         <div
           id="mobile-menu"
-          className="fixed top-20 left-2 w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
+          className="fixed top-20 left-2 w-[95%] lg:w-[97.5%] mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
           style={{ display: hasMounted ? "block" : "none" }}
         >
           <div className="flex flex-col p-4 gap-4">

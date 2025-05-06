@@ -4,7 +4,7 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function Hero() {
   return (
-    <div className="rounded-t-[32px] h-[650px] lg:h-[1000px] bg-gradient-to-b from-primary from-10% via-primary/20 to-100% to-transparent p-5 lg:p-10 relative overflow-hidden">
+    <div className="rounded-t-[32px] h-[500px] md:h-[650px] lg:h-[1000px] bg-gradient-to-b from-primary from-10% via-primary/20 to-100% to-transparent p-5 lg:p-10 relative overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-15"
@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
 
       {/* Container Scroll positioned absolutely to be "in" the background */}
-      <div className="absolute inset-0 w-full h-full mt-32 lg:mt-64 xl:mt-52">
+      <div className="absolute inset-0 w-full h-full mt-16 md:mt-32 lg:mt-64 xl:mt-52">
         <ContainerScroll>
           <Image
             src={`/linear.webp`}

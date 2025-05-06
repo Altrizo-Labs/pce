@@ -182,7 +182,7 @@ const Header = () => {
       >
         {/* Logo */}
         <Link href="/">
-          <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
+          <Image src={logo} alt="logo" className="relative w-24 lg:w-44 z-[999]" />
         </Link>
 
         {/* Desktop Navigation */}

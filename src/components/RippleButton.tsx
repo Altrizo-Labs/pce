@@ -77,12 +77,10 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       <button
         ref={buttonRef}
         onClick={onclick}
-        className={`relative px-5 py-2 flex items-center justify-center gap-3 overflow-hidden z-0  ${className} `}
+        className={`relative py-2 lg:py-4 md:px-6 lg:px-7 flex items-center justify-center gap-3 overflow-hidden z-0 ${className}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onMouseMove={(e) => {
-          handleMouseMove(e);
-        }}
+        onMouseMove={handleMouseMove}
       >
         <div
           ref={divRef}
@@ -97,30 +95,30 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           />
         )}
 
-        {/* Corrected font class */}
-        <span className="z-10 font-ibm-plex-sans text-[10px] lg:text-[14px]">{text}</span>
+        {/* Flex row container for text + arrow */}
+        <span className="z-10 font-ibm-plex-sans text-[12px] lg:text-[16px] flex items-center gap-2">
+          {text}
 
-        {icon && (
-          <Image
-            src={arrow}
-            alt="arrow icon"
-            className={`w-4 lg:w-6 h-4 lg:h-6 transition-transform duration-300 ${
-              hovering && "rotate-45"
-            } `}
-          />
-        )}
+          {icon && (
+            <Image
+              src={arrow}
+              alt="arrow icon"
+              className={`w-4 lg:w-6 h-4 lg:h-6 transition-transform duration-300 ${
+                hovering ? "rotate-45" : ""
+              }`}
+            />
+          )}
 
-        {yellowIcon && (
-          <span className="relative w-4 lg:w-6 h-4 lg:h-6">
+          {yellowIcon && (
             <ArrowRight
               color="#FCCF37"
               size={20}
-              className={`absolute top-0 left-0 transition-transform duration-300 ${
+              className={`transition-transform duration-300 mt-[1px] ml-6 ${
                 hovering ? "translate-x-2" : "translate-x-0"
               }`}
             />
-          </span>
-        )}
+          )}
+        </span>
       </button>
     </Link>
   );

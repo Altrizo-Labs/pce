@@ -35,9 +35,9 @@ export const ContainerScroll = ({
   // 3D transforms with tilt, only during the first 15% of the scroll
   const rotateX = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Forward-back tilt
   const rotateY = useTransform(scrollYProgress, [0, 1], [-10, 0]);   // Left-right tilt
-  const rotateZ = useTransform(scrollYProgress, [0, 1], [10, 0]);    // Sideways twist
+  const rotateZ = useTransform(scrollYProgress, [0, 1], [8, 0]);    // Sideways twist
   const translateY = useTransform(scrollYProgress, [0, 1], [0, 0]);
-  const translateX = useTransform(scrollYProgress, [0, 1], [-50, 0]);
+  const translateX = useTransform(scrollYProgress, [0, 1], [-20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
 
   return (
@@ -93,7 +93,7 @@ export const Card = ({
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-[1088px] -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-[1088px] mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
         {children}

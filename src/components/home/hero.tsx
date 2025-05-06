@@ -4,7 +4,7 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function Hero() {
   return (
-    <div className="rounded-t-[32px] h-[600px] lg:h-[875px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
+    <div className="rounded-t-[32px] h-[600px] lg:h-[1000px] bg-gradient-to-b from-primary from-10%  via-primary/20 to-100% to-transparent p-10 relative overflow-hidden">
       {/* Dot pattern overlay */}
       <div
         className="absolute inset-0 z-[1] opacity-15"
@@ -20,7 +20,7 @@ export default function Hero() {
           Smart Education <br className="hidden lg:block" /> Driven by Innovation Shaping Student Success
         </p>
 
-        <div className="flex-[0.45]">
+        <div className="flex-[0.45]  flex flex-col justify-between">
           {/* Corrected font class */}
           <p className="text-xs sm:text-sm md:text-[16px] font-ibm-plex-sans text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
           <RippleButton
             text="Book a Demo"
-            className="bg-white rounded-full font-lato text-primary font-bold w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
+            className="bg-white rounded-full font-lato text-primary font-bold w-full lg:w-auto whitespace-nowrap text-black text-sm md:text-[16px] z-50"
             url=""
             yellowIcon
           />

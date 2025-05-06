@@ -34,22 +34,22 @@ const WhyChooseUs: React.FC = () => {
         </h2>
         {/* Main container: flex column below lg, flex row for lg and above */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[40%] lg:space-y-12 order-2 lg:order-1">
-            {features.slice(2, 4).map((feature, index) => (
+          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[33%] lg:space-y-12 order-2 lg:order-1">
+            {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
                   <Image
                     src="/images/Vector.svg"
                     alt="Feature icon"
-                    width={32}
-                    height={32}
+                    width={28}
+                    height={28}
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato font-medium mb-1 md:mb-2">
+                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-56 font-medium mb-1 md:mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-[9.92px] lg:max-w-64  font-ibm-plex-sans">
+                  <p className="text-gray-400 text-[9.92px] lg:max-w-[200px]  font-ibm-plex-sans">
                     {feature.description}
                   </p>
                 </div>
@@ -62,15 +62,15 @@ const WhyChooseUs: React.FC = () => {
             <Image
               src="/images/phone-mockup.svg"
               alt="Edusight mobile app preview"
-              width={300}
-              height={500}
+              width={330}
+              height={360}
               className="object-contain"
             />
           </div>
 
           {/* Right Features: Grid below lg, Flex column for lg+ */}
           {/* Added grid classes for sm/md, flex for lg, adjusted spacing/width */}
-          <div className="w-full grid  gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[40%] lg:space-y-12 order-3 lg:order-3">
+          <div className="w-full grid  gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[33%] lg:space-y-12 order-3 lg:order-3">
             {features.slice(2, 4).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -82,7 +82,7 @@ const WhyChooseUs: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato font-medium mb-1 md:mb-2">
+                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-64 font-medium mb-1 md:mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-gray-400 text-[9.92px] lg:max-w-64 font-ibm-plex-sans">

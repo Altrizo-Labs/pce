@@ -77,7 +77,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       <button
         ref={buttonRef}
         onClick={onclick}
-        className={`relative py-2 lg:py-4 md:px-6 lg:px-7 flex items-center justify-center gap-3 overflow-hidden z-0 ${className}`}
+        className={`relative py-2 lg:py-4 px-6 lg:px-7 flex items-center justify-center gap-3 overflow-hidden z-0 ${className}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}

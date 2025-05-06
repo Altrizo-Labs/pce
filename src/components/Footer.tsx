@@ -25,7 +25,7 @@ const Footer = () => {
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Top section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
           {/* Left column */}
           <div className="flex flex-col gap-6">
             <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
 
           {/* Right column */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0">
             {footerLinks
               .filter((section) =>
                 ["QUICK LINKS", "COMPLIANCE"].includes(section.title)
@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:hidden grid grid-cols-2 gap-8 lg:gap-0">
+          <div className="md:hidden grid grid-cols-2 gap-8 lg:gap-0">
             {footerLinks
               .filter((section) =>
                 ["QUICK LINKS", "COMPLIANCE"].includes(section.title)

@@ -215,7 +215,7 @@ const Header = () => {
                     <span className="relative inline-block">
                       {item.title}
                       {pathname === item.href && (
-                        <span className="absolute -bottom-1 left-0 right-0 h-[1px] bg-primary rounded-md" />
+                        <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-primary rounded-md" />
                       )}
                     </span>
                   </Link>

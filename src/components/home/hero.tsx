@@ -1,6 +1,6 @@
 import Image from "next/image";
 import RippleButton from "../RippleButton";
-import { ContainerScroll } from "../ui/container-scroll-animation";
+import laptop from "../../../public/images/laptop.png";
 
 export default function Hero() {
   return (
@@ -13,11 +13,12 @@ export default function Hero() {
           backgroundSize: "40px 40px",
         }}
       />
-      
+
       {/* Content Grid */}
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 relative z-10">
         <p className="text-[#F3F4F6] flex-[0.55] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-tight font-lato font-bold">
-          Smart Education <br className="hidden lg:block" /> Driven by Innovation Shaping Student Success
+          Smart Education <br className="hidden lg:block" /> Driven by
+          Innovation Shaping Student Success
         </p>
 
         <div className="flex-[0.45]  flex flex-col justify-between">
@@ -35,20 +36,8 @@ export default function Hero() {
           />
         </div>
       </div>
-
-      {/* Container Scroll positioned absolutely to be "in" the background */}
-      <div className="w-full h-full">
-        <ContainerScroll>
-          <Image
-            src={`/linear.webp`}
-            alt="hero"
-            height={720}
-            width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
-          />
-        </ContainerScroll>
-      </div>
+      
+      <Image src={laptop} alt="" className="scale-150 lg:scale-125 -mb-[50%]  mt-24 lg:mt-52" />
     </div>
   );
 }

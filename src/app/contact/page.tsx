@@ -181,10 +181,10 @@ function Contact_Us() {
   return (
     <div className="py-12">
       <Toaster position="bottom-right" reverseOrder={false} />
-      <div className="relative lg:pt-24 pt-20 mx-4 md:mx-14 lg:mx-20 pb-12">
+      <div className="relative lg:pt-24 pt-20 mx-2 md:mx-12 lg:mx-20 pb-12">
         <div className="min-h-screen text-white flex flex-col justify-center items-center">
           {/* Top Container */}
-          <div className="container mx-auto px-6 flex flex-col items-center text-center mb-24 lg:mb-36">
+          <div className="container mx-auto px-6 flex flex-col lg:items-center text-left lg:text-center mb-24 lg:mb-36">
             {/* Heading */}
             <h1
               ref={headingRef}
@@ -212,7 +212,7 @@ function Contact_Us() {
               className="flex flex-col justify-start space-y-10 opacity-0 text-[#181D27]"
             >
               {/* New Heading */}
-              <h2 className="text-4xl lg:text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-4 max-w-sm">
+              <h2 className="text-[32px] lg:text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-2 max-w-sm">
                 We are always ready to help you and answer your questions.
               </h2>
 
@@ -223,12 +223,12 @@ function Contact_Us() {
 
               <div className="gap-y-24">
                 {/* Email */}
-                <div className="mb-8 lg:mb-16">
+                <div className="mb-12 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
                 </div>
 
                 {/* Schedule a Call */}
-                <div className="mb-8 lg:mb-16">
+                <div className="mb-12 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
                 </div>
 

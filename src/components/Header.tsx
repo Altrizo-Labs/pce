@@ -174,7 +174,7 @@ const Header = () => {
     <>
       <nav
         ref={headerRef}
-        className={`fixed w-[93.5%] lg:w-[98%] max-w-[1500px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
+        className={`fixed w-[93.5%] lg:w-[98%] max-w-[1520px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
           isHeaderHidden ? "-translate-y-full" : "translate-y-0"
         } ${isMobileMenuOpen ? "bg-white" : ""} ${
           isScrolled ? "px-6 bg-white" : ""

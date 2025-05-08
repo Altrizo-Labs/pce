@@ -8,7 +8,9 @@ export interface RippleButtonProps {
   icon?: React.ReactNode;
   play?: React.ReactNode;
   yellowIcon?: React.ReactNode;
+  yellowArrow?: React.ReactNode;
   onclick?: () => void;
+  type?: "button" | "submit" | "reset";
 }
 
 export interface HeroBannerProps {

@@ -9,6 +9,7 @@ import arrow from "../../public/images/arrow.png";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const RippleButton: React.FC<RippleButtonProps> = ({
   text,
@@ -17,7 +18,9 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   hoverColor,
   icon,
   yellowIcon,
+  yellowArrow,
   play,
+  type,
   onclick,
 }) => {
   const xTo = useRef<(value: number) => void>();
@@ -81,6 +84,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
+        type={type}
       >
         <div
           ref={divRef}
@@ -89,9 +93,8 @@ const RippleButton: React.FC<RippleButtonProps> = ({
 
         {play && (
           <FaPlay
-            className={`w-4 h-4 transition-colors duration-300 ${
-              hovering ? "text-black" : "text-white"
-            }`}
+            className={`w-4 h-4 transition-colors duration-300 ${hovering ? "text-black" : "text-white"
+              }`}
           />
         )}
 
@@ -103,19 +106,26 @@ const RippleButton: React.FC<RippleButtonProps> = ({
             <Image
               src={arrow}
               alt="arrow icon"
-              className={`w-4 lg:w-6 h-4 lg:h-6 transition-transform duration-300 ${
-                hovering ? "rotate-45" : ""
-              }`}
+              className={`w-4 lg:w-6 h-4 lg:h-6 transition-transform duration-300 ${hovering ? "rotate-45" : ""
+                }`}
             />
           )}
+
+            {yellowArrow && (
+              <FiArrowUpRight
+                color="#FCCF37"
+                size={24}
+                className={`transition-transform duration-300 mt-[1px] ml-4 ${hovering ? "rotate-45" : "rotate-0"
+                }`}
+              />
+            )}
 
           {yellowIcon && (
             <ArrowRight
               color="#FCCF37"
               size={20}
-              className={`transition-transform duration-300 mt-[1px] ml-6 ${
-                hovering ? "translate-x-2" : "translate-x-0"
-              }`}
+              className={`transition-transform duration-300 mt-[1px] ml-6 ${hovering ? "translate-x-2" : "translate-x-0"
+                }`}
             />
           )}
         </span>

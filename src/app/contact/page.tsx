@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
 import gsap from "gsap";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import axios from "axios";
 import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
 import toast, { Toaster } from "react-hot-toast";
+import RippleButton from "../../components/RippleButton";
 
 function Contact() {
   return (
@@ -162,7 +163,7 @@ function Contact_Us() {
     });
 
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", () => { });
     };
   }, []);
 
@@ -178,7 +179,7 @@ function Contact_Us() {
   }, [messageSent]);
 
   return (
-    <div className="contactus-background">
+    <div className="py-12">
       <Toaster position="bottom-right" reverseOrder={false} />
       <div className="relative lg:pt-24 pt-20 mx-4 md:mx-14 lg:mx-20 pb-12">
         <div className="min-h-screen text-white flex flex-col justify-center items-center">
@@ -195,7 +196,7 @@ function Contact_Us() {
             {/* Intro Text */}
             <p
               ref={introTextRef}
-              className="text-base opacity-0 text-[#181D27] max-w-4xl"
+              className="text-base font-ibm-plex-sans opacity-0 text-[#181D27] max-w-4xl"
             >
               AI-powered solutions to enhance student engagement, streamline
               administration, and personalize learning—helping institutions stay
@@ -216,56 +217,58 @@ function Contact_Us() {
               </h2>
 
               {/* New Paragraph */}
-              <p className="text-xl text-gray-600 mb-6 max-w-lg">
+              <p className="text-xl font-ibm-plex-sans text-gray-600 mb-6 max-w-lg">
                 Edusight is committed to transforming how institutions engage with students by leveraging the power of AI. From automating communication to personalizing support, our intelligent solutions help create more connected, efficient, and student-focused learning environments.
               </p>
 
-              {/* Email */}
-              <div className="mb-12">
-                <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
-              </div>
+              <div className="gap-y-24">
+                {/* Email */}
+                <div className="mb-20">
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
+                </div>
 
-              {/* Schedule a Call */}
-              <div className="mb-12">
-                <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
-              </div>
+                {/* Schedule a Call */}
+                <div className="mb-20">
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
+                </div>
 
-              {/* Social Icons */}
-              <div className="mb-6">
-                <p className="mb-4 text-[#535862] text-xl font-semibold">Social Network.</p>
-                <div className="flex space-x-4 text-2xl text-[#1E3A8A]">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Follow us on Facebook"
-                  >
-                    <FaFacebook />
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Follow us on X"
-                  >
-                    <FaXTwitter />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/cinnamon-digital-solutions"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Follow us on LinkedIn"
-                  >
-                    <FaLinkedin />
-                  </a>
+                {/* Social Icons */}
+                <div className="mb-6">
+                  <p className="mb-4 text-[#535862] text-xl font-semibold">Social Network.</p>
+                  <div className="flex space-x-4 text-2xl text-[#1E3A8A]">
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Follow us on Facebook"
+                    >
+                      <FaFacebookSquare />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Follow us on X"
+                    >
+                      <FaXTwitter />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/cinnamon-digital-solutions"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Follow us on LinkedIn"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Form */}
-            <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px] shadow-lg">
-              <h3 className="text-3xl font-semibold text-[#181D27] mb-4">Get in Touch</h3>
-              <p className="text-gray-600 text-xl mb-8">Fill out the form—we&apos;ll be in touch soon.</p>
+            <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px]">
+              <h3 className="text-4xl font-ibm-plex-sans font-medium text-[#181D27] mb-2">Get in Touch</h3>
+              <p className="text-gray-600 font-ibm-plex-sans text-xl mb-8">Fill out the form—we&apos;ll be in touch soon.</p>
 
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 {/* Full Name */}
@@ -337,19 +340,18 @@ function Contact_Us() {
                 </div>
 
                 {/* Submit Button */}
-                <button
+                <RippleButton
+                  text="Send a Message"
+                  className="bg-primary rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
                   type="submit"
-                  className="inline-flex items-center px-6 py-3 bg-[#3B5998] rounded-lg hover:bg-[#2d4373] text-white"
-                >
-                  Send a Message
-                  <FiArrowUpRight className="ml-2 h-7 w-7 text-[#FCCF37]" />
-                </button>
+                  yellowArrow
+                />
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

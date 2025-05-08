@@ -201,7 +201,7 @@ const Header = () => {
                   {item.title === "Contact Us" ? (
                     <RippleButton
                       text="Contact Us"
-                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-[2.5] md:px-6 lg:px-6 whitespace-nowrap text-black"
+                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-2.5 md:px-6 lg:px-6 whitespace-nowrap text-black"
                       url={item.href}
                       icon
                     />

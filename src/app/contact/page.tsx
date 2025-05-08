@@ -212,23 +212,23 @@ function Contact_Us() {
               className="flex flex-col justify-start space-y-10 opacity-0 text-[#181D27]"
             >
               {/* New Heading */}
-              <h2 className="text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-4 max-w-sm">
+              <h2 className="text-4xl lg:text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-4 max-w-sm">
                 We are always ready to help you and answer your questions.
               </h2>
 
               {/* New Paragraph */}
-              <p className="text-xl font-ibm-plex-sans text-gray-600 mb-6 max-w-lg">
+              <p className="lg:text-xl text-lg lg:text-left font-ibm-plex-sans text-gray-600 mb-6 max-w-lg">
                 Edusight is committed to transforming how institutions engage with students by leveraging the power of AI. From automating communication to personalizing support, our intelligent solutions help create more connected, efficient, and student-focused learning environments.
               </p>
 
               <div className="gap-y-24">
                 {/* Email */}
-                <div className="mb-20">
+                <div className="mb-8 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
                 </div>
 
                 {/* Schedule a Call */}
-                <div className="mb-20">
+                <div className="mb-8 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
                 </div>
 
@@ -342,7 +342,7 @@ function Contact_Us() {
                 {/* Submit Button */}
                 <RippleButton
                   text="Send a Message"
-                  className="bg-primary rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
+                  className="bg-primary rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
                   type="submit"
                   yellowArrow
                 />

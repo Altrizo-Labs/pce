@@ -27,14 +27,14 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 text-white mx-auto font-ibm-plex-sans">
+    <section className="py-12 text-white lg:max-w-6xl mx-auto font-ibm-plex-sans">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-[45px] font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16">
           Why choose Edusight
         </h2>
         {/* Main container: flex column below lg, flex row for lg and above */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[33%] lg:space-y-12 order-2 lg:order-1">
+          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-1/3 lg:space-y-12 order-2 lg:order-1">
             {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -70,7 +70,7 @@ const WhyChooseUs: React.FC = () => {
 
           {/* Right Features: Grid below lg, Flex column for lg+ */}
           {/* Added grid classes for sm/md, flex for lg, adjusted spacing/width */}
-          <div className="w-full grid  gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-[33%] lg:space-y-12 order-3 lg:order-3">
+          <div className="w-full grid  gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-1/3 lg:space-y-12 order-3 lg:order-3">
             {features.slice(2, 4).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">

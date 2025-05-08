@@ -34,7 +34,7 @@ const WhyChooseUs: React.FC = () => {
         </h2>
         {/* Main container: flex column below lg, flex row for lg and above */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-1/3 lg:space-y-12 order-2 lg:order-1">
+          <div className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:w-1/3 lg:space-y-12 order-2 lg:order-1  ">
             {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -58,7 +58,7 @@ const WhyChooseUs: React.FC = () => {
           </div>
 
           {/* Phone Mockup: Centered, order changes responsively */}
-          <div className="w-full max-w-[240px] md:max-w-xs lg:w-1/3 flex justify-center my-8 lg:my-0 order-1 lg:order-2">
+          <div className="w-full max-w-[240px] md:max-w-xs lg:w-1/3 flex justify-center my-8 lg:my-0 order-1 lg:order-2 ">
             <Image
               src="/images/phone-mockup.svg"
               alt="Edusight mobile app preview"

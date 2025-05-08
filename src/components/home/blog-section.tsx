@@ -8,7 +8,7 @@ import RippleButton from "../RippleButton";
 export default function BlogSection() {
   // Fetch the latest 4 posts
   const { data, isLoading, error } = useGhostPosts({
-    limit: 3,
+    limit: 4,
   });
 
   const posts = data?.posts || [];
@@ -35,7 +35,7 @@ export default function BlogSection() {
 
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...Array(3)].map((_, index) => (
+            {[...Array(4)].map((_, index) => (
               <PostCardSkeleton key={index} />
             ))}
           </div>
@@ -46,7 +46,7 @@ export default function BlogSection() {
             </p>
           </div>
         ) : posts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto pb-4">
             {posts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}

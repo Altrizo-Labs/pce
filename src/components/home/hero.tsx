@@ -16,12 +16,12 @@ export default function Hero() {
 
       {/* Content Grid */}
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 relative z-10">
-        <p className="text-[#F3F4F6] flex-[0.55] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-tight font-lato font-bold">
+        <p className="text-[#F3F4F6] flex-[0.55] text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-lato font-bold">
           Smart Education <br className="hidden lg:block" /> Driven by
           Innovation Shaping Student Success
         </p>
 
-        <div className="flex-[0.45]  flex flex-col justify-between">
+        <div className="flex-[0.42] flex flex-col justify-between">
           {/* Corrected font class */}
           <p className="text-xs sm:text-sm md:text-[16px] font-ibm-plex-sans text-[#F3F4F6] lg:w-[85%] mb-8 leading-normal md:leading-relaxed">
             AI-powered solutions to enhance student engagement, streamline
@@ -30,14 +30,14 @@ export default function Hero() {
           </p>
           <RippleButton
             text="Book a Demo"
-            className="bg-white rounded-full font-lato text-primary font-bold w-auto whitespace-nowrap text-black text-sm md:text-[16px] z-50"
+            className="bg-white mb-3 rounded-full font-lato text-primary font-bold w-auto whitespace-nowrap text-black text-sm md:text-[16px] z-50"
             url=""
             yellowIcon
           />
         </div>
       </div>
       
-      <Image src={laptop} alt="" className="scale-150 lg:scale-125 -mb-[50%]  mt-24 lg:mt-52" />
+      <Image src={laptop} alt="" className="scale-150 lg:scale-125 -mb-[50%]  mt-24 lg:mt-44" />
     </div>
   );
 }

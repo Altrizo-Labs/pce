@@ -19,41 +19,43 @@ const CTASection: React.FC<CTASectionProps> = ({
   imagePosition = "right", // Default value
 }) => {
   return (
-    <section className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20 min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] overflow-hidden my-8 md:my-10 lg:my-12">
+    <section className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20 min-h-[480px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] overflow-hidden my-8 md:my-10 lg:my-12">
       <div
         className={clsx(
-          "absolute z-0 bg-[url('/images/cta-vector.svg')] bg-cover bg-no-repeat", // Changed bg-contain to bg-cover
-
-          // Adjusted width and positioning for responsiveness
-          "inset-y-0 w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]",
+          "absolute z-0 bg-[url('/images/cta-vector.svg')] bg-cover bg-no-repeat",
+          // Mobile: image from top
+          "inset-x-0 -top-28 w-full h-[500px] bg-top",
+          // MD and larger: restore side image
+          "md:inset-y-0 md:inset-x-auto md:top-auto md:h-full",
+          "md:w-[500px] lg:w-[600px] xl:w-[700px]",
           imagePosition === "left"
-            ? "-left-40 md:-left-50 lg:-left-60 bg-left"
-            : "-right-40 md:-right-50 lg:-right-60 bg-right"
+            ? "md:-left-60 lg:-left-60 xl:-left-72 md:bg-left"
+            : "md:-right-60 lg:-right-60 xl:-right-72 md:bg-right"
         )}
       />
 
       {/* Content container: using flex to align text - Simplified alignment */}
       <div
         className={clsx(
-          "relative z-10 max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center",
+          "relative z-10 max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center pt-40 md:pt-0",
           // Align text opposite to image position
           imagePosition === "left"
-            ? "md:justify-end text-center md:text-left"
-            : "md:justify-start text-center md:text-left"
+            ? "md:justify-end md:text-left text-left"
+            : "md:justify-start md:text-left"
         )}
       >
         {/* Added flex flex-col to enable vertical centering with justify-center */}
         {/* Adjusted width for responsiveness */}
         <div
           className={clsx(
-            "w-full flex flex-col items-center md:items-start justify-center",
+            "w-full flex flex-col items-start mt-24 md:mt-0 md:items-start justify-center",
             imagePosition === "left"
               ? "md:w-[60%] lg:w-[70%]"
               : "md:w-[60%] lg:w-[70%]"
           )}
         >
           {/* Added max-w-3xl to the title, adjusted font sizes, and re-added line-height */}
-          <h2 className="text-2xl md:text-3xl lg:text-[45px] font-bold leading-snug md:leading-tight lg:leading-tight mb-3 md:mb-4 font-lato">
+          <h2 className="text-2xl text-left md:text-3xl lg:text-[45px] font-bold leading-snug md:leading-tight lg:leading-tight mb-3 md:mb-4 font-lato">
             {title}
           </h2>
           <p className="text-xs md:text-sm lg:text-base text-white/75 mb-6 md:mb-8 lg:mb-10 font-ibm-plex-sans max-w-md lg:max-w-xl">

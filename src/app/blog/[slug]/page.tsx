@@ -1,5 +1,6 @@
 "use client";
 
+export const runtime = 'edge';
 import { useParams } from "next/navigation";
 import { useGhostPost } from "@/hooks/useGhostPost";
 import PostContent from "@/components/blog/post-content";

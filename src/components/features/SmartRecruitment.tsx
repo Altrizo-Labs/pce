@@ -1,6 +1,6 @@
 import Image from "next/image";
 import RippleButton from "../RippleButton"; // Assuming RippleButton is in the components directory
-import recruitmentDashboard from "../../../public/images/recruitment-dashboard.png"; // Adjust the path as needed
+import recruitmentDashboard from "../../../public/images/dashboard-desktop.png"; // Adjust the path as needed
 
 const SmartRecruitment = () => {
     return (

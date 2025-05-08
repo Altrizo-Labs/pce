@@ -40,7 +40,7 @@ export default function PostCard({ post }: PostCardProps) {
         </div>
 
         <Link href={`/blog/${post.slug}`} className="block mb-2">
-          <h3 className="text-[28px] font-lato font-medium text-[#181D27]">
+          <h3 className="text-[24px] font-lato font-medium text-[#181D27]">
             {post.title}
           </h3>
         </Link>

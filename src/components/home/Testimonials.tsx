@@ -34,7 +34,7 @@ const testimonials: TestimonialData[] = [
     name: "Mr. David Chen",
     school: "@Oakwood Elementary",
     quote:
-      "The insights we get from EduSight are invaluable for school-wide planning and supporting our teachers.",
+      "The insights are invaluable for school-wide planning and supporting our teachers.",
     imageUrl: "",
   },
   {
@@ -84,8 +84,8 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 bg-white font-ibm-plex-sans">
-      <div className="xl:max-w-screen-2xl lg:max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-16 md:py-24 font-ibm-plex-sans">
+      <div className=" mx-auto max-w-7xl w-full px-4 md:px-0">
         <div className="flex justify-between items-center mb-8">
           
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
@@ -152,7 +152,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="pb-10">
               {/* Added lg: prefix to min-w and min-h */}
-              <div className="relative bg-[#EDEFF1] p-6 pt-12 rounded-[20px] shadow-sm flex flex-col items-center text-center h-full lg:min-w-[379px] lg:min-h-[285px]">
+              <div className="relative bg-[#EDEFF1] p-6 pt-12 rounded-[20px] mx-auto shadow-sm flex flex-col items-center text-center h-full lg:min-w-[379px] lg:min-h-[285px]">
                 {/* Avatar */}
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[67px] h-[67px] bg-[#D9D9D9] rounded-full border-4 border-white overflow-hidden">
                   {testimonial.imageUrl ? (

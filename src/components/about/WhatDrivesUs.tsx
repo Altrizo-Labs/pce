@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { useInView } from 'react-intersection-observer';
-import clsx from 'clsx'; // Import clsx for conditional classes
+import { ChevronDown } from "lucide-react";
+import clsx from "clsx";
 
 const drivesData = [
   {
@@ -25,7 +25,7 @@ const drivesData = [
   {
     id: 3,
     title: "Integrity At Our Core",
-    titleExpanded: ["Integrity At ", "Our Core"],
+    titleExpanded: ["Integrity At", "Our Core"],
     text: "We operate with transparency and honesty, building trust through every partnership and product decision.",
     image: "/images/work.jpg",
   },
@@ -42,58 +42,43 @@ interface DriveItemProps {
   item: typeof drivesData[0];
   index: number;
   isActive: boolean;
-  // Modify setActiveIndex to handle adding/removing from an array
-  setActiveIndex: (index: number, action: 'add' | 'toggle') => void;
+  toggleActive: (index: number) => void;
   isMobile: boolean;
 }
 
-const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveIndex, isMobile }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false, 
-    threshold: 1,
-    
-  });
 
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    // Apply effect only if in view, not mobile, and not the first item (index > 0)
-    if (inView && !isMobile && index > 0) {
-      timeoutRef.current = setTimeout(() => {
-        setActiveIndex(index, 'add');
-      }, 250);
-    }
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [inView, index, setActiveIndex, isMobile]);
-
-  const handleInteraction = () => {
-    setActiveIndex(index, 'toggle');
-  };
-
-
+const DriveItem: React.FC<DriveItemProps> = ({
+  item,
+  index,
+  isActive,
+  toggleActive,
+  isMobile,
+}) => {
   return (
-    <div
-      ref={ref}
-      key={item.id}
-      onClick={handleInteraction}
-      className="bg-white rounded-2xl border border-gray-200 shadow-sm cursor-pointer transition min-h-[100px]"
-    >
+    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition">
       {/* Header */}
-      {!isActive && (
-        <div className="px-6 py-8 flex items-center justify-between">
-          <h3 className="text-[#1E3A8A] font-semibold text-base md:text-3xl">
-            {item.title}
-          </h3>
-        </div>
-      )}
+      <button
+        onClick={() => toggleActive(index)}
+        className="w-full p-6 flex items-center justify-between text-left"
+      >
+        <h3 className="text-[#1E3A8A] font-bold text-base md:text-3xl">
+          {isActive && !isMobile ? (
+            <>
+              {item.titleExpanded[0]}
+              <br />
+              {item.titleExpanded[1]}
+            </>
+          ) : (
+            item.title
+          )}
+        </h3>
+        <motion.span
+          animate={{ rotate: isActive ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDown className="text-blue-700 w-5 h-5" />
+        </motion.span>
+      </button>
 
       {/* Expandable Content */}
       <AnimatePresence initial={false}>
@@ -103,38 +88,21 @@ const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveI
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5 }}
             className="overflow-hidden"
           >
-            {/* Apply fixed height conditionally */}
-            <div className={clsx(
-              // Adjust grid layout for mobile when image is hidden
-              isMobile ? "grid grid-cols-1" : "grid md:grid-cols-[1.5fr_4.5fr]",
-              // Use fixed height on lg screens, fallback to min-height
-              isActive ? "lg:h-[530px] md:h-[450px] min-h-[350px]" : "min-h-[350px]"
-            )}>
-              {/* Left column: Title + Text */}
-              {/* Keep justify-center */}
-              <div className="flex flex-col justify-between pl-8 pr-5 py-6">
-                <div className="text-[#1E3A8A] font-bold text-base md:text-3xl leading-tight mb-4">
-                  {/* Conditionally render title based on isMobile */}
-                  {isMobile ? (
-                    <span className="block">{item.title}</span>
-                  ) : (
-                    <span className="block">
-                      {item.titleExpanded[0]}
-                      <br />
-                      {item.titleExpanded[1]}
-                    </span>
-                  )}
-                </div>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  {item.text}
-                </p>
+            <div
+              className={clsx(
+                isMobile ? "grid grid-cols-1" : "grid md:grid-cols-[1.5fr_4.5fr]",
+                "min-h-[250px] md:h-[450px] lg:h-[530px]"
+              )}
+            >
+              {/* Text Column */}
+              <div className="flex flex-col justify-end px-6 py-6">
+                <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
               </div>
 
-              {/* Right column: Image - Conditionally render based on isMobile */}
-              {/* Keep h-full */}
+              {/* Image Column (Desktop only) */}
               {!isMobile && (
                 <div className="relative rounded-2xl overflow-hidden w-full h-full">
                   <Image
@@ -155,22 +123,10 @@ const DriveItem: React.FC<DriveItemProps> = ({ item, index, isActive, setActiveI
 
 const WhatDrivesUs: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 767px)");
-  // Initialize with the first index (0) active
-  const [activeIndices, setActiveIndices] = useState<number[]>([0]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const handleSetActiveIndex = (index: number, action: 'add' | 'toggle') => {
-    setActiveIndices(prevIndices => {
-      const indexExists = prevIndices.includes(index);
-
-      if (action === 'add') {
-        return indexExists ? prevIndices : [...prevIndices, index];
-      } else if (action === 'toggle') {
-        return indexExists
-          ? prevIndices.filter(i => i !== index)
-          : [...prevIndices, index];
-      }
-      return prevIndices;
-    });
+  const toggleActive = (index: number) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -179,15 +135,14 @@ const WhatDrivesUs: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-[#181D27] mb-10">
           What Drives Us Forward
         </h2>
-
         <div className="space-y-4">
           {drivesData.map((item, index) => (
             <DriveItem
               key={item.id}
               item={item}
               index={index}
-              isActive={activeIndices.includes(index)}
-              setActiveIndex={handleSetActiveIndex}
+              isActive={activeIndex === index}
+              toggleActive={toggleActive}
               isMobile={isMobile}
             />
           ))}

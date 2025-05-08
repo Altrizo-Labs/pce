@@ -87,32 +87,32 @@ export default function Testimonials() {
     <section className="py-16 bg-white font-ibm-plex-sans">
       <div className="xl:max-w-screen-2xl lg:max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center mb-8">
-          {/* Updated section title: font, size */}
+          
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
             What Educators & Students Say
           </h2>
-          <div className="md:flex items-center space-x-2 hidden">
+          <div className="md:flex items-center space-x-1 md:space-x-2 hidden">
             <button
               ref={prevRef}
-              className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-200 ease-in-out ${
+              className={`w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full border flex items-center justify-center transition-colors duration-200 ease-in-out ${
                 isBeginning
                   ? "border-gray-300 text-gray-300 cursor-not-allowed"
                   : "border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white"
               }`}
               disabled={isBeginning}
             >
-              <ArrowLeft size={18} />
+              <ArrowLeft size={20} />
             </button>
             <button
               ref={nextRef}
-              className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 ease-in-out ${
+              className={`w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-colors duration-200 ease-in-out ${
                 isEnd
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                   : "bg-blue-800 text-[#FEDC69] hover:bg-blue-900 hover:text-[#FEDC69]"
               }`}
               disabled={isEnd}
             >
-              <ArrowRight size={18} />
+              <ArrowRight size={20} />
             </button>
           </div>
         </div>

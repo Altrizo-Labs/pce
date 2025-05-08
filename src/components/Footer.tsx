@@ -72,7 +72,7 @@ const Footer = () => {
         {/* Middle section - Social and Contact */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32 mt-12">
           {/* Social Links */}
-          <div>
+          <div className="self-end mb-4">
             <div className="flex flex-wrap gap-4">
               {["Facebook", "Instagram", "Twitter"].map((platform) => (
                 <a
@@ -148,7 +148,7 @@ const Footer = () => {
                     {section.title}
                   </h3>
                   {/* Corrected font class */}
-                  <ul className="hidden space-y-3 lg:grid grid-cols-3 gap-12 text-[14px] font-ibm-plex-sans">
+                  <ul className="hidden lg:grid grid-cols-3 items-start self-start gap-12 text-[14px] font-ibm-plex-sans">
                     {section.links.map((link) => (
                       <li key={link.name}>
                         {link.href ? (

@@ -8,7 +8,6 @@ import ErrorMessage from "./error-message";
 import Pagination from "./pagination";
 import PostCard from "./post-card";
 import PostCardSkeleton from "./post-card.skeleton";
-import { HeroTitle } from "./hero-title";
 
 export default function BlogListing() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -80,7 +79,6 @@ export default function BlogListing() {
   return (
     <section className="py-16 px-4 md:px-6">
       <div className="container mx-auto max-w-7xl">
-        <HeroTitle />
         <h2 className="text-[45px] font-lato font-bold text-[#181D27] mb-10">
           Latest Blogs
         </h2>

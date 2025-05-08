@@ -1,6 +1,7 @@
 // Ghost API endpoints
 export const API_ENDPOINTS = {
   POSTS: "/ghost/api/content/posts/",
+  POST: "/ghost/api/content/posts/slug/",
   TAGS: "/ghost/api/content/tags/",
   AUTHORS: "/ghost/api/content/authors/",
   SETTINGS: "/ghost/api/content/settings/",

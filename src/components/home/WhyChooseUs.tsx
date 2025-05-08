@@ -17,12 +17,12 @@ const WhyChooseUs: React.FC = () => {
     {
       title: "Enhanced Administrative Efficiency",
       description:
-        "Reduce workload by automating repetitive tasks, allowing educators to focus on what matters most.",
+        "Automate repetitive tasks, letting educators focus on what matters most.",
     },
     {
       title: "Seamless System Integration",
       description:
-        "Connect effortlessly with your existing LMS and student portals for a smooth digital experience.",
+        "Connect effortlessly with your existing learning management system and student portals, ensuring a smooth and unified digital experience.",
     },
   ];
 

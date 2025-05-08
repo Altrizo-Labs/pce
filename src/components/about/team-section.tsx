@@ -13,29 +13,29 @@ export default function TeamSection() {
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-lato font-bold mb-4">
           Meet the Minds Behind Edusight
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-600">
+        <p className="max-w-3xl mx-auto font-ibm-plex-sans text-gray-600">
           A passionate team of educators, innovators, and technologists working
           together to shape the future of education through AI.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-28">
         {teamMembers.map((member) => (
           <div key={member.id} className="flex flex-col ">
-            <div className={`relative rounded-lg overflow-hidden`}>
+            <div className={`relative rounded-[24px] overflow-hidden`}>
               <Image
                 src="/images/business_person.png"
                 alt={member.name}
-                width={300}
-                height={300}
+                width={312}
+                height={349}
                 className="w-full h-auto"
               />
             </div>
             <div className="text-left mt-4">
-              <h3 className="mt-4 font-semibold text-lg">{member.name}</h3>
+              <h3 className="mt-4 font-semibold text-xl">{member.name}</h3>
               <p className="text-gray-500">{member.position}</p>
             </div>
           </div>

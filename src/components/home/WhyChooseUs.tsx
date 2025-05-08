@@ -33,7 +33,7 @@ const WhyChooseUs: React.FC = () => {
           Why choose Edusight
         </h2>
         {/* Main container: flex column below lg, flex row for lg and above */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 space-x-32">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:space-x-32">
           <div className="grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12  order-2 lg:order-1">
             {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">

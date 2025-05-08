@@ -174,9 +174,9 @@ const Header = () => {
     <>
       <nav
         ref={headerRef}
-        className={`fixed w-[95%] lg:w-[98%] max-w-[1500px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
+        className={`fixed w-[93.5%] lg:w-[98%] max-w-[1500px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
           isHeaderHidden ? "-translate-y-full" : "translate-y-0"
-        } ${isMobileMenuOpen ? "bg-secondary" : ""} ${
+        } ${isMobileMenuOpen ? "bg-white" : ""} ${
           isScrolled ? "px-6 bg-white" : ""
         }`}
       >
@@ -201,7 +201,7 @@ const Header = () => {
                   {item.title === "Contact Us" ? (
                     <RippleButton
                       text="Contact Us"
-                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap text-black"
+                      className="bg-secondary rounded-[12px] w-full lg:w-auto py-2 lg:py-[2.5] md:px-6 lg:px-6 whitespace-nowrap text-black"
                       url={item.href}
                       icon
                     />

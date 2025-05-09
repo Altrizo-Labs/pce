@@ -6,46 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
-
-const drivesData = [
-  {
-    id: 1,
-    title: "Relentless Innovation",
-    titleExpanded: ["Relentless", "Innovation"],
-    text: "We continuously push boundaries to create forward-thinking solutions that redefine how institutions connect with students.",
-    image: "/images/work.jpg",
-  },
-  {
-    id: 2,
-    title: "Empathy In Every Interaction",
-    titleExpanded: ["Empathy In", "Every Interaction"],
-    text: "Understanding the needs of students and institutions is central to our approach, ensuring solutions are truly supportive.",
-    image: "/images/work.jpg",
-  },
-  {
-    id: 3,
-    title: "Integrity At Our Core",
-    titleExpanded: ["Integrity At", "Our Core"],
-    text: "We operate with transparency and honesty, building trust through every partnership and product decision.",
-    image: "/images/work.jpg",
-  },
-  {
-    id: 4,
-    title: "Driven By Purposeful Impact",
-    titleExpanded: ["Driven By", "Purposeful Impact"],
-    text: "Our goal is to make a meaningful difference in education, empowering institutions and students to achieve more.",
-    image: "/images/work.jpg",
-  },
-];
+import { drivesData } from "@/data/data";
 
 interface DriveItemProps {
-  item: typeof drivesData[0];
+  item: (typeof drivesData)[0];
   index: number;
   isActive: boolean;
   toggleActive: (index: number) => void;
   isMobile: boolean;
 }
-
 
 const DriveItem: React.FC<DriveItemProps> = ({
   item,
@@ -55,7 +24,7 @@ const DriveItem: React.FC<DriveItemProps> = ({
   isMobile,
 }) => {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition">
+    <div className="bg-gradient-to-b from-primary/10 via-transparent to-transparent rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition">
       {/* Header */}
       <button
         onClick={() => toggleActive(index)}
@@ -93,13 +62,17 @@ const DriveItem: React.FC<DriveItemProps> = ({
           >
             <div
               className={clsx(
-                isMobile ? "grid grid-cols-1" : "grid md:grid-cols-[1.5fr_4.5fr]",
+                isMobile
+                  ? "grid grid-cols-1"
+                  : "grid md:grid-cols-[1.5fr_4.5fr]",
                 "min-h-[250px] md:h-[450px] lg:h-[530px]"
               )}
             >
               {/* Text Column */}
               <div className="flex flex-col justify-end px-6 py-6">
-                <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  {item.text}
+                </p>
               </div>
 
               {/* Image Column (Desktop only) */}
@@ -151,6 +124,5 @@ const WhatDrivesUs: React.FC = () => {
     </section>
   );
 };
-
 
 export default WhatDrivesUs;

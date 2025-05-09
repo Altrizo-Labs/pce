@@ -77,7 +77,7 @@ const DriveItem: React.FC<DriveItemProps> = ({
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.5 }}
-            className="overflow-hidden -mt-[120px] min-h-52"
+            className="overflow-hidden -mt-[120px] min-h-28"
           >
             <div
               className={clsx(

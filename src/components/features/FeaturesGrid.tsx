@@ -37,7 +37,7 @@ const FeaturesBentoGrid = () => {
         <div className="grid grid-cols-12 gap-6 auto-rows-[446px]">
           {/* 1st row - Left (705px) ~ 7/12 */}
           <div className="col-span-12 md:col-span-7 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-6 h-1/2">
+            <div className="p-6 h-1/3">
               <h3 className="text-lg font-semibold text-gray-900">
                 {features[0].title}
               </h3>
@@ -45,14 +45,16 @@ const FeaturesBentoGrid = () => {
                 {features[0].description}
               </p>
             </div>
-            <div className="h-1/2 flex items-center justify-center p-4">
-              <img src="/images/24-7.svg" alt={features[0].title} className="max-h-full max-w-full" />
-            </div>
+            <div
+              className="h-2/3 bg-no-repeat bg-bottom bg-contain"
+              style={{ backgroundImage: `url('/images/24-7.svg')` }}
+              aria-label={features[0].title + " illustration"}
+            ></div>
           </div>
 
           {/* 1st row - Right (470px) ~ 5/12 */}
           <div className="col-span-12 md:col-span-5 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-6 h-1/2">
+            <div className="p-6 h-1/3">
               <h3 className="text-lg font-semibold text-gray-900">
                 {features[1].title}
               </h3>
@@ -60,14 +62,16 @@ const FeaturesBentoGrid = () => {
                 {features[1].description}
               </p>
             </div>
-            <div className="h-1/2 flex items-center justify-center p-4">
-              <img src="/images/conversations.svg" alt={features[1].title} className="max-h-full max-w-full" />
-            </div>
+            <div
+              className="h-2/3 bg-no-repeat bg-bottom bg-contain"
+              style={{ backgroundImage: `url('/images/conversations.svg')` }}
+              aria-label={features[1].title + " illustration"}
+            ></div>
           </div>
 
           {/* 2nd row - Left (470px) ~ 5/12 */}
           <div className="col-span-12 md:col-span-5 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-6 h-1/2">
+            <div className="p-6 h-1/3">
               <h3 className="text-lg font-semibold text-gray-900">
                 {features[2].title}
               </h3>
@@ -75,14 +79,16 @@ const FeaturesBentoGrid = () => {
                 {features[2].description}
               </p>
             </div>
-            <div className="h-1/2 flex items-center justify-center p-4">
-              <img src="/images/scalable-efficent.svg" alt={features[2].title} className="max-h-full max-w-full" />
-            </div>
+            <div
+              className="h-2/3 bg-no-repeat bg-bottom bg-contain"
+              style={{ backgroundImage: `url('/images/scalable-efficent2.svg')` }}
+              aria-label={features[2].title + " illustration"}
+            ></div>
           </div>
 
           {/* 2nd row - Right (705px) ~ 7/12 */}
           <div className="col-span-12 md:col-span-7 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-6 h-1/2">
+            <div className="p-6 h-1/3">
               <h3 className="text-lg font-semibold text-gray-900">
                 {features[3].title}
               </h3>
@@ -90,9 +96,11 @@ const FeaturesBentoGrid = () => {
                 {features[3].description}
               </p>
             </div>
-            <div className="h-1/2 flex items-center justify-center p-4">
-              <img src="/images/analytics.svg" alt={features[3].title} className="max-h-full max-w-full" />
-            </div>
+            <div
+              className="h-2/3 bg-no-repeat bg-bottom bg-contain"
+              style={{ backgroundImage: `url('/images/analytics.svg')` }}
+              aria-label={features[3].title + " illustration"}
+            ></div>
           </div>
         </div>
       </div>

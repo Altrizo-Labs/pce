@@ -1,0 +1,63 @@
+<svg width="525" height="260" viewBox="0 0 525 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1021_6406)">
+<mask id="mask0_1021_6406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-195" y="-207" width="768" height="768">
+<rect width="768" height="768" transform="translate(-195 -207)" fill="url(#paint0_radial_1021_6406)"/>
+</mask>
+<g mask="url(#mask0_1021_6406)">
+<g clip-path="url(#clip1_1021_6406)">
+<g clip-path="url(#clip2_1021_6406)">
+<line x1="45.5" y1="-207" x2="45.5" y2="561" stroke="#E9EAEB"/>
+<line x1="93.5" y1="-207" x2="93.5" y2="561" stroke="#E9EAEB"/>
+<line x1="141.5" y1="-207" x2="141.5" y2="561" stroke="#E9EAEB"/>
+<line x1="189.5" y1="-207" x2="189.5" y2="561" stroke="#E9EAEB"/>
+<line x1="237.5" y1="-207" x2="237.5" y2="561" stroke="#E9EAEB"/>
+<line x1="285.5" y1="-207" x2="285.5" y2="561" stroke="#E9EAEB"/>
+<line x1="333.5" y1="-207" x2="333.5" y2="561" stroke="#E9EAEB"/>
+<line x1="381.5" y1="-207" x2="381.5" y2="561" stroke="#E9EAEB"/>
+<line x1="429.5" y1="-207" x2="429.5" y2="561" stroke="#E9EAEB"/>
+<line x1="477.5" y1="-207" x2="477.5" y2="561" stroke="#E9EAEB"/>
+</g>
+<rect x="-194.5" y="-206.5" width="767" height="767" stroke="#E9EAEB"/>
+<g clip-path="url(#clip3_1021_6406)">
+<line x1="-195" y1="32.5" x2="573" y2="32.5" stroke="#E9EAEB"/>
+<line x1="-195" y1="80.5" x2="573" y2="80.5" stroke="#E9EAEB"/>
+<line x1="-195" y1="128.5" x2="573" y2="128.5" stroke="#E9EAEB"/>
+<line x1="-195" y1="176.5" x2="573" y2="176.5" stroke="#E9EAEB"/>
+<line x1="-195" y1="224.5" x2="573" y2="224.5" stroke="#E9EAEB"/>
+</g>
+<rect x="-194.5" y="-206.5" width="767" height="767" stroke="#E9EAEB"/>
+</g>
+</g>
+<rect y="149" width="534" height="111" fill="url(#paint1_linear_1021_6406)"/>
+<path d="M-32.7914 219.956C-49.2083 211.369 5.7728 170.131 20.0214 182.193C37.8322 197.27 38.9163 253.707 76.861 232.129C114.806 210.55 119.917 197.132 134.785 200.867C149.653 204.602 168.703 232.129 188.682 232.129C208.661 232.129 291.984 184.129 306.698 189.801C321.411 195.472 351.921 225.627 374.069 219.956C396.216 214.284 412.168 175.691 437.413 189.801C457.609 201.088 538.547 222.722 576.492 232.129V324.392L-32.7914 332V219.956Z" fill="#527297"/>
+<path d="M-29.1045 193.658C-6.9881 185.09 2.60082 201.121 20.3867 201.121C38.1726 201.121 43.5857 193.658 57.1958 193.658C64.0821 193.658 93.4019 214.904 128.803 219.917C180.305 193.658 203.979 213.51 215.104 210.519C250.057 201.121 253.15 132.435 253.15 86H258.409C258.409 136.167 270.627 216.185 323.52 210.519C358.489 206.773 350.122 201.121 370.073 201.121C390.024 201.121 401.933 210.519 426.215 210.519C450.496 210.519 465.498 193.658 495.039 193.658L495.748 193.658C525.111 193.657 558.07 193.656 568.657 210.519V298H-29.1045V193.658Z" fill="url(#paint2_linear_1021_6406)"/>
+<path d="M256.111 31L298.982 97.3338L277.237 77.4337L256.111 97.3338L234.366 77.4337L213.24 97.3338L256.111 31Z" fill="#99A6B6"/>
+<path d="M256.111 31L298.982 97.3338L277.237 77.4337L256.111 97.3338L256.111 31Z" fill="#527297"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1021_6406" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(384 384) rotate(90) scale(384 384)">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="paint1_linear_1021_6406" x1="267.379" y1="166.5" x2="266.719" y2="259.998" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.768749" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1021_6406" x1="269.776" y1="113.64" x2="269.776" y2="209.552" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F6F6F9"/>
+<stop offset="1" stop-color="#002147" stop-opacity="0.37"/>
+</linearGradient>
+<clipPath id="clip0_1021_6406">
+<rect width="525" height="260" fill="white"/>
+</clipPath>
+<clipPath id="clip1_1021_6406">
+<rect width="768" height="768" fill="white" transform="translate(-195 -207)"/>
+</clipPath>
+<clipPath id="clip2_1021_6406">
+<rect x="-195" y="-207" width="768" height="768" fill="white"/>
+</clipPath>
+<clipPath id="clip3_1021_6406">
+<rect x="-195" y="-207" width="768" height="768" fill="white"/>
+</clipPath>
+</defs>
+</svg>

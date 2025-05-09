@@ -45,7 +45,9 @@ const FeaturesBentoGrid = () => {
                 {features[0].description}
               </p>
             </div>
-            <div className="h-1/2 bg-gray-200" />
+            <div className="h-1/2 flex items-center justify-center p-4">
+              <img src="/images/24-7.svg" alt={features[0].title} className="max-h-full max-w-full" />
+            </div>
           </div>
 
           {/* 1st row - Right (470px) ~ 5/12 */}
@@ -58,7 +60,9 @@ const FeaturesBentoGrid = () => {
                 {features[1].description}
               </p>
             </div>
-            <div className="h-1/2 bg-gray-200" />
+            <div className="h-1/2 flex items-center justify-center p-4">
+              <img src="/images/conversations.svg" alt={features[1].title} className="max-h-full max-w-full" />
+            </div>
           </div>
 
           {/* 2nd row - Left (470px) ~ 5/12 */}
@@ -71,7 +75,9 @@ const FeaturesBentoGrid = () => {
                 {features[2].description}
               </p>
             </div>
-            <div className="h-1/2 bg-gray-200" />
+            <div className="h-1/2 flex items-center justify-center p-4">
+              <img src="/images/scalable-efficent.svg" alt={features[2].title} className="max-h-full max-w-full" />
+            </div>
           </div>
 
           {/* 2nd row - Right (705px) ~ 7/12 */}
@@ -84,7 +90,9 @@ const FeaturesBentoGrid = () => {
                 {features[3].description}
               </p>
             </div>
-            <div className="h-1/2 bg-gray-200" />
+            <div className="h-1/2 flex items-center justify-center p-4">
+              <img src="/images/analytics.svg" alt={features[3].title} className="max-h-full max-w-full" />
+            </div>
           </div>
         </div>
       </div>

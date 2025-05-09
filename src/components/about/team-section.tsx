@@ -164,7 +164,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
       </div>
 
       {/* Text content */}
-      <div className="text-left px-4 mt-4">
+      <div className="text-center lg:text-left px-4 mt-4 mb-4 lg:mb-0">
         <h3 className="mt-4 font-semibold text-xl">{member.name}</h3>
         <p className="text-gray-500">{member.position}</p>
       </div>

@@ -2,9 +2,9 @@ import { footerLinks } from "@/data/footer";
 import Link from "next/link";
 import Image from "next/image";
 
-import fb from "../../public/images/facebook.png";
-import instagram from "../../public/images/instagram.png";
-import twitter from "../../public/images/twitter.png";
+import fb from "../../public/images/facebook.svg";
+import instagram from "../../public/images/instagram.svg";
+import twitter from "../../public/images/twitter.svg";
 
 import logo from "../../public/images/footer_logo.png";
 

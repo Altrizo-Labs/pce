@@ -253,7 +253,7 @@ const Header = () => {
       {isMobile && (
         <div
           id="mobile-menu"
-          className="fixed top-20 left-2 mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
+          className="fixed top-20 left-2 w-full mx-auto h-fit bg-white rounded-[8px] z-40 shadow-lg transform -translate-y-[150%]"
           style={{ display: hasMounted ? "block" : "none" }}
         >
           <div className="flex flex-col p-4 gap-4">

@@ -12,7 +12,7 @@ interface DriveItemProps {
   item: (typeof drivesData)[0];
   index: number;
   isActive: boolean;
-  toggleActive: (index: number) => void;
+  setActiveIndex: (index: number | null) => void;
   isMobile: boolean;
 }
 
@@ -20,14 +20,30 @@ const DriveItem: React.FC<DriveItemProps> = ({
   item,
   index,
   isActive,
-  toggleActive,
+  setActiveIndex,
   isMobile,
 }) => {
+  const handleMouseEnter = () => {
+    if (!isMobile) setActiveIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) setActiveIndex(null);
+  };
+
   return (
-    <div className="bg-gradient-to-b from-primary/10 via-transparent to-transparent rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition">
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="bg-gradient-to-b from-primary/10 via-transparent to-transparent rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition cursor-pointer"
+    >
       {/* Header */}
       <button
-        onClick={() => toggleActive(index)}
+        onClick={() => {
+          if (isMobile) {
+            setActiveIndex(isActive ? null : index);
+          }
+        }}
         className="w-full p-6 flex items-center justify-between text-left"
       >
         <h3 className="text-[#1E3A8A] font-bold text-base md:text-3xl">
@@ -41,15 +57,18 @@ const DriveItem: React.FC<DriveItemProps> = ({
             item.title
           )}
         </h3>
-        <motion.span
-          animate={{ rotate: isActive ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <ChevronDown className="text-blue-700 w-5 h-5" />
-        </motion.span>
+        {/* Only show chevron for mobile */}
+        {isMobile && (
+          <motion.span
+            animate={{ rotate: isActive ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronDown className="text-blue-700 w-5 h-5" />
+          </motion.span>
+        )}
       </button>
 
-      {/* Expandable Content */}
+      {/* Expandable Content */} 
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
@@ -58,13 +77,11 @@ const DriveItem: React.FC<DriveItemProps> = ({
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.5 }}
-            className="overflow-hidden"
+            className="overflow-hidden -mt-[120px] min-h-52"
           >
             <div
               className={clsx(
-                isMobile
-                  ? "grid grid-cols-1"
-                  : "grid md:grid-cols-[1.5fr_4.5fr]",
+                isMobile ? "grid grid-cols-1" : "grid md:grid-cols-[1.5fr_4.5fr]",
                 "min-h-[250px] md:h-[450px] lg:h-[530px]"
               )}
             >
@@ -95,12 +112,8 @@ const DriveItem: React.FC<DriveItemProps> = ({
 };
 
 const WhatDrivesUs: React.FC = () => {
-  const isMobile = useMediaQuery("(max-width: 767px)");
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
-  const toggleActive = (index: number) => {
-    setActiveIndex((prev) => (prev === index ? null : index));
-  };
+  const isMobile = useMediaQuery("(max-width: 1023px)"); // lg breakpoint
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -115,7 +128,7 @@ const WhatDrivesUs: React.FC = () => {
               item={item}
               index={index}
               isActive={activeIndex === index}
-              toggleActive={toggleActive}
+              setActiveIndex={setActiveIndex}
               isMobile={isMobile}
             />
           ))}

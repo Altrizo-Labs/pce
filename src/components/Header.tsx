@@ -1,14 +1,14 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
-import { FiMenu, FiX } from "react-icons/fi";
+import { Menu, X } from "lucide-react";
 import logo from "../../public/images/logo.png";
-
 import Image from "next/image";
 import { HEADER } from "@/data/header";
 import RippleButton from "./RippleButton";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const pathname = usePathname();
@@ -19,13 +19,12 @@ const Header = () => {
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // new state for scroll position
+  const [isScrolled, setIsScrolled] = useState(false);
+  const prevPathRef = useRef(pathname);
 
-  // Scroll tracking variables
   const lastScrollY = useRef(0);
-  const scrollThreshold = 100; // Pixels to scroll before hiding header
+  const scrollThreshold = 100;
 
-  // Check for mobile screen size
   useEffect(() => {
     const checkMobileScreen = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -33,44 +32,31 @@ const Header = () => {
 
     checkMobileScreen();
     window.addEventListener("resize", checkMobileScreen);
-
-    return () => {
-      window.removeEventListener("resize", checkMobileScreen);
-    };
+    return () => window.removeEventListener("resize", checkMobileScreen);
   }, []);
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  // Scroll handling effect
   useEffect(() => {
     if (!hasMounted) return;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Determine scroll direction and amount
       const scrollDiff = currentScrollY - lastScrollY.current;
 
-      if (currentScrollY > 50) {
-        setIsScrolled(true); // Add mx-12 when scrolled more than 50px
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(currentScrollY > 50);
 
       if (scrollDiff > 10 && currentScrollY > scrollThreshold) {
-        // Scrolling down significantly
         setIsHeaderHidden(true);
       } else if (scrollDiff < -10) {
-        // Scrolling up
         setIsHeaderHidden(false);
       }
 
       lastScrollY.current = currentScrollY;
     };
 
-    // Debounce scroll event
     let rafId: number;
     const debouncedHandleScroll = () => {
       cancelAnimationFrame(rafId);
@@ -78,17 +64,14 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", debouncedHandleScroll);
-
     return () => {
       window.removeEventListener("scroll", debouncedHandleScroll);
       cancelAnimationFrame(rafId);
     };
   }, [hasMounted]);
 
-  // Animation for nav links
   useEffect(() => {
     if (!navLinksRef.current || !hasMounted) return;
-
     gsap.fromTo(
       navLinksRef.current.children,
       { opacity: 0, y: -20 },
@@ -96,10 +79,8 @@ const Header = () => {
     );
   }, [hasMounted]);
 
-  // Active link indicator animation
   useEffect(() => {
     if (!hasMounted) return;
-
     const activeLinkIndex = HEADER.findIndex((item) => pathname === item.href);
     if (activeLinkIndex >= 0 && indicatorRefs.current[activeLinkIndex]) {
       gsap.to(indicatorRefs.current[activeLinkIndex], {
@@ -111,7 +92,19 @@ const Header = () => {
     }
   }, [pathname, hasMounted]);
 
-  // Mouse enter/leave handlers for link indicators
+  // Fixed route change effect to properly close mobile menu
+  useEffect(() => {
+    if (!hasMounted) return;
+    
+    // Only run this effect when the path actually changes, not on mount
+    if (prevPathRef.current !== pathname) {
+      if (isMobileMenuOpen) {
+        closeMobileMenu();
+      }
+      prevPathRef.current = pathname;
+    }
+  }, [pathname, hasMounted]);
+
   const handleMouseEnter = (index: number) => {
     if (indicatorRefs.current[index]) {
       gsap.to(indicatorRefs.current[index], {
@@ -134,63 +127,36 @@ const Header = () => {
     }
   };
 
-  // Toggle mobile menu with animation and freeze screen
-  const toggleMobileMenu = () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    if (!mobileMenu) return;
-
-    if (isMobileMenuOpen) {
-      gsap.to(mobileMenu, {
-        y: "-150%",
-        duration: 0.4,
-        ease: "power2.inOut",
-        onComplete: () => {
-          setIsMobileMenuOpen(false);
-          document.body.classList.remove("overflow-hidden"); // Remove freeze
-        },
-      });
-    } else {
-      setIsMobileMenuOpen(true);
-      gsap.fromTo(
-        mobileMenu,
-        { y: "-100%" },
-        {
-          y: "0%",
-          duration: 0.4,
-          ease: "power2.inOut",
-          onStart: () => {
-            document.body.classList.add("overflow-hidden"); // Freeze screen
-          },
-        }
-      );
-    }
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    document.body.classList.remove("overflow-hidden");
   };
 
-  // Only render the component once it's mounted on the client side
+  const toggleMobileMenu = useCallback(() => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+    } else {
+      setIsMobileMenuOpen(true);
+      document.body.classList.add("overflow-hidden");
+    }
+  }, [isMobileMenuOpen]);
+
   if (!hasMounted) return null;
 
-  // Render desktop or mobile navigation
   return (
     <>
       <nav
         ref={headerRef}
-        className={`fixed w-full px-4 max-w-[1520px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${
-          isHeaderHidden ? "-translate-y-full" : "translate-y-0"
-        } ${isMobileMenuOpen ? "bg-white" : ""} ${
-          isScrolled ? "bg-white" : ""
-        }`}
+        className={`fixed w-full px-4 max-w-[1520px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${isHeaderHidden ? "-translate-y-full" : "translate-y-0"} ${isMobileMenuOpen ? "bg-white" : ""} ${isScrolled ? "bg-white" : ""}`}
       >
-        {/* Logo */}
         <Link href="/">
           <Image src={logo} alt="logo" className="relative w-32 lg:w-44 z-[999]" />
         </Link>
 
-        {/* Desktop Navigation */}
         {!isMobile ? (
           <div className="flex space-x-2" ref={navLinksRef}>
             {HEADER.map((item, index) => {
               const isActive = pathname === item.href;
-
               return (
                 <div
                   key={index}
@@ -207,23 +173,18 @@ const Header = () => {
                     />
                   ) : (
                     <Link
-                    href={item.href}
-                    className={`relative p-2 lg:p-4 inline-block text-[10px] lg:text-[14px] px-3 lg:px-5
-                      ${pathname === item.href ? "font-bold text-primary" : ""}
-                    `}
-                  >
-                    <span className="relative inline-block">
-                      {item.title}
-                      {pathname === item.href && (
-                        <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-primary rounded-md" />
-                      )}
-                    </span>
-                  </Link>
-                  
-                  
+                      href={item.href}
+                      className={`relative p-2 lg:p-4 inline-block text-[10px] lg:text-[14px] px-3 lg:px-5 ${isActive ? "font-bold text-primary" : ""}`}
+                    >
+                      <span className="relative inline-block">
+                        {item.title}
+                        {isActive && (
+                          <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-primary rounded-md" />
+                        )}
+                      </span>
+                    </Link>
                   )}
 
-                  {/* Active Indicator */}
                   {isActive && item.title !== "Contact Us" && (
                     <div className="absolute -left-4 lg:left-4 bottom-[26px] lg:bottom-[30px] transform -translate-x-1/2">
                       <div
@@ -239,57 +200,78 @@ const Header = () => {
             })}
           </div>
         ) : (
-          // Mobile Hamburger Menu
           <button
             onClick={toggleMobileMenu}
-            className="text-2xl focus:outline-none"
+            className="text-2xl focus:outline-none z-50"
           >
-            {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+            <motion.div
+              initial={false}
+              animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </motion.div>
+            <span className="sr-only">Toggle menu</span>
           </button>
         )}
       </nav>
 
-      {/* Mobile Menu Drawer */}
       {isMobile && (
-        <div
-          id="mobile-menu"
-          className="fixed top-20 left-0 w-full mx-auto h-full bg-white rounded-[8px] shadow-lg transform -translate-y-[150%] z-[999]"
-          style={{ display: hasMounted ? "block" : "none" }}
-        >
-          <div className="flex flex-col p-4 gap-4">
-            {HEADER.map((item) =>
-              item.title === "Contact Us" ? (
-                <RippleButton
-                  key={item.href}
-                  text="Contact Us"
-                  className={`bg-accent border border-black rounded-[12px] w-full lg:w-auto py-3 lg:py-4 px-14 whitespace-nowrap mt-4
-                    ${
-                    pathname === item.href
-                      ? "font-bold text-primary bg-primary/10 rounded-md"
-                      : ""
-                  }
-                  `}
-                  textStyles="text-lg"
-                  url={item.href}
-                  onclick={toggleMobileMenu}
-                />
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={toggleMobileMenu}
-                  className={`p-3 text-lg px-4 ${
-                    pathname === item.href
-                      ? "font-bold underline text-primary bg-primary/10 rounded-md"
-                      : ""
-                  }`}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-white z-50 md:hidden min-h-screen flex flex-col justify-center"
+              id="mobile-menu"
+            >
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+                <div className="absolute -left-[20%] top-0 w-[140%] h-[140%] bg-[#5182FF]/5" />
+              </div>
+
+              <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">
+                <div className="w-full max-w-md">
+                  {HEADER.map((item, index) => (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.3,
+                        ease: "easeOut",
+                      }}
+                      className="mb-8"
+                    >
+                      <Link
+                        href={item.href}
+                        className={`text-3xl font-bold transition-all hover:pl-4 cursor-pointer ${pathname === item.href ? "pl-4 border-l-2 border-primary" : ""}`}
+                      >
+                        {item.title}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="absolute bottom-12 left-0 right-0 text-center text-sm px-8"
                 >
-                  {item.title}
-                </Link>
-              )
-            )}
-          </div>
-        </div>
+                  <p>© {new Date().getFullYear()} EduSight. All rights reserved.</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       )}
     </>
   );

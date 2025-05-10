@@ -51,7 +51,7 @@ export default function Hero() {
             <RippleButton
               text="Book a Demo"
               className="bg-white mb-3 rounded-full font-lato text-primary font-bold w-auto whitespace-nowrap text-black text-sm md:text-[16px] z-50"
-              url="Book a Demo Button" 
+              url="/contact" 
               yellowIcon
             />
           </motion.div>

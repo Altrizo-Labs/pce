@@ -35,7 +35,7 @@ const FeaturesBentoGrid = () => {
         </h2>
 
         {/* Custom Bento Grid Layout */}
-        <div className="grid grid-cols-12 gap-6 auto-rows-[446px]">
+        <div className="grid grid-cols-12 gap-6 auto-rows-[380px] md:auto-rows-[446px]">
           {/* 1st row - Left (705px) ~ 7/12 */}
           <motion.div
             className="col-span-12 md:col-span-7 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"

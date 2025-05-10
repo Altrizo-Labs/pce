@@ -18,8 +18,8 @@ export default function AboutPage() {
       <CTASection
         title="Discover the Ideas, Innovations, and Insights Shaping the Future of Education and Student Engagement"
         description="From AI breakthroughs to transformative strategies in higher ed, our blog keeps you informed, inspired, and ahead of the curve."
-        buttonText="Browse Insights"
-        buttonLink="#careers"
+        buttonText="Discover the Impact"
+        buttonLink="/blog"
         imagePosition="right"
       />
       <BrandLogosMarquee

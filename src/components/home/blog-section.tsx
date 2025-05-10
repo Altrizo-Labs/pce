@@ -5,6 +5,7 @@ import PostCard from "@/components/blog/post-card";
 import PostCardSkeleton from "@/components/blog/post-card.skeleton";
 import RippleButton from "../RippleButton";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { useState, useRef, useEffect } from "react";
 
 export default function BlogSection() {
   // Fetch the latest 4 posts
@@ -14,10 +15,31 @@ export default function BlogSection() {
 
   const isMobile = useMediaQuery("(max-width: 767px)");
   const posts = data?.posts || [];
+  const [hasStartedSwiping, setHasStartedSwiping] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Function to handle user interaction with the scroll container
+  const handleScroll = () => {
+    if (!hasStartedSwiping) {
+      setHasStartedSwiping(true);
+    }
+  };
+
+  // Function to handle touch start on mobile
+  const handleTouchStart = () => {
+    if (!hasStartedSwiping) {
+      setHasStartedSwiping(true);
+    }
+  };
+
+  // Reset swiping state when component unmounts or mobile state changes
+  useEffect(() => {
+    setHasStartedSwiping(false);
+  }, [isMobile]);
 
   return (
     <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container h-[700px] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-20">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#181D27] mb-3 font-lato">
@@ -52,20 +74,48 @@ export default function BlogSection() {
         ) : posts.length > 0 ? (
           <>
             {isMobile ? (
-              <div className="overflow-x-auto pb-6 -mx-4 px-4">
-                <div className="flex gap-4" style={{ width: "max-content" }}>
-                  {posts.map((post) => (
-                    <div
-                      key={post.id}
-                      style={{
-                        width: "85vw",
-                        maxWidth: "320px",
-                        flex: "0 0 auto",
-                      }}
-                    >
-                      <PostCard post={post} />
+              <div className="relative">
+                {!hasStartedSwiping && (
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none z-10">
+                    <div className="bg-primary p-2 rounded-full shadow-lg swipe-arrow-container border border-white/10">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="animate-swipe-hint"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
                     </div>
-                  ))}
+                  </div>
+                )}
+                <div
+                  ref={scrollContainerRef}
+                  className="overflow-x-auto pb-6 -mx-4 px-4"
+                  onScroll={handleScroll}
+                  onTouchStart={handleTouchStart}
+                >
+                  <div className="flex gap-4" style={{ width: "max-content" }}>
+                    {posts.map((post) => (
+                      <div
+                        key={post.id}
+                        style={{
+                          width: "85vw",
+                          maxWidth: "320px",
+                          flex: "0 0 auto",
+                        }}
+                      >
+                        <PostCard post={post} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (
@@ -92,6 +142,24 @@ export default function BlogSection() {
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        @keyframes swipeHint {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-swipe-hint {
+          animation: swipeHint 1.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import type { GhostTag } from "@/types/ghost";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 interface CategoryFiltersProps {
   tags: GhostTag[];
@@ -17,6 +18,27 @@ export default function CategoryFilters({
   isLoading,
 }: CategoryFiltersProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const [hasStartedSwiping, setHasStartedSwiping] = useState(false);
+
+  // Function to handle user interaction with the scroll container
+  const handleScroll = () => {
+    if (!hasStartedSwiping) {
+      setHasStartedSwiping(true);
+    }
+  };
+
+  // Function to handle touch start on mobile
+  const handleTouchStart = () => {
+    if (!hasStartedSwiping) {
+      setHasStartedSwiping(true);
+    }
+  };
+
+  // Reset swiping state when component unmounts or mobile state changes
+  useEffect(() => {
+    setHasStartedSwiping(false);
+  }, [isMobile]);
 
   // Prepare categories from fetched tags
   const categories = [
@@ -51,7 +73,46 @@ export default function CategoryFilters({
               scrollbar-color: #888 #f1f1f1;
             }
           }
+
+          @keyframes swipeHint {
+            0% {
+              transform: translateX(0);
+            }
+            50% {
+              transform: translateX(5px);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+
+          .animate-swipe-hint {
+            animation: swipeHint 1.5s ease-in-out infinite;
+          }
         `}</style>
+
+        {/* Swipe indicator for mobile */}
+        {isMobile && !hasStartedSwiping && (
+          <div className="absolute right-0 mt-6 transform -translate-y-1/2 pointer-events-none z-10">
+            <div className="bg-primary p-2 rounded-full shadow-lg swipe-arrow-container border border-white/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="animate-swipe-hint"
+              >
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* Scroll container with visible scrollbar on mobile */}
         <div
@@ -61,6 +122,8 @@ export default function CategoryFilters({
             paddingLeft: "16px",
             paddingRight: "16px",
           }}
+          onScroll={handleScroll}
+          onTouchStart={handleTouchStart}
         >
           {isLoading
             ? // Loading state
@@ -94,7 +157,7 @@ export default function CategoryFilters({
           {/* Add an extra invisible spacer at the end to ensure proper padding when scrolled all the way */}
           <div className="min-w-[40px] h-1"></div>
         </div>
-        
+
         {/* Add padding below to accommodate visible scrollbar on mobile */}
         <div className="h-2 md:h-0"></div>
       </div>

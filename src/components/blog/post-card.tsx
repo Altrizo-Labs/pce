@@ -15,7 +15,7 @@ export default function PostCard({ post }: PostCardProps) {
 
   return (
     <div
-      className={`flex flex-col bg-white py-8 px-4 stroke-[#E9EAEB] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg border border-[#E9EAEB] ${
+      className={`flex flex-col bg-white py-8 px-4 stroke-[#E9EAEB] rounded-[20px] overflow-hidden shadow-sm transition-all duration-1000 hover:shadow-lg border border-[#E9EAEB] ${
         isHovered ? "h-auto" : "h-[500px]"
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -54,7 +54,7 @@ export default function PostCard({ post }: PostCardProps) {
         </div>
 
         <div
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-1000 ${
             isHovered
               ? "max-h-[200px] opacity-100"
               : "max-h-0 opacity-0 overflow-hidden"

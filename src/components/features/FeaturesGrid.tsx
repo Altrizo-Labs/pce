@@ -30,7 +30,7 @@ const FeaturesBentoGrid = () => {
   return (
     <section className="relative py-12 z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-16">
+        <h2 className="text-center text-3xl lg:text-[45px] font-bold font-lato text-gray-900 mb-16">
           Built to Support, Scale, and Succeed
         </h2>
 
@@ -45,10 +45,10 @@ const FeaturesBentoGrid = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
           >
             <div className="p-6 h-1/3">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold font-lato text-gray-900">
                 {features[0].title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600 font-ibm-plex-sans">
                 {features[0].description}
               </p>
             </div>
@@ -68,10 +68,10 @@ const FeaturesBentoGrid = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
             <div className="p-6 h-1/3">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold font-lato text-gray-900">
                 {features[1].title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600 font-ibm-plex-sans">
                 {features[1].description}
               </p>
             </div>
@@ -91,10 +91,10 @@ const FeaturesBentoGrid = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             <div className="p-6 h-1/3">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold font-lato text-gray-900">
                 {features[2].title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600 font-ibm-plex-sans">
                 {features[2].description}
               </p>
             </div>
@@ -114,10 +114,10 @@ const FeaturesBentoGrid = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           >
             <div className="p-6 h-1/3">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 font-lato">
                 {features[3].title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600 font-ibm-plex-sans">
                 {features[3].description}
               </p>
             </div>

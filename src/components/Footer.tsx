@@ -168,10 +168,10 @@ const Footer = () => {
                           <a
                             href={
                               index === 1
-                                ? `tel:${link.href}`
+                                ? `tel:${link.href ?? ''}`
                                 : index === 2
-                                ? `mailto:${link.href}`
-                                : link.href
+                                ? `mailto:${link.href ?? ''}`
+                                : link.href ?? '#'
                             }
                             className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
                           >

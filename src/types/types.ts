@@ -19,4 +19,5 @@ export interface HeroBannerProps {
   image?: StaticImageData;
   description: string;
   title: string;
+  link?: string;
 }

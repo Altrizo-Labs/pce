@@ -28,10 +28,10 @@ export const BrandLogosMarquee: React.FC<BrandLogosProps> = ({
       {/* Wrapper to keep title/description centered */}
       <div className="mx-auto text-center mb-10">
         {/* Updated title styles: Lato Bold 45px */}
-        {title && <h2 className="font-lato font-bold text-[45px] mb-2">{title}</h2>}
+        {title && <h2 className="font-lato font-bold text-[32px] md:text-[45px] mb-2">{title}</h2>}
         {/* Updated description styles: IBM Plex Sans Regular 20px */}
         {description && (
-          <p className="font-ibm-plex-sans text-[20px] text-gray-600">{description}</p>
+          <p className="font-ibm-plex-sans text-[16px] md:text-[20px] text-gray-600">{description}</p>
         )}
       </div>
       {/* Container for marquees, made full-width */}

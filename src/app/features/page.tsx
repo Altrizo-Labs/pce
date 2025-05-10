@@ -12,6 +12,7 @@ export default function FeaturesPage() {
         image={FeatureHero}
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
         title="Book a Demo"
+        link="/contact"
       />
       <SmartRecruitment />
       <FeaturesGrid />

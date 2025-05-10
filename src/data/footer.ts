@@ -14,7 +14,7 @@ export const footerLinks = [
     links: [
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms & Conditions", href: "/terms-conditions" },
-      { name: "Technical Documentation", href: "/documentation" },
+      { name: "Release Notes", href: "/release-notes" },
     ],
     style: "flex items-center gap-2",
   },

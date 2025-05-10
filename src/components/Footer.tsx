@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
           {/* Left column */}
           <div className="flex flex-col gap-6">
-            <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
+            <Image src={logo} alt="logo" className="relative w-52 lg:w-72 z-[999]" />
 
             <h2 className="text-[14px] lg:text-[16px] font-ibm-plex-sans">
               Transform your institution with intelligent AI solutions that

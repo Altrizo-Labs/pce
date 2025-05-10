@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const WhyChooseUs: React.FC = () => {
   const features = [
@@ -29,12 +32,23 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section className="py-12 text-white lg:max-w-6xl mx-auto font-ibm-plex-sans">
       <div className="container w-full items-center mx-auto px-4">
-        <h2 className="text-3xl md:text-[45px] justify-center font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-[45px] justify-center font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16"
+        >
           Why choose Edusight
-        </h2>
-        {/* Main container: flex column below lg, flex row for lg and above */}
+        </motion.h2>
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:space-x-32">
-          <div className="grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12  order-2 lg:order-1">
+          <motion.div 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12 order-2 lg:order-1"
+          >
             {features.slice(0, 2).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -55,10 +69,15 @@ const WhyChooseUs: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Phone Mockup: Centered, order changes responsively */}
-          <div className="w-full max-w-[240px] md:max-w-full flex justify-center my-8 lg:my-0 order-1 lg:order-2">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full max-w-[240px] md:max-w-full flex justify-center my-8 lg:my-0 order-1 lg:order-2"
+          >
             <Image
               src="/images/Container.svg"
               alt="Edusight mobile app preview"
@@ -66,11 +85,15 @@ const WhyChooseUs: React.FC = () => {
               height={360}
               className="object-contain"
             />
-          </div>
+          </motion.div>
 
-          {/* Right Features: Grid below lg, Flex column for lg+ */}
-          {/* Added grid classes for sm/md, flex for lg, adjusted spacing/width */}
-          <div className="w-full grid  gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12  order-3 lg:order-3">
+          <motion.div 
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12 order-3 lg:order-3"
+          >
             {features.slice(2, 4).map((feature, index) => (
               <div key={index} className="flex flex-col items-start gap-3">
                 <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
@@ -91,7 +114,7 @@ const WhyChooseUs: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

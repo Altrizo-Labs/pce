@@ -12,7 +12,7 @@ interface DriveItemProps {
   item: (typeof drivesData)[0];
   index: number;
   isActive: boolean;
-  setActiveIndex: (index: number | null) => void;
+  setActiveIndex: (index: number) => void;
   isMobile: boolean;
 }
 
@@ -24,15 +24,16 @@ const DriveItem: React.FC<DriveItemProps> = ({
   isMobile,
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  
-  // Optimized scroll trigger settings for desktop only, mobile uses tap
+
+  // Adjusted scroll trigger settings to detect visibility more precisely
   const inView = useInView(ref, {
-    margin: "-20% 0px -20% 0px",
-    amount: 0.5,
+    margin: "-20% 0px -20% 0px", // -20% margin top and bottom for opening and closing
+    amount: 0.5, // Detect when 50% of the item is in view
   });
 
   useEffect(() => {
     if (!isMobile && inView) {
+      // When scrolling to a card, set it as active and close all subsequent cards
       setActiveIndex(index);
     }
   }, [inView, index, isMobile, setActiveIndex]);
@@ -48,7 +49,8 @@ const DriveItem: React.FC<DriveItemProps> = ({
       <button
         onClick={() => {
           if (isMobile) {
-            setActiveIndex(isActive ? null : index);
+            // On mobile, clicking a card opens it and closes all cards after it
+            setActiveIndex(isActive ? -1 : index);
           }
         }}
         className="w-full p-6 flex items-center justify-between text-left"
@@ -120,7 +122,12 @@ const DriveItem: React.FC<DriveItemProps> = ({
 
 const WhatDrivesUs: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 1023px)");
-  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Start with first item active
+  const [activeIndex, setActiveIndex] = useState<number>(0); // Start with first item active
+
+  // Modified setActiveIndex function that closes all subsequent cards
+  const handleSetActiveIndex = (index: number) => {
+    setActiveIndex(index);
+  };
 
   // Only set initial active item for desktop
   useEffect(() => {
@@ -141,8 +148,8 @@ const WhatDrivesUs: React.FC = () => {
               key={item.id}
               item={item}
               index={index}
-              isActive={activeIndex === index}
-              setActiveIndex={setActiveIndex}
+              isActive={index <= activeIndex} // This ensures only current and previous cards are open
+              setActiveIndex={handleSetActiveIndex}
               isMobile={isMobile}
             />
           ))}

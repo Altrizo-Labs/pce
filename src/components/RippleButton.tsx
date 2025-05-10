@@ -16,6 +16,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   url,
   className,
   hoverColor,
+  textStyles,
   icon,
   yellowIcon,
   yellowArrow,
@@ -99,7 +100,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
         )}
 
         {/* Flex row container for text + arrow */}
-        <span className="z-10 font-ibm-plex-sans text-[12px] lg:text-[16px] flex items-center gap-2">
+        <span className={`z-10 font-ibm-plex-sans text-[12px] lg:text-[16px] flex items-center gap-2 ${textStyles}`}>
           {text}
 
           {icon && (

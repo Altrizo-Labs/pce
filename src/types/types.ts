@@ -5,6 +5,7 @@ export interface RippleButtonProps {
   url?: string;
   className?: string;
   hoverColor?: string;
+  textStyles?: string;
   icon?: React.ReactNode;
   play?: React.ReactNode;
   yellowIcon?: React.ReactNode;

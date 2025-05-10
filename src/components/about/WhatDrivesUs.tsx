@@ -25,9 +25,9 @@ const DriveItem: React.FC<DriveItemProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   
-  // Optimized scroll trigger settings for desktop and mobile
+  // Optimized scroll trigger settings for desktop only, mobile uses tap
   const inView = useInView(ref, {
-    margin: isMobile ? "-30% 0px -30% 0px" : "-40% 0px -20% 0px",
+    margin: "-20% 0px -20% 0px",
     amount: 0.5,
   });
 
@@ -122,11 +122,9 @@ const WhatDrivesUs: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 1023px)");
   const [activeIndex, setActiveIndex] = useState<number | null>(0); // Start with first item active
 
-  // Reset active item when switching between mobile and desktop
+  // Only set initial active item for desktop
   useEffect(() => {
-    if (isMobile) {
-      setActiveIndex(null);
-    } else {
+    if (!isMobile) {
       setActiveIndex(0);
     }
   }, [isMobile]);

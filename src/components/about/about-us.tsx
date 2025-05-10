@@ -23,7 +23,7 @@ export default function AboutUsSection() {
           </p>
           <div>
             <RippleButton
-              text="Read More"
+              text="Our Values"
               className="bg-white border border-primary rounded-full text-primary font-bold font-lato w-auto py-2 lg:py-3 px-4 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base"
               url="#whatdrivesus"
               yellowIcon

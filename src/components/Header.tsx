@@ -233,7 +233,7 @@ const Header = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
-                <div className="absolute -left-[20%] top-0 w-[140%] h-[140%] bg-[#5182FF]/5" />
+                <div className="absolute -left-[20%] top-0 w-[140%] h-[140%] " />
               </div>
 
               <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">

@@ -19,8 +19,8 @@ export default function Home() {
       <CTASection
         title="Be Part of the Team That's Transforming Education Through the Power of Artificial Intelligence"
         description="Join us on our mission to build smarter tools for schools and universities, and make a lasting impact on the future of learning."
-        buttonText="Explore Careers"
-        buttonLink="#careers"
+        buttonText="Get Started"
+        buttonLink="/contact"
         imagePosition="left"
       />
       <BlogSection />

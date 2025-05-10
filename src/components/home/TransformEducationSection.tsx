@@ -62,12 +62,6 @@ export default function TransformEducationSection() {
                   {feature.description}
                 </p>
               </div>
-              <Link
-                href={feature.url}
-                className="absolute bottom-6 right-6 mt-auto"
-              >
-                <CustomArrowRight className="w-8 h-8 text-[#FCCF37] group-hover:text-[#FEDC69] duration-300 ease-in-out" /> 
-              </Link>
             </div>
           ))}
         </div>

@@ -63,7 +63,7 @@ const WhyChooseUs: React.FC = () => {
                   <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-56 font-medium mb-1 md:mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-[9.92px] lg:max-w-[200px]  font-ibm-plex-sans">
+                  <p className="text-[#363D4F] text-[9.92px] lg:max-w-[200px]  font-ibm-plex-sans">
                     {feature.description}
                   </p>
                 </div>
@@ -108,7 +108,7 @@ const WhyChooseUs: React.FC = () => {
                   <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-64 font-medium mb-1 md:mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-[9.92px] lg:max-w-64 font-ibm-plex-sans">
+                  <p className="text-[#363D4F] text-[9.92px] lg:max-w-64 font-ibm-plex-sans">
                     {feature.description}
                   </p>
                 </div>

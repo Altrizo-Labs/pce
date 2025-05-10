@@ -21,12 +21,12 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, titl
     
     if (image) {
       return (
-        <div className="absolute inset-0 ml-8 lg:ml-0 w-full h-full z-0">
+        <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src={image}
             alt="Hero"
             fill
-            className="object-cover"
+            className="object-cover ml-12 lg:ml-0"
             priority
           />
         </div>

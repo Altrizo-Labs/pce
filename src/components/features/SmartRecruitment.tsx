@@ -40,7 +40,7 @@ const SmartRecruitment = () => {
           alt="EduSight AI Recruitment Dashboard"
           width={700}
           height={500}
-          className="object-contain lg:-mr-52 lg:-mb-32"
+          className="object-contain lg:-mr-64 lg:-mb-32"
           priority
         />
       </div>

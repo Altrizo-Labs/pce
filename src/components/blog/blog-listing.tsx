@@ -45,11 +45,16 @@ export default function BlogListing() {
   // Handle page change
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    // Scroll to top of the blog grid
-    const blogGrid = document.querySelector(".grid");
-    if (blogGrid) {
-      blogGrid.scrollIntoView({ behavior: "smooth" });
-    }
+    // Add a small timeout to ensure state updates before scrolling
+    setTimeout(() => {
+      // Scroll to the blog-grid-title element instead of the top of the page
+      const blogGridTitle = document.getElementById("blog-grid-title");
+      if (blogGridTitle) {
+        blogGridTitle.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }, 100);
   };
 
   // Reset filters
@@ -78,8 +83,11 @@ export default function BlogListing() {
 
   return (
     <section className="py-16 px-4 md:px-6">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className="text-[45px] font-lato font-bold text-[#181D27] mb-10">
+      <div className="container min-h-[1800px] mx-auto max-w-7xl">
+        <h2
+          id="blog-grid-title"
+          className="text-[45px] font-lato font-bold text-[#181D27] mb-10"
+        >
           Latest Blogs
         </h2>
 
@@ -138,19 +146,18 @@ export default function BlogListing() {
             />
           )}
         </div>
-
-        {/* Pagination - Only show if there are posts and multiple pages */}
-        {postsData?.posts &&
-          postsData.posts.length > 0 &&
-          pagination.pages > 1 && (
-            <Pagination
-              currentPage={pagination.page}
-              totalPages={pagination.pages}
-              onPageChange={handlePageChange}
-              nextPage={pagination.next}
-            />
-          )}
       </div>
+      {/* Pagination - Only show if there are posts and multiple pages */}
+      {postsData?.posts &&
+        postsData.posts.length > 0 &&
+        pagination.pages > 1 && (
+          <Pagination
+            currentPage={pagination.page}
+            totalPages={pagination.pages}
+            onPageChange={handlePageChange}
+            nextPage={pagination.next}
+          />
+        )}
     </section>
   );
 }

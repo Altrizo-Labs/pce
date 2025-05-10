@@ -23,7 +23,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, titl
         <img
           src={image.src}
           alt="Hero"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 ml-8 lg:ml-0 w-full h-full object-cover z-0"
         />
       );
     }

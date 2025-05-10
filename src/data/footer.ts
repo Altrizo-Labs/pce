@@ -2,7 +2,7 @@ export const footerLinks = [
   {
     title: "QUICK LINKS",
     links: [
-      { name: "Services", href: "/services" },
+      { name: "Features", href: "/features" },
       { name: "About", href: "/about" },
       { name: "Blog", href: "/blog" },
       { name: "Careers", href: "/careers" },

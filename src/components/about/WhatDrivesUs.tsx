@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { ChevronDown } from "lucide-react";
 import clsx from "clsx";
@@ -23,18 +23,25 @@ const DriveItem: React.FC<DriveItemProps> = ({
   setActiveIndex,
   isMobile,
 }) => {
-  const handleMouseEnter = () => {
-    if (!isMobile) setActiveIndex(index);
-  };
+  const ref = useRef<HTMLDivElement | null>(null);
+  
+  // Optimized scroll trigger settings for desktop and mobile
+  const inView = useInView(ref, {
+    margin: isMobile ? "-30% 0px -30% 0px" : "-40% 0px -20% 0px",
+    amount: 0.5,
+  });
 
-  const handleMouseLeave = () => {
-    if (!isMobile) setActiveIndex(null);
-  };
+  useEffect(() => {
+    if (!isMobile && inView) {
+      setActiveIndex(index);
+    }
+  }, [inView, index, isMobile, setActiveIndex]);
 
   return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <motion.div
+      ref={ref}
+      animate={{ scale: inView && !isMobile ? 1.03 : 1 }}
+      transition={{ duration: 0.3 }}
       className="bg-gradient-to-b from-primary/10 via-transparent to-transparent rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition cursor-pointer"
     >
       {/* Header */}
@@ -57,7 +64,7 @@ const DriveItem: React.FC<DriveItemProps> = ({
             item.title
           )}
         </h3>
-        {/* Only show chevron for mobile */}
+        {/* Mobile Chevron */}
         {isMobile && (
           <motion.span
             animate={{ rotate: isActive ? 180 : 0 }}
@@ -68,7 +75,7 @@ const DriveItem: React.FC<DriveItemProps> = ({
         )}
       </button>
 
-      {/* Expandable Content */} 
+      {/* Expandable Content */}
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
@@ -107,13 +114,22 @@ const DriveItem: React.FC<DriveItemProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
 const WhatDrivesUs: React.FC = () => {
-  const isMobile = useMediaQuery("(max-width: 1023px)"); // lg breakpoint
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useMediaQuery("(max-width: 1023px)");
+  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Start with first item active
+
+  // Reset active item when switching between mobile and desktop
+  useEffect(() => {
+    if (isMobile) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(0);
+    }
+  }, [isMobile]);
 
   return (
     <section className="py-16 md:py-24 bg-white">

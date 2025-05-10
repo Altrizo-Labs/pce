@@ -1,7 +1,7 @@
 import { HeroBannerProps } from "@/types/types";
 import RippleButton from "./RippleButton";
 
-const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description }) => {
+const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, title }) => {
   const renderMedia = () => {
     if (video) {
       return (
@@ -43,16 +43,16 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description }) =>
         </div>
         <div className="flex flex-col lg:flex-row gap-4">
           <RippleButton
-            text="Start your Journey"
+            text={title}
             className="bg-white text-black hover:text-white w-52 lg:w-auto py-3 sm:py-4 px-6 sm:px-8 rounded-full font-ibm-plex-sans text-sm sm:text-base"
             hoverColor="bg-black"
           />
-          <RippleButton
+          {/* <RippleButton
             text="Watch Demo Video"
             className="text-white hover:text-black w-52 lg:w-auto py-3 sm:py-4 px-6 sm:px-8 rounded-full border border-white font-ibm-plex-sans text-sm sm:text-base"
             hoverColor="bg-white"
             play
-          />
+          /> */}
         </div>
       </div>
     </div>

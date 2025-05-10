@@ -18,4 +18,5 @@ export interface HeroBannerProps {
   video?: string; 
   image?: StaticImageData;
   description: string;
+  title: string;
 }

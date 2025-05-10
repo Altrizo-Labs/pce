@@ -11,6 +11,7 @@ export default function AboutPage() {
       <HeroBanner
         video="/test.mp4"
         description="Driving the Next Wave of Student Engagement and Enrollment Through AI Innovation"
+        title="Explore Features"
       />
       <AboutUsSection />
       <CTASection

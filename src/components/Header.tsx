@@ -262,7 +262,14 @@ const Header = () => {
                 <RippleButton
                   key={item.href}
                   text="Contact Us"
-                  className="bg-accent border border-black rounded-[12px] w-full lg:w-auto py-3 lg:py-4 px-14 whitespace-nowrap mt-4"
+                  className={`bg-accent border border-black rounded-[12px] w-full lg:w-auto py-3 lg:py-4 px-14 whitespace-nowrap mt-4
+                    ${
+                    pathname === item.href
+                      ? "font-bold text-primary bg-primary/10 rounded-md"
+                      : ""
+                  }
+                  `}
+                  textStyles="text-lg"
                   url={item.href}
                   onclick={toggleMobileMenu}
                 />

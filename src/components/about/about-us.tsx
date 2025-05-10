@@ -24,7 +24,7 @@ export default function AboutUsSection() {
           <div>
             <RippleButton
               text="Read More"
-              className="bg-white border border-primary rounded-full text-primary font-bold font-lato w-auto py-2 lg:py-3 px-4 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base z-50"
+              className="bg-white border border-primary rounded-full text-primary font-bold font-lato w-auto py-2 lg:py-3 px-4 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base"
               url="#"
               yellowIcon
             />
@@ -74,10 +74,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                At Edusight, we are dedicated to revolutionizing education through AI-driven technology. Our mission is to create innovative solutions that empower educational institutions by enhancing student engagement, streamlining administrative processes, and facilitating personalized learning experiences.
               </p>
             </div>
           </div>

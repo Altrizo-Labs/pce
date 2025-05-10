@@ -10,7 +10,7 @@ import logo from "../../public/images/footer_logo.png";
 
 const Footer = () => {
   return (
-    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-12 lg:py-16 px-8 lg:px-12 overflow-hidden mt-12">
+    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-12 px-8 lg:px-12 overflow-hidden mt-12">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0" />
       {/* Dot pattern overlay */}
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
           {/* Left column */}
           <div className="flex flex-col gap-6">
-            <Image src={logo} alt="logo" className="relative w-52 z-[999]" />
+            <Image src={logo} alt="logo" className="relative w-52 lg:w-72 z-[999]" />
 
             <h2 className="text-[14px] lg:text-[16px] font-ibm-plex-sans">
               Transform your institution with intelligent AI solutions that

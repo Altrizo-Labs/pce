@@ -48,7 +48,7 @@ const ibm = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "edusight",
+  title: "Edusight",
   description: "EduSight revolutionizes student recruitment and engagement through AI-powered solutions. Our intelligent chatbot platform streamlines communication, automates routine tasks, and provides personalized support for educational institutions. Transform your student experience with cutting-edge technology.",
   icons: {
     icon: '/favicon.ico',

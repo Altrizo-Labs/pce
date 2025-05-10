@@ -20,7 +20,7 @@ export default function FeaturesPage() {
       title="Get to Know the Team Behind EduSight and Our Vision for Transforming Education"
       description="Learn more about our mission, values, and how we're revolutionizing student engagement with AI-powered solutions."
       buttonText="Explore Our Story"
-      buttonLink="#careers"
+      buttonLink="/about"
       imagePosition="right"
     />
     <Pricing />

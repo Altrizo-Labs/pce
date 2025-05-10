@@ -10,7 +10,7 @@ import logo from "../../public/images/footer_logo.png";
 
 const Footer = () => {
   return (
-    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-12 lg:py-12 px-8 lg:px-12 overflow-hidden mt-12">
+    <footer className="mx-4 mb-4 rounded-[32px] text-white relative py-12 lg:py-16 px-8 lg:px-12 overflow-hidden mt-12">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0" />
       {/* Dot pattern overlay */}
@@ -36,9 +36,9 @@ const Footer = () => {
 
             <h2 className="text-[14px] lg:text-[16px] font-ibm-plex-sans">
               Transform your institution with intelligent AI solutions that
-              drive engagement, efficiency, and student success, fostering
-              growth and innovation across all levels, enhancing overall
-              performance.
+              drive engagement, boost efficiency, personalize learning, enhance
+              student success, and empower educators with real-time insights and
+              data-driven decisions.
             </h2>
           </div>
 
@@ -153,77 +153,64 @@ const Footer = () => {
                   <h3 className="font-medium text-[16px] mb-4 font-lato">
                     {section.title}
                   </h3>
-                  {/* Corrected font class */}
+
+                  {/* Desktop */}
                   <ul className="hidden lg:grid grid-cols-3 items-start self-start gap-12 text-[14px] font-ibm-plex-sans">
-                    {section.links.map((link) => (
+                    {section.links.map((link, index) => (
                       <li key={link.name}>
-                        {link.href ? (
+                        {index === 0 ? (
+                          <span
+                            className={`text-gray-300/50 hover:text-gray-300 ${section.style}`}
+                          >
+                            {link.name}
+                          </span>
+                        ) : (
                           <a
-                            href={link.href}
+                            href={
+                              index === 1
+                                ? `tel:${link.href}`
+                                : index === 2
+                                ? `mailto:${link.href}`
+                                : link.href
+                            }
                             className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
                           >
                             {link.name}
                           </a>
-                        ) : (
-                          <span className="text-gray-300/50 hover:text-gray-300">
-                            {link.name}
-                          </span>
                         )}
                       </li>
                     ))}
                   </ul>
 
+                  {/* Mobile */}
                   <ul className="lg:hidden grid grid-rows-2 gap-4 font-ibm-plex-sans text-[14px]">
-                    {/* First row - centered item */}
-                    <li className="row-start-1 col-span-1  text-gray-300/50 hover:text-gray-300 transition duration-200">
-                      {section.links[0].href ? (
-                        <a
-                          href={section.links[0].href}
-                          className={section.style}
-                        >
-                          {section.links[0].name}
-                        </a>
-                      ) : (
-                        <span className={section.style}>
-                          {section.links[0].name}
-                        </span>
-                      )}
+                    {/* First row - centered item (address) */}
+                    <li className="row-start-1 col-span-1 text-gray-300/50 hover:text-gray-300 transition duration-200">
+                      <span className={section.style}>
+                        {section.links[0].name}
+                      </span>
                     </li>
 
-                    {/* Second row - flex container with left and right items */}
+                    {/* Second row - flex container with phone and email */}
                     <li className="row-start-2 col-span-1">
                       <div className="flex justify-between w-full">
+                        {/* Phone */}
                         {section.links[1] && (
-                          <span className="text-gray-300/50 hover:text-gray-300 transition duration-200">
-                            {section.links[1].href ? (
-                              <a
-                                href={section.links[1].href}
-                                className={section.style}
-                              >
-                                {section.links[1].name}
-                              </a>
-                            ) : (
-                              <span className={section.style}>
-                                {section.links[1].name}
-                              </span>
-                            )}
-                          </span>
+                          <a
+                            href={`tel:${section.links[1].href}`}
+                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
+                          >
+                            {section.links[1].name}
+                          </a>
                         )}
+                        {/* Email */}
                         {section.links[2] && (
-                          <span className="text-gray-300/50 hover:text-gray-300 transition duration-200 text-right">
-                            {section.links[2].href ? (
-                              <a
-                                href={section.links[2].href}
-                                className={section.style}
-                              >
-                                {section.links[2].name}
-                              </a>
-                            ) : (
-                              <span className={section.style}>
-                                {section.links[2].name}
-                              </span>
-                            )}
-                          </span>
+                          <a
+                            href={`mailto:${section.links[2].href}`}
+                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 text-right ${section.style}`}
+                          >
+                            {section.links[2].name}
+                          </a>
                         )}
                       </div>
                     </li>

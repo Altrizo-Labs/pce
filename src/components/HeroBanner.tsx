@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { HeroBannerProps } from "@/types/types";
 import RippleButton from "./RippleButton";
 
@@ -20,11 +21,15 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, titl
     
     if (image) {
       return (
-        <img
-          src={image.src}
-          alt="Hero"
-          className="absolute inset-0 ml-8 lg:ml-0 w-full h-full object-cover z-0"
-        />
+        <div className="absolute inset-0 ml-8 lg:ml-0 w-full h-full z-0">
+          <Image
+            src={image}
+            alt="Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       );
     }
     

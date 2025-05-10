@@ -12,7 +12,7 @@ export default function AboutPage() {
         video="/test.mp4"
         description="Driving the Next Wave of Student Engagement and Enrollment Through AI Innovation"
         title="Explore Features"
-        link="/features"
+        link="/features#features"
       />
       <AboutUsSection />
       <CTASection

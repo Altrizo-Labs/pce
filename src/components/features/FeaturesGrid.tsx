@@ -28,7 +28,7 @@ const features = [
 
 const FeaturesBentoGrid = () => {
   return (
-    <section className="relative py-12 z-10 lg:mt-32 overflow-hidden">
+    <section id="features" className="relative py-12 z-10 lg:mt-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl lg:text-[45px] font-bold font-lato text-gray-900 mb-16">
           Built to Support, Scale, and Succeed

@@ -41,7 +41,7 @@ const DriveItem: React.FC<DriveItemProps> = ({
   return (
     <motion.div
       ref={ref}
-      animate={{ scale: inView && !isMobile ? 1.03 : 1 }}
+      // animate={{ scale: inView && !isMobile ? 1.03 : 1 }}
       transition={{ duration: 0.3 }}
       className="bg-gradient-to-b from-primary/10 via-transparent to-transparent rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition cursor-pointer"
     >

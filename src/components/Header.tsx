@@ -103,7 +103,7 @@ const Header = () => {
       }
       prevPathRef.current = pathname;
     }
-  }, [pathname, hasMounted]);
+  }, [pathname, hasMounted, isMobileMenuOpen]);
 
   const handleMouseEnter = (index: number) => {
     if (indicatorRefs.current[index]) {

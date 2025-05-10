@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import {
   Headset,
   BookMinus,
@@ -39,7 +38,7 @@ export default function TransformEducationSection() {
           Transforming Education with AI
         </h2>
         <p className="text-[18px] md:text-[20px] text-center text-gray-600 mb-12 mx-auto font-ibm-plex-sans">
-          Edusight’s AI-powered chatbot enhances student-institution communication by
+          Edusight's AI-powered chatbot enhances student-institution communication by
           providing real-time support, course assistance, and seamless LMS
           integration—making learning smarter and more efficient.
         </p>

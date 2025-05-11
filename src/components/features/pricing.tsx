@@ -116,7 +116,7 @@ const Pricing = () => {
   }
 
   return (
-    <div id="pricing" className="bg-white text-black py-12 sm:py-16 md:py-12 px-4 sm:px-6 lg:px-8 transition-all duration-300 font-ibm-plex-sans">
+    <div id="pricing" className="bg-white text-black py-10 md:py-12 px-4 sm:px-6 lg:px-8 transition-all duration-300 font-ibm-plex-sans">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-lato font-bold text-center mb-8 md:mb-10">
         Affordable Plans to Power Your Institution’s Growth
       </h2>

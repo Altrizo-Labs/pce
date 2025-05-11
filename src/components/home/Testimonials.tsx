@@ -84,9 +84,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-24 font-ibm-plex-sans">
+    <section className="py-10 md:py-24 font-ibm-plex-sans">
       <div className=" mx-auto max-w-7xl w-full px-4 md:px-0">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-6 md:mb-8">
           
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
             What Educators & Students Say

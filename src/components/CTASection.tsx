@@ -23,7 +23,7 @@ const CTASection: React.FC<CTASectionProps> = ({
 }) => {
   return (
     <motion.section
-      className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20 min-h-[480px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] overflow-hidden my-8 md:my-10 lg:my-12"
+      className="relative bg-[linear-gradient(116deg,#1E3A8A,rgba(30,58,138,0.75),#1E3A8A)] text-white rounded-[32px] px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20 min-h-[480px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] overflow-hidden my-5 md:my-10 lg:my-12"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

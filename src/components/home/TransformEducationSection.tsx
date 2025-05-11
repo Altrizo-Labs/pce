@@ -31,7 +31,7 @@ const features = [
 
 export default function TransformEducationSection() {
   return (
-    <section className="py-5 md:py-24 font-ibm-plex-sans">
+    <section className="py-5 md:py-12 font-ibm-plex-sans">
       <div className="container mx-auto px-4">
         <h2 className="text-[32px] md:text-[45px] font-bold text-center text-gray-800 mb-4 font-lato">
           Transforming Education with AI

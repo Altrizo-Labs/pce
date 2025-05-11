@@ -4,7 +4,7 @@ import recruitmentDashboard from "../../../public/images/dashboard-desktop.png";
 
 const SmartRecruitment = () => {
   return (
-    <section className="flex flex-col md:flex-row justify-center my-12 bg-white text-gray-800 px-4 md:px-8 lg:px-16 py-12">
+    <section className="flex flex-col md:flex-row justify-center my-12 bg-white text-gray-800 px-4 md:px-8 lg:px-16 md:py-12">
       {/* Left Content Section */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left mb-10 md:mb-0 md:pr-10 lg:pr-20 lg:space-y-12">
         <h1 className="text-4xl lg:text-5xl font-bold font-lato mb-6 leading-tight">

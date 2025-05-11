@@ -137,7 +137,7 @@ const WhatDrivesUs: React.FC = () => {
   }, [isMobile]);
 
   return (
-    <section className="py-16 md:py-24 bg-white" id="whatdrivesus">
+    <section className="py-8 md:py-24 bg-white" id="whatdrivesus">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-2xl md:text-[45px] font-bold text-[#181D27] mb-10">
           What Drives Us Forward

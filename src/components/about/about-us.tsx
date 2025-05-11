@@ -2,7 +2,7 @@ import RippleButton from "../RippleButton";
 
 export default function AboutUsSection() {
   return (
-    <div className="mx-auto py-8 md:py-16">
+    <div className="mx-auto py-5 md:py-16">
       {/* About Us Section */}
       <div className="px-4 sm:px-8 md:px-16 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-24">
         <div>

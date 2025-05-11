@@ -24,7 +24,7 @@ export const BrandLogosMarquee: React.FC<BrandLogosProps> = ({
 }) => {
   return (
     // Added overflow-hidden to contain the full-width marquee
-    <div className="py-10 overflow-hidden">
+    <div className="py-5 md:py-10 overflow-hidden">
       {/* Wrapper to keep title/description centered */}
       <div className="mx-auto text-center mb-10">
         {/* Updated title styles: Lato Bold 45px */}

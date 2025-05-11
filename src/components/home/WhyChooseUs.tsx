@@ -30,7 +30,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 text-white lg:max-w-6xl mx-auto font-ibm-plex-sans overflow-x-hidden">
+    <section className="py-0 md:py-12 text-white lg:max-w-6xl mx-auto font-ibm-plex-sans overflow-x-hidden">
       <div className="container w-full items-center mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

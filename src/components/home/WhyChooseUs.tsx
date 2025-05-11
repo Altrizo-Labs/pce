@@ -76,14 +76,14 @@ const WhyChooseUs: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full max-w-[240px] md:max-w-full flex justify-center my-8 lg:my-0 order-1 lg:order-2"
+            className="w-full max-w-[330px] md:max-w-full flex justify-center my-8 lg:my-0 order-1 lg:order-2"
           >
             <Image
-              src="/images/Container.svg"
+              src="/images/prototype.svg"
               alt="Edusight mobile app preview"
-              width={330}
-              height={360}
-              className="object-contain"
+              width={333}
+              height={389}
+              className="object-contain z-10"
             />
           </motion.div>
 

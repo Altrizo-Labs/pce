@@ -1,29 +1,25 @@
 import CompanyOverview from "@/components/home/company-overview";
 import Hero from "@/components/home/hero";
+import KeyServicesSnapshot from "@/components/home/WhyChooseUs"; // Adapted WhyChooseUs for Key Services
+import ProjectHighlights from "@/components/projects/ProjectHighlights"; // Import ProjectHighlights
 import Testimonials from "@/components/home/Testimonials"; // Import Testimonials
-import TransformEducationSection from "@/components/home/TransformEducationSection";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import BrandLogosMarquee from "@/components/BrandLogosMarquee";
 import CTASection from "@/components/CTASection";
-import BlogSection from "@/components/home/blog-section";
 
 export default function Home() {
   return (
     <main className="mx-4 pt-20 lg:pt-24">
       <Hero />
       <CompanyOverview />
-      <WhyChooseUs />
-      <BrandLogosMarquee />
-      <TransformEducationSection />
+      <KeyServicesSnapshot />
+      <ProjectHighlights />
       <Testimonials />
       <CTASection
-        title="Be Part of the Team That's Transforming Education Through the Power of Artificial Intelligence"
-        description="Join us on our mission to build smarter tools for schools and universities, and make a lasting impact on the future of learning."
-        buttonText="Get Started"
+        title="Ready to Discuss Your Project?"
+        description="Contact us today to learn how Projects Cost Engineering (Pvt) Ltd can provide expert Quantity Surveying and Cost Engineering solutions for your next project."
+        buttonText="Contact Us"
         buttonLink="/contact"
-        imagePosition="left"
+        imagePosition="right"
       />
-      <BlogSection />
     </main>
   );
 }

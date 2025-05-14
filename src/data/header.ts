@@ -1,8 +1,7 @@
 export const HEADER = [
   { title: "Home", href: "/" },
-  { title: "Features", href: "/features" },
-  { title: "About", href: "/about" },
-  // { title: "Blog", href: "/blog" },
-  // { title: "Careers", href: "/careers" },
+  { title: "About Us", href: "/about" },
+  { title: "Services", href: "/services" },
+  { title: "Projects", href: "/projects" },
   { title: "Contact Us", href: "/contact" },
 ];

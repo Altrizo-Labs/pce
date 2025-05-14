@@ -36,10 +36,7 @@ const Footer = () => {
             /></Link>
 
             <h2 className="text-[14px] lg:text-[16px] font-ibm-plex-sans">
-              Transform your institution with intelligent AI solutions that
-              drive engagement, boost efficiency, personalize learning, enhance
-              student success, and empower educators with real-time insights and
-              data-driven decisions.
+              Projects Cost Engineering (Pvt) Ltd provides expert Quantity Surveying and Cost Engineering services, built on extensive experience and adherence to international standards.
             </h2>
           </div>
 
@@ -47,7 +44,7 @@ const Footer = () => {
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0">
             {footerLinks
               .filter((section) =>
-                ["QUICK LINKS", "COMPLIANCE"].includes(section.title)
+                ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT
               )
               .map((section) => (
                 <div key={section.title}>
@@ -84,7 +81,7 @@ const Footer = () => {
               {["Facebook", "Instagram", "Twitter"].map((platform) => (
                 <a
                   key={platform}
-                  href="#"
+                  href="#" // Placeholder link
                   aria-label={platform}
                   className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"
                 >
@@ -117,7 +114,7 @@ const Footer = () => {
           <div className="md:hidden grid grid-cols-2 gap-8 lg:gap-0">
             {footerLinks
               .filter((section) =>
-                ["QUICK LINKS", "COMPLIANCE"].includes(section.title)
+                ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT
               )
               .map((section) => (
                 <div key={section.title}>

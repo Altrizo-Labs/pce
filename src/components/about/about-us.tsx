@@ -7,32 +7,25 @@ export default function AboutUsSection() {
       <div className="px-4 sm:px-8 md:px-16 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-24">
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-lato font-bold text-[#181D27]">
-            About Us
+            About Projects Cost Engineering (Pvt) Ltd
           </h2>
         </div>
         <div className="space-y-8 md:space-y-6">
           <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-sm sm:text-base">
-            Edusight is at the forefront of redefining how educational
-            institutions engage with students in a digital-first world. Founded
-            with the vision of enhancing student recruitment and communication,
-            our platform leverages advanced AI to streamline interactions,
-            automate routine tasks, and provide meaningful, human-like
-            experiences at scale. From inquiry to enrollment, Edusight bridges
-            the gap between students and institutions through intelligent
-            automation and real-time support.
+            Projects Cost Engineering (Pvt) Ltd (PCE) was founded in 2024 in Sri Lanka. Our Director brings over 25 years of extensive experience from working in the Middle East. PCE operates under strict international business standards and practices, ensuring high-quality and reliable services. Our team comprises qualified and experienced professionals, many of whom have worked alongside the Director at Daan Shaaban Office (DSO) in Oman, our core partner. We are committed to providing expert Quantity Surveying, Cost Engineering, and related services to our clients.
           </p>
           <div>
             <RippleButton
-              text="Our Values"
+              text="Our Partnership"
               className="bg-white border border-primary rounded-full text-primary font-bold font-lato w-auto py-2 lg:py-3 px-4 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base"
-              url="#whatdrivesus"
+              url="/about#partnership" // Link to a potential partnership section
               yellowIcon
             />
           </div>
         </div>
       </div>
 
-      {/* Values Section */}
+      {/* Principles Section */}
       <div
         className=" min-h-[#452] rounded-[40px] p-8 sm:p-6 md:p-8 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-8"
         style={{
@@ -45,10 +38,10 @@ export default function AboutUsSection() {
           {/* MODIFIED: Removed grid, grid-cols, and gap classes */}
           <div>
             <p className="text-black font-ibm-plex-sans mb-1 md:mb-8 sm:text-2xl text-xl">
-              What we value
+              Our Approach
             </p>
             <h3 className="sm:text-6xl text-5xl font-lato font-bold text-[#4a63a9]">
-              Our Company&apos;s Values
+              Our Principles
             </h3>
           </div>
         </div>
@@ -61,10 +54,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-sm sm:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                To be a leading provider of Quantity Surveying and Cost Engineering services, recognized for our expertise, integrity, and commitment to international standards. (Placeholder Vision)
               </p>
             </div>
           </div>
@@ -76,11 +66,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                At Edusight, we are dedicated to revolutionizing education
-                through AI-driven technology. Our mission is to create
-                innovative solutions that empower educational institutions by
-                enhancing student engagement, streamlining administrative
-                processes, and facilitating personalized learning experiences.
+                To deliver exceptional Quantity Surveying and Cost Engineering solutions that provide value and certainty to our clients' projects, adhering to the highest professional and ethical standards. (Placeholder Mission)
               </p>
             </div>
           </div>

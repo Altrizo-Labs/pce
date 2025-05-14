@@ -1,30 +1,37 @@
 export const drivesData = [
   {
     id: 1,
-    title: "Relentless Innovation",
-    titleExpanded: ["Relentless", "Innovation"],
-    text: "We continuously push boundaries to create forward-thinking solutions that redefine how institutions connect with students.",
-    image: "/images/work.jpg",
+    title: "25 Years of Experience",
+    titleExpanded: ["25 Years of", "Experience"],
+    text: "Benefit from our Director's extensive 25 years of experience in the Middle East, bringing a wealth of knowledge to your projects.",
+    image: "/images/work.jpg", // Placeholder image
   },
   {
     id: 2,
-    title: "Empathy In Every Interaction",
-    titleExpanded: ["Empathy In", "Every Interaction"],
-    text: "Understanding the needs of students and institutions is central to our approach, ensuring solutions are truly supportive.",
-    image: "/images/work.jpg",
+    title: "International Standards",
+    titleExpanded: ["International", "Standards"],
+    text: "We operate under strict international business standards and practices, ensuring quality, reliability, and compliance.",
+    image: "/images/work.jpg", // Placeholder image
   },
   {
     id: 3,
-    title: "Integrity At Our Core",
-    titleExpanded: ["Integrity At", "Our Core"],
-    text: "We operate with transparency and honesty, building trust through every partnership and product decision.",
-    image: "/images/work.jpg",
+    title: "Qualified Team",
+    titleExpanded: ["Qualified", "Team"],
+    text: "Our team comprises qualified and experienced professionals with a proven track record in the field.",
+    image: "/images/work.jpg", // Placeholder image
   },
   {
     id: 4,
-    title: "Driven By Purposeful Impact",
-    titleExpanded: ["Driven By", "Purposeful Impact"],
-    text: "Our goal is to make a meaningful difference in education, empowering institutions and students to achieve more.",
-    image: "/images/work.jpg",
+    title: "Core Partnership",
+    titleExpanded: ["Core", "Partnership"],
+    text: "Our strong partnership with Daan Shaaban Office (DSO) in Oman enhances our capabilities and reach.",
+    image: "/images/work.jpg", // Placeholder image
+  },
+   {
+    id: 5,
+    title: "Proven Track Record",
+    titleExpanded: ["Proven", "Track Record"],
+    text: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capability.",
+    image: "/images/work.jpg", // Placeholder image
   },
 ];

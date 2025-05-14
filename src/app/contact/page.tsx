@@ -21,8 +21,6 @@ function Contact() {
 function Contact_Us() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [university, setUniversity] = useState("");
-  const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -80,14 +78,12 @@ function Contact_Us() {
       const formData = {
         name,
         email,
-        university,
-        role,
         message,
       };
 
       const response = await axios({
         method: "post",
-        url: "https://formspree.io/f/xlddzqqe",
+        url: "https://formspree.io/f/xlddzqqe", // This Formspree endpoint needs to be updated for PCE
         data: formData,
         headers: {
           Accept: "application/json",
@@ -99,8 +95,6 @@ function Contact_Us() {
         toast.success("Message sent successfully");
         setName("");
         setEmail("");
-        setUniversity("");
-        setRole("");
         setMessage("");
         setMessageSent(true);
       }
@@ -190,7 +184,7 @@ function Contact_Us() {
               ref={headingRef}
               className="text-6xl font-lato font-[700] text-[#1E3A8A] leading-tight mb-4"
             >
-              Contact Us
+              Get in Touch with PCE
             </h1>
 
             {/* Intro Text */}
@@ -198,9 +192,7 @@ function Contact_Us() {
               ref={introTextRef}
               className="text-base font-ibm-plex-sans opacity-0 text-[#181D27] max-w-4xl"
             >
-              AI-powered solutions to enhance student engagement, streamline
-              administration, and personalize learning—helping institutions stay
-              ahead in today&apos;s fast-paced education landscape.
+              We are ready to discuss your project needs and provide expert Quantity Surveying and Cost Engineering solutions.
             </p>
           </div>
 
@@ -213,31 +205,40 @@ function Contact_Us() {
             >
               {/* New Heading */}
               <h2 className="text-[32px] lg:text-5xl font-lato text-[#181D27] font-semibold leading-tight mb-2 max-w-sm">
-                We are always ready to help you and answer your questions.
+                Contact Information
               </h2>
 
               {/* New Paragraph */}
               <p className="lg:text-xl text-lg lg:text-left font-ibm-plex-sans text-gray-600 mb-6 max-w-lg">
-                Edusight is committed to transforming how institutions engage with students by leveraging the power of AI. From automating communication to personalizing support, our intelligent solutions help create more connected, efficient, and student-focused learning environments.
+                Feel free to reach out to us through the contact form or using the details below.
               </p>
 
               <div className="gap-y-24">
                 {/* Email */}
                 <div className="mb-12 lg:mb-16">
-                  <p className="mb-1 text-[#535862] text-xl font-semibold">Email us directly.</p>
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">Email:</p>
+                  <p className="text-[#181D27] text-lg">[PCE Email Address Placeholder]</p>
                 </div>
 
-                {/* Schedule a Call */}
-                <div className="mb-12 lg:mb-16">
-                  <p className="mb-1 text-[#535862] text-xl font-semibold">Schedule a call.</p>
+                {/* Phone */}
+                 <div className="mb-12 lg:mb-16">
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">Phone:</p>
+                  <p className="text-[#181D27] text-lg">[PCE Phone Number Placeholder]</p>
                 </div>
+
+                {/* Address */}
+                 <div className="mb-12 lg:mb-16">
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">Address:</p>
+                  <p className="text-[#181D27] text-lg">[PCE Physical Address Placeholder]</p>
+                </div>
+
 
                 {/* Social Icons */}
                 <div className="mb-6">
                   <p className="mb-4 text-[#535862] text-xl font-semibold">Social Network.</p>
                   <div className="flex space-x-4 text-2xl text-[#1E3A8A]">
                     <a
-                      href="#"
+                      href="#" // Placeholder link
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Follow us on Facebook"
@@ -245,7 +246,7 @@ function Contact_Us() {
                       <FaFacebookSquare />
                     </a>
                     <a
-                      href="#"
+                      href="#" // Placeholder link
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Follow us on X"
@@ -253,7 +254,7 @@ function Contact_Us() {
                       <FaXTwitter />
                     </a>
                     <a
-                      href="https://www.linkedin.com/company/cinnamon-digital-solutions"
+                      href="#" // Placeholder link
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Follow us on LinkedIn"
@@ -262,13 +263,21 @@ function Contact_Us() {
                     </a>
                   </div>
                 </div>
+
+                {/* Location Map Placeholder */}
+                <div className="mb-6">
+                  <p className="mb-4 text-[#535862] text-xl font-semibold">Our Location.</p>
+                  <div className="h-64 bg-gray-300 rounded-lg flex items-center justify-center text-gray-600">
+                    [Location Map Embed Placeholder]
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Right Column: Form */}
             <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px]">
-              <h3 className="text-4xl font-ibm-plex-sans font-medium text-[#181D27] mb-2">Get in Touch</h3>
-              <p className="text-gray-600 font-ibm-plex-sans text-xl mb-8">Fill out the form—we&apos;ll be in touch soon.</p>
+              <h3 className="text-4xl font-ibm-plex-sans font-medium text-[#181D27] mb-2">Send us a Message</h3>
+              <p className="text-gray-600 font-ibm-plex-sans text-xl mb-8">Fill out the form below to get in touch with us.</p>
 
               <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 {/* Full Name */}
@@ -299,32 +308,6 @@ function Contact_Us() {
                   />
                 </div>
 
-                {/* University / Organisation */}
-                <div>
-                  <input
-                    id="university"
-                    name="university"
-                    type="text"
-                    placeholder="University / Organisation"
-                    value={university}
-                    onChange={(e) => setUniversity(e.target.value)}
-                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
-                  />
-                </div>
-
-                {/* Role */}
-                <div>
-                  <input
-                    id="role"
-                    name="role"
-                    type="text"
-                    placeholder="Role"
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
-                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
-                  />
-                </div>
-
                 {/* Message */}
                 <div>
                   <textarea
@@ -341,7 +324,7 @@ function Contact_Us() {
 
                 {/* Submit Button */}
                 <RippleButton
-                  text="Send a Message"
+                  text="Send Message"
                   className="bg-primary rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
                   type="submit"
                   yellowArrow

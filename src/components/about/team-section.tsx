@@ -24,9 +24,9 @@ interface TeamMemberCardProps {
 
 export default function TeamSection() {
   const teamMembers: TeamMember[] = [
-    { id: 1, name: "Name", position: "Position" },
-    { id: 2, name: "Name", position: "Position" },
-    { id: 3, name: "Name", position: "Position" },
+    { id: 1, name: "Director Name (Placeholder)", position: "Director" },
+    { id: 2, name: "Team Member Name (Placeholder)", position: "Position (Placeholder)" },
+    { id: 3, name: "Team Member Name (Placeholder)", position: "Position (Placeholder)" },
   ];
 
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -41,11 +41,10 @@ export default function TeamSection() {
     <section className="py-5 md:py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-lato font-bold mb-4">
-          Meet the Minds Behind Edusight
+          Meet the PCE Team
         </h2>
         <p className="max-w-3xl mx-auto font-ibm-plex-sans text-gray-600">
-          A passionate team of educators, innovators, and technologists working
-          together to shape the future of education through AI.
+          A team of qualified and experienced professionals dedicated to delivering exceptional Quantity Surveying and Cost Engineering services.
         </p>
       </div>
 
@@ -79,7 +78,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
       {/* Image wrapper with hover SVGs */}
       <div className="relative p-4 rounded-[24px] overflow-hidden">
         <Image
-          src="/images/business_person.png"
+          src="/images/business_person.png" // Placeholder image
           alt={member.name}
           width={312}
           height={349}

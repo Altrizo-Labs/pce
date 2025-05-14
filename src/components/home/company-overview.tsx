@@ -4,15 +4,12 @@ export default function CompanyOverview() {
   return (
     <div className="md:mx-12 lg:mx-24 py-12 lg:py-16 mt-12">
       <p className="text-[32px] lg:text-[45px] text-lato font-[700] lg:leading-[60px] mb-6 lg:w-[80%]">
-        Edusight delivers AI-powered tools that enhance engagement, simplify
-        operations, and support student success.
+        Projects Cost Engineering (Pvt) Ltd: Expertise Built on Experience and International Standards
       </p>
 
       {/* Corrected font class */}
-      <p className="mb-6 text-[14px] lg:text-[16px] text-[#535862] font-ibm-plex-sans lg:w-[44%]">
-        With a deep understanding of academia and the power of artificial
-        intelligence, we create tools that bridge gaps, boost efficiency, and
-        elevate every touchpoint in the student journey.
+      <p className="mb-6 text-[14px] lg:text-[16px] text-[#535862] font-ibm-plex-sans lg:w-[80%]">
+        Founded in 2024 in Sri Lanka, PCE benefits from the Director's 25 years of experience in the Middle East. The company operates under strict international business standards and practices and is manned by a team of qualified and experienced professionals who worked with the Director in Daan Shaaban Office (DSO) in Oman, our core partner.
       </p>
 
       <RippleButton

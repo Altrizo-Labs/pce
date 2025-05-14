@@ -4,121 +4,85 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const WhyChooseUs: React.FC = () => {
-  const features = [
+const KeyServicesSnapshot: React.FC = () => {
+  const services = [
     {
-      title: "24/7 AI Assistance",
+      title: "Quantity Surveying",
       description:
-        "Ensure students get the support they need anytime, anywhere.",
+        "Providing expert cost management and financial control services for construction projects.",
     },
 
     {
-      title: "Personalized Learning Journey",
+      title: "Cost Engineering",
       description:
-        "Help students navigate courses and programs with AI-driven recommendations.",
+        "Applying scientific principles and techniques to cost estimation, cost control, and project profitability.",
     },
     {
-      title: "Enhanced Administrative Efficiency",
+      title: "Project Management",
       description:
-        "Automate repetitive tasks, letting educators focus on what matters most.",
+        "Overseeing and managing all aspects of a project from initiation to completion.",
     },
     {
-      title: "Seamless System Integration",
+      title: "Contract Administration",
       description:
-        "Connect effortlessly with your existing learning management system and student portals, ensuring a smooth and unified digital experience.",
+        "Managing the contractual relationships and obligations between parties in a construction project.",
+    },
+     {
+      title: "Value Engineering",
+      description:
+        "Analyzing project designs to optimize costs without compromising quality or function.",
+    },
+     {
+      title: "Dispute Resolution",
+      description:
+        "Providing expert analysis and support for resolving construction disputes.",
     },
   ];
 
   return (
-    <section className="py-0 md:py-12 text-white lg:max-w-6xl mx-auto font-ibm-plex-sans overflow-x-hidden">
+    <section className="py-12 lg:py-16 lg:max-w-6xl mx-auto font-ibm-plex-sans overflow-x-hidden">
       <div className="container w-full items-center mx-auto px-4">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-[45px] justify-center font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16"
         >
-          Why choose Edusight
+          Our Key Services
         </motion.h2>
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:space-x-32">
-          <motion.div 
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12 order-2 lg:order-1"
-          >
-            {features.slice(0, 2).map((feature, index) => (
-              <div key={index} className="flex flex-col items-start gap-3">
-                <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
-                  <Image
-                    src="/images/Vector.svg"
-                    alt="Feature icon"
-                    width={28}
-                    height={28}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-56 font-medium mb-1 md:mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#363D4F] text-[9.92px] lg:max-w-[200px]  font-ibm-plex-sans">
-                    {feature.description}
-                  </p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex flex-col items-start gap-4 p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="p-3 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Image
+                  src="/images/Vector.svg" // Placeholder icon
+                  alt="Service icon"
+                  width={32}
+                  height={32}
+                />
               </div>
-            ))}
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full max-w-[330px] md:max-w-full flex justify-center my-8 lg:my-0 order-1 lg:order-2"
-          >
-            <Image
-              src="/images/prototype.svg"
-              alt="Edusight mobile app preview"
-              width={333}
-              height={389}
-              className="object-contain z-10"
-            />
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full grid gap-y-10 grid-cols-2 gap-x-8 lg:flex lg:flex-col lg:space-y-12 order-3 lg:order-3"
-          >
-            {features.slice(2, 4).map((feature, index) => (
-              <div key={index} className="flex flex-col items-start gap-3">
-                <div className="p-2 flex items-center justify-center rounded-full border border-[#E9EBF1]">
-                  <Image
-                    src="/images/Vector.svg"
-                    alt="Feature icon"
-                    width={28}
-                    height={28}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl text-[#060B13] font-lato md:w-64 font-medium mb-1 md:mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#363D4F] text-[9.92px] lg:max-w-64 font-ibm-plex-sans">
-                    {feature.description}
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl font-lato font-semibold text-[#060B13] mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-[#363D4F] text-sm font-ibm-plex-sans">
+                  {service.description}
+                </p>
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default WhyChooseUs;
+export default KeyServicesSnapshot;

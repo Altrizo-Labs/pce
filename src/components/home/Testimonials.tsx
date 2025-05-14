@@ -15,7 +15,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 interface TestimonialData {
   id: number;
   name: string;
-  school: string;
+  affiliation: string; // Changed from school to affiliation
   quote: string;
   imageUrl?: string; // Optional image URL for avatar
 }
@@ -23,51 +23,35 @@ interface TestimonialData {
 const testimonials: TestimonialData[] = [
   {
     id: 1,
-    name: "Aisha Khan",
-    school: "@Maple High School",
+    name: "Client Name",
+    affiliation: "Company/Project (Placeholder)",
     quote:
-      "EduSight makes tracking my progress so much easier! I know exactly where I need to focus.",
-    imageUrl: "",
+      "PCE provided exceptional Quantity Surveying services that were crucial to the success of our project. Their expertise and attention to detail were invaluable.",
+    imageUrl: "", // Placeholder
   },
   {
     id: 2,
-    name: "Mr. David Chen",
-    school: "@Oakwood Elementary",
+    name: "Client Name",
+    affiliation: "Company/Project (Placeholder)",
     quote:
-      "The insights are invaluable for school-wide planning and supporting our teachers.",
-    imageUrl: "",
+      "The cost engineering solutions from PCE helped us optimize our budget and ensure financial control throughout the construction phase.",
+    imageUrl: "", // Placeholder
   },
   {
     id: 3,
-    name: "Samantha Lee",
-    school: "@Willow Academy",
+    name: "Client Name",
+    affiliation: "Company/Project (Placeholder)",
     quote:
-      "Identifying students who need extra help early on has become much more efficient with EduSight.",
-    imageUrl: "",
+      "We were impressed with PCE's professionalism and adherence to international standards. They are a reliable partner for complex engineering projects.",
+    imageUrl: "", // Placeholder
   },
   {
     id: 4,
-    name: "Raj Patel",
-    school: "@Pine Ridge",
+    name: "Client Name",
+    affiliation: "Company/Project (Placeholder)",
     quote:
-      "Being able to see my child&apos;s performance trends helps me have more productive conversations ",
-    imageUrl: "",
-  },
-  {
-    id: 5,
-    name: "Emily White",
-    school: "@Cedar Grove",
-    quote:
-      "Having a clear record of my achievements in EduSight was a great asset for my university applications.",
-    imageUrl: "",
-  },
-  {
-    id: 6,
-    name: "Anya Sharma",
-    school: "@District School",
-    quote:
-      "EduSight provides the data granularity we need to make informed decisions about curriculum adjustments.",
-    imageUrl: "",
+      "PCE's team provided excellent contract administration support, ensuring smooth project execution and minimizing disputes.",
+    imageUrl: "", // Placeholder
   },
 ];
 
@@ -87,9 +71,9 @@ export default function Testimonials() {
     <section className="py-10 md:py-16 font-ibm-plex-sans">
       <div className=" mx-auto max-w-7xl w-full px-4 md:px-0">
         <div className="flex justify-between items-center mb-6 md:mb-8">
-          
+
           <h2 className="text-2xl md:text-[45px] font-lato font-bold text-gray-900 text-left">
-            What Educators & Students Say
+            What Our Clients Say
           </h2>
           <div className="md:flex items-center space-x-1 md:space-x-2 hidden">
             <button
@@ -178,7 +162,7 @@ export default function Testimonials() {
                 </h3>
 
                 <p className="font-ibm-plex-sans font-medium text-base text-gray-500 mb-4">
-                  {testimonial.school}
+                  {testimonial.affiliation}
                 </p>
 
                 <p className="font-ibm-plex-sans font-normal text-[#535862] text-base">

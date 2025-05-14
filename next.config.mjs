@@ -18,18 +18,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["demo.ghost.io"],
-    dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment",
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "placehold.co",
-        port: "",
-        pathname: "/**",
-      },
-    ],
+    domains: ["demo.ghost.io"]
   },
 };
 

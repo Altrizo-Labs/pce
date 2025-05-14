@@ -4,7 +4,7 @@ export const footerLinks = [
     links: [
       { name: "Features", href: "/features" },
       { name: "About", href: "/about" },
-      { name: "Blog", href: "/blog" },
+      // { name: "Blog", href: "/blog" },
       { name: "Careers", href: "/careers" },
     ],
     style: "inline-block hover:translate-x-1", 

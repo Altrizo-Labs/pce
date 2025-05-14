@@ -2,9 +2,15 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion'; // Import motion
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-const ProjectHighlights: React.FC = () => {
+interface ProjectHighlightsProps {
+  limit?: number; // Number of projects to show (if provided)
+  showViewMore?: boolean; // Show the View More button
+}
+
+const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMore }) => {
   // Placeholder data for projects with categories
   const allProjects = [
     {
@@ -12,7 +18,7 @@ const ProjectHighlights: React.FC = () => {
       name: 'Infrastructure Project 1',
       description: 'Brief description of Infrastructure Project 1.',
       sector: 'Infrastructure',
-      image: '/images/work.jpg', // Using the work image as a placeholder
+      image: '/images/work.jpg',
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -22,7 +28,7 @@ const ProjectHighlights: React.FC = () => {
       name: 'Buildings Project 1',
       description: 'Brief description of Buildings Project 1.',
       sector: 'Buildings',
-      image: '/images/work.jpg', // Using the work image as a placeholder
+      image: '/images/work.jpg',
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -32,27 +38,27 @@ const ProjectHighlights: React.FC = () => {
       name: 'Leisure Themes Project 1',
       description: 'Brief description of Leisure Themes Project 1.',
       sector: 'Leisure Themes',
-      image: '/images/work.jpg', // Using the work image as a placeholder
+      image: '/images/work.jpg',
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
-     {
+    {
       id: 4,
       name: 'Landscaping Project 1',
       description: 'Brief description of Landscaping Project 1.',
       sector: 'Landscaping',
-      image: '/images/work.jpg', // Using the work image as a placeholder
+      image: '/images/work.jpg',
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
-     {
+    {
       id: 5,
       name: 'Infrastructure Project 2',
       description: 'Brief description of Infrastructure Project 2.',
       sector: 'Infrastructure',
-      image: '/images/work.jpg', // Using the work image as a placeholder
+      image: '/images/work.jpg',
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -61,9 +67,15 @@ const ProjectHighlights: React.FC = () => {
 
   const [filter, setFilter] = useState('All');
 
+  // Hide filter if limit is set (home page), show if not (projects page)
+  const showFilter = !limit;
+
   const filteredProjects = filter === 'All'
     ? allProjects
     : allProjects.filter(project => project.sector === filter);
+
+  // Apply limit if provided
+  const displayedProjects = limit ? filteredProjects.slice(0, limit) : filteredProjects;
 
   const sectors = ['All', ...Array.from(new Set(allProjects.map(project => project.sector)))];
 
@@ -87,19 +99,21 @@ const ProjectHighlights: React.FC = () => {
           Completed Projects
         </h2>
         {/* Project filtering */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {sectors.map(sector => (
-            <button
-              key={sector}
-              onClick={() => setFilter(sector)}
-              className={`px-6 py-2 rounded-full font-lato text-sm font-semibold transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary/50 ${filter === sector ? 'bg-primary text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-            >
-              {sector}
-            </button>
-          ))}
-        </div>
+        {showFilter && (
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {sectors.map(sector => (
+              <button
+                key={sector}
+                onClick={() => setFilter(sector)}
+                className={`px-6 py-2 rounded-full font-lato text-sm font-semibold transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary/50 ${filter === sector ? 'bg-primary text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+              >
+                {sector}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={project.id}
               custom={index}
@@ -108,16 +122,16 @@ const ProjectHighlights: React.FC = () => {
               animate="visible"
               className="bg-white rounded-xl overflow-hidden shadow-lg flex flex-col"
             >
-              <div className="relative w-full h-52"> {/* Fixed height for image container */}
+              <div className="relative w-full h-52">
                 <Image 
                   src={project.image} 
                   alt={project.name} 
-                  layout="fill" // Use layout="fill" for responsive image within fixed container
-                  objectFit="cover" // Ensures image covers the container
-                  className="" // Example hover effect for image
+                  layout="fill"
+                  objectFit="cover"
+                  className=""
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow"> {/* Added flex-grow for content to take remaining space */}
+              <div className="p-6 flex flex-col flex-grow">
                 <span 
                   className="inline-block bg-primary/10 text-primary text-xs font-semibold font-ibm-plex-sans px-3 py-1 rounded-full mb-3 self-start"
                 >
@@ -125,7 +139,6 @@ const ProjectHighlights: React.FC = () => {
                 </span>
                 <h3 className="text-xl font-lato font-semibold text-gray-800 mb-2">{project.name}</h3>
                 <p className="text-gray-600 text-sm font-ibm-plex-sans mb-4 flex-grow">{project.description}</p> 
-                {/* Add flex-grow to description if you want it to push other elements down in flex-col */}
                 <p className="text-gray-500 text-xs font-ibm-plex-sans">Value: {project.projectValue}</p>
                 <p className="text-gray-500 text-xs font-ibm-plex-sans">Challenges: {project.challenges}</p>
                 <p className="text-gray-500 text-xs font-ibm-plex-sans">PCE Services: {project.pceServicesProvided}</p>
@@ -133,6 +146,15 @@ const ProjectHighlights: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        {showViewMore && (
+          <div className="flex justify-center mt-10">
+            <Link href="/projects">
+              <span className="inline-block px-8 py-3 bg-primary text-white font-lato font-semibold rounded-full shadow-md hover:bg-primary-dark transition-colors duration-200 cursor-pointer">
+                View More Projects
+              </span>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

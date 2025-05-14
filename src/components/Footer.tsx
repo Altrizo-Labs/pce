@@ -14,13 +14,7 @@ const Footer = () => {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0" />
       {/* Dot pattern overlay */}
-      <div
-        className="absolute inset-0 z-[1] opacity-15"
-        style={{
-          backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      />
+      
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -29,12 +23,8 @@ const Footer = () => {
           {/* Left column */}
           <div className="flex flex-col gap-6">
             <Link href="/">
-            <Image
-              src={logo}
-              alt="logo"
-              className="relative w-52 lg:w-72 z-[999]"
-            /></Link>
-
+              <span className="relative w-52 lg:w-72 z-[999] text-4xl lg:text-5xl font-bold font-lato tracking-wide text-white">PCE</span>
+            </Link>
             <h2 className="text-[14px] lg:text-[16px] font-ibm-plex-sans">
               Projects Cost Engineering (Pvt) Ltd provides expert Quantity Surveying and Cost Engineering services, built on extensive experience and adherence to international standards.
             </h2>

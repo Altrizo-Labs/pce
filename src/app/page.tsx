@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <CompanyOverview />
       <KeyServicesSnapshot />
-      <ProjectHighlights />
+      <ProjectHighlights limit={3} showViewMore />
       <WhyChooseUsSection /> {/* Add WhyChooseUsSection */}
       <Testimonials />
       <CTASection

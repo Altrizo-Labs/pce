@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
-import logo from "../../public/images/logo.png";
 import Image from "next/image";
 import { HEADER } from "@/data/header";
 import RippleButton from "./RippleButton";
@@ -150,7 +149,7 @@ const Header = () => {
         className={`fixed w-full px-4 max-w-[1520px] mx-auto font-lato py-5 flex rounded-b-[8px] items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out z-[999] ${isHeaderHidden ? "-translate-y-full" : "translate-y-0"} ${isMobileMenuOpen ? "bg-white" : ""} ${isScrolled ? "bg-white" : ""}`}
       >
         <Link href="/">
-          <Image src={logo} alt="logo" className="relative w-32 lg:w-44 z-[999]" />
+          <span className="relative w-32 lg:w-44 z-[999] text-3xl lg:text-4xl font-bold font-lato tracking-wide text-primary">PCE</span>
         </Link>
 
         {!isMobile ? (

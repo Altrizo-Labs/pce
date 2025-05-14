@@ -13,6 +13,9 @@ const ProjectHighlights: React.FC = () => {
       description: 'Brief description of Infrastructure Project 1.',
       sector: 'Infrastructure',
       image: '/images/work.jpg', // Using the work image as a placeholder
+      projectValue: "[Project Value Placeholder]",
+      challenges: "[Key Challenges & Solutions Placeholder]",
+      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
     {
       id: 2,
@@ -20,6 +23,9 @@ const ProjectHighlights: React.FC = () => {
       description: 'Brief description of Buildings Project 1.',
       sector: 'Buildings',
       image: '/images/work.jpg', // Using the work image as a placeholder
+      projectValue: "[Project Value Placeholder]",
+      challenges: "[Key Challenges & Solutions Placeholder]",
+      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
     {
       id: 3,
@@ -27,6 +33,9 @@ const ProjectHighlights: React.FC = () => {
       description: 'Brief description of Leisure Themes Project 1.',
       sector: 'Leisure Themes',
       image: '/images/work.jpg', // Using the work image as a placeholder
+      projectValue: "[Project Value Placeholder]",
+      challenges: "[Key Challenges & Solutions Placeholder]",
+      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
      {
       id: 4,
@@ -34,6 +43,9 @@ const ProjectHighlights: React.FC = () => {
       description: 'Brief description of Landscaping Project 1.',
       sector: 'Landscaping',
       image: '/images/work.jpg', // Using the work image as a placeholder
+      projectValue: "[Project Value Placeholder]",
+      challenges: "[Key Challenges & Solutions Placeholder]",
+      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
      {
       id: 5,
@@ -41,6 +53,9 @@ const ProjectHighlights: React.FC = () => {
       description: 'Brief description of Infrastructure Project 2.',
       sector: 'Infrastructure',
       image: '/images/work.jpg', // Using the work image as a placeholder
+      projectValue: "[Project Value Placeholder]",
+      challenges: "[Key Challenges & Solutions Placeholder]",
+      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
     },
   ];
 
@@ -111,6 +126,9 @@ const ProjectHighlights: React.FC = () => {
                 <h3 className="text-xl font-lato font-semibold text-gray-800 mb-2">{project.name}</h3>
                 <p className="text-gray-600 text-sm font-ibm-plex-sans mb-4 flex-grow">{project.description}</p> 
                 {/* Add flex-grow to description if you want it to push other elements down in flex-col */}
+                <p className="text-gray-500 text-xs font-ibm-plex-sans">Value: {project.projectValue}</p>
+                <p className="text-gray-500 text-xs font-ibm-plex-sans">Challenges: {project.challenges}</p>
+                <p className="text-gray-500 text-xs font-ibm-plex-sans">PCE Services: {project.pceServicesProvided}</p>
               </div>
             </motion.div>
           ))}

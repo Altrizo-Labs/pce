@@ -4,6 +4,7 @@ import KeyServicesSnapshot from "@/components/home/WhyChooseUs"; // Adapted WhyC
 import ProjectHighlights from "@/components/projects/ProjectHighlights"; // Import ProjectHighlights
 import Testimonials from "@/components/home/Testimonials"; // Import Testimonials
 import CTASection from "@/components/CTASection";
+import WhyChooseUsSection from "@/components/home/WhyChooseUsSection"; // Import WhyChooseUsSection
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <CompanyOverview />
       <KeyServicesSnapshot />
       <ProjectHighlights />
+      <WhyChooseUsSection /> {/* Add WhyChooseUsSection */}
       <Testimonials />
       <CTASection
         title="Ready to Discuss Your Project?"

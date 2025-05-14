@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const DirectorProfile: React.FC = () => {
   return (
-    <section className="py-12 lg:py-16 bg-gray-100">
+    <section className="py-12 lg:py-16 ">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
         <div className="md:w-1/3">
           {/* Placeholder for Director's image */}

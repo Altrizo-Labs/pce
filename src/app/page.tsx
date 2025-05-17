@@ -5,6 +5,8 @@ import ProjectHighlights from "@/components/projects/ProjectHighlights"; // Impo
 import Testimonials from "@/components/home/Testimonials"; // Import Testimonials
 import CTASection from "@/components/CTASection";
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection"; // Import WhyChooseUsSection
+import StickyScrollReveal from "@/components/home/StickyScrollReveal";
+import ScrollReveal from "@/components/home/MobileScrollReveal";
 
 export default function Home() {
   return (
@@ -13,8 +15,14 @@ export default function Home() {
       <CompanyOverview />
       <KeyServicesSnapshot />
       <ProjectHighlights limit={3} showViewMore />
-      <WhyChooseUsSection /> {/* Add WhyChooseUsSection */}
-      <Testimonials />
+      {/* <WhyChooseUsSection /> */}
+      <div className="hidden lg:block">
+          <StickyScrollReveal />
+        </div>
+        <div className="block lg:hidden">
+          <ScrollReveal />
+        </div> 
+      {/* <Testimonials /> */}
       <CTASection
         title="Ready to Discuss Your Project?"
         description="Contact us today to learn how Projects Cost Engineering (Pvt) Ltd can provide expert Quantity Surveying and Cost Engineering solutions for your next project."

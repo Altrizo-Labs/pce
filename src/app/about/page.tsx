@@ -11,7 +11,7 @@ export default function AboutPage() {
       <AboutUsSection />
       <DirectorProfile />
       <PartnershipSection />
-      <WhatDrivesUs />
+      {/* <WhatDrivesUs /> */}
       <TeamSection />
       <CTASection
         title="Partner with PCE for Your Next Project"

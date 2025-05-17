@@ -4,7 +4,7 @@ export default function AboutUsSection() {
   return (
     <div className="mx-auto py-5 md:py-16">
       {/* About Us Section */}
-      <div className="px-4 sm:px-8 md:px-16 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-24">
+      <div className="px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-24">
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-lato font-bold text-[#181D27]">
             About Projects Cost Engineering (Pvt) Ltd

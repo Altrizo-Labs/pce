@@ -49,9 +49,10 @@ const ibm = localFont({
 
 export const metadata: Metadata = {
   title: "Edusight",
-  description: "EduSight revolutionizes student recruitment and engagement through AI-powered solutions. Our intelligent chatbot platform streamlines communication, automates routine tasks, and provides personalized support for educational institutions. Transform your student experience with cutting-edge technology.",
+  description:
+    "EduSight revolutionizes student recruitment and engagement through AI-powered solutions. Our intelligent chatbot platform streamlines communication, automates routine tasks, and provides personalized support for educational institutions. Transform your student experience with cutting-edge technology.",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 
@@ -62,7 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.variable} ${ibm.variable} antialiased max-w-[1540px] mx-auto overflow-x-hidden`}>
+      <body
+        className={`${lato.variable} ${ibm.variable} antialiased max-w-[1600px] mx-auto overflow-x-hidden min-h-screen bg-gradient-to-b from-white via-gray-50 to-gray-100`}
+      >
         <TanStackProvider>
           <Header />
           {children}

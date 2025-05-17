@@ -3,6 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { 
+  Calculator, 
+  LineChart, 
+  ClipboardList, 
+  FileText, 
+  Lightbulb, 
+  Scale 
+} from "lucide-react";
 
 const KeyServicesSnapshot: React.FC = () => {
   const services = [
@@ -10,32 +18,37 @@ const KeyServicesSnapshot: React.FC = () => {
       title: "Quantity Surveying",
       description:
         "Providing expert cost management and financial control services for construction projects.",
+      icon: Calculator
     },
-
     {
       title: "Cost Engineering",
       description:
         "Applying scientific principles and techniques to cost estimation, cost control, and project profitability.",
+      icon: LineChart
     },
     {
       title: "Project Management",
       description:
         "Overseeing and managing all aspects of a project from initiation to completion.",
+      icon: ClipboardList
     },
     {
       title: "Contract Administration",
       description:
         "Managing the contractual relationships and obligations between parties in a construction project.",
+      icon: FileText
     },
-     {
+    {
       title: "Value Engineering",
       description:
         "Analyzing project designs to optimize costs without compromising quality or function.",
+      icon: Lightbulb
     },
-     {
+    {
       title: "Dispute Resolution",
       description:
         "Providing expert analysis and support for resolving construction disputes.",
+      icon: Scale
     },
   ];
 
@@ -62,12 +75,7 @@ const KeyServicesSnapshot: React.FC = () => {
               className="flex flex-col items-start gap-4 p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="p-3 flex items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Image
-                  src="/images/Vector.svg" // Placeholder icon
-                  alt="Service icon"
-                  width={32}
-                  height={32}
-                />
+                <service.icon className="w-8 h-8" />
               </div>
               <div>
                 <h3 className="text-xl font-lato font-semibold text-[#060B13] mb-2">

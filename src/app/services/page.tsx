@@ -1,7 +1,8 @@
-import React from 'react';
-import ServicesList from '@/components/services/ServicesList'; // Import ServicesList
+import React from "react";
+import ServicesList from "@/components/services/ServicesList"; // Import ServicesList
 import HeroBanner from "@/components/HeroBanner"; // Import HeroBanner
 import FeatureHero from "../../../public/images/bg.svg"; // Import the image
+import ServicesShowcase from "@/components/services/ServicesShowcase";
 
 const ServicesPage: React.FC = () => {
   return (
@@ -12,13 +13,8 @@ const ServicesPage: React.FC = () => {
         title="Get a Quote" // This is the button text
         link="/contact"
       />
-      {/* The h1 title is removed as HeroBanner will provide the visual intro */}
-      <div className="my-8 md:my-12"> {/* Added margin for spacing */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#181D27]">
-          Our Core Services
-        </h2>
-        <ServicesList />
-      </div>
+      <ServicesShowcase />
+      <ServicesList />
     </div>
   );
 };

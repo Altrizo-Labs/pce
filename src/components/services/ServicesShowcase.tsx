@@ -1,16 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { 
   Calculator, 
   ClipboardList, 
   Building2, 
   FileCheck, 
   BarChart3,
-  ArrowRight
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import Image from "next/image";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const services = [
   {
@@ -82,6 +85,51 @@ const services = [
 
 export default function ServicesShowcase() {
   const [activeService, setActiveService] = useState(services[0]);
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const controls = useAnimation();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const nextService = () => {
+    setCurrentIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const prevService = () => {
+    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  useEffect(() => {
+    setActiveService(services[currentIndex]);
+  }, [currentIndex]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextService();
+    }
+    if (isRightSwipe) {
+      prevService();
+    }
+  };
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -102,10 +150,9 @@ export default function ServicesShowcase() {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Services List */}
-          <div className="space-y-4">
+          {/* Desktop Services List */}
+          <div className="hidden lg:block space-y-4">
             {services.map((service) => (
               <motion.div
                 key={service.id}
@@ -162,6 +209,26 @@ export default function ServicesShowcase() {
             ))}
           </div>
 
+          {/* Mobile Navigation - Above Card */}
+          {isMobile && (
+            <div className="flex items-center justify-end gap-2">
+              <button
+                onClick={prevService}
+                className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
+                aria-label="Previous service"
+              >
+                <ChevronLeft className="w-5 h-5 text-primary" />
+              </button>
+              <button
+                onClick={nextService}
+                className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
+                aria-label="Next service"
+              >
+                <ChevronRight className="w-5 h-5 text-primary" />
+              </button>
+            </div>
+          )}
+
           {/* Active Service Details */}
           <motion.div
             key={activeService.id}
@@ -169,6 +236,10 @@ export default function ServicesShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="h-full"
+            ref={containerRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
               <div className="relative h-72 flex-shrink-0">
@@ -208,6 +279,22 @@ export default function ServicesShowcase() {
                 </ul>
               </div>
             </div>
+
+            {/* Mobile Progress Indicators */}
+            {isMobile && (
+              <div className="flex justify-center gap-2 mt-4">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentIndex ? "bg-primary" : "bg-gray-300"
+                    }`}
+                    aria-label={`Go to service ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </motion.div>
         </div>
       </div>

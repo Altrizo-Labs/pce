@@ -2,7 +2,7 @@ import RippleButton from "../RippleButton";
 
 export default function CompanyOverview() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16 mt-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <p className="text-[32px] lg:text-[45px] text-lato font-[700] lg:leading-[60px] mb-6 lg:w-[80%]">
         Projects Cost Engineering (Pvt) Ltd: Expertise Built on Experience and International Standards
       </p>

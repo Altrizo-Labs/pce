@@ -1,0 +1,65 @@
+.marqueeContainer {
+  width: 100%; /* Corrected from screen.width */
+  overflow: hidden;
+  padding: 10px 0; /* Optional: padding for the container */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-top: 2.5rem; /* Added top margin */
+  margin-bottom: 2.5rem; /* Added bottom margin */
+}
+
+.marqueeContent {
+  display: flex; /* Use flex to line up items */
+  width: fit-content; /* Adjust width to content */
+  animation: marquee 35s linear infinite; /* Adjusted duration */
+  white-space: nowrap; 
+}
+
+.marqueeText {
+  font-size: 6rem; /* Further increased font size for large screens */
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-right: 50px;
+
+  /* Option 1: Primary to Secondary Gradient (Commented Out) */
+  /*
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  */
+
+  /* Option 2: Blue Gradient Theme (Active) */
+  /* Using primary color and a lighter blue. Adjust 'lightblue' if a specific theme shade is available */
+  background: linear-gradient(to right, rgb(73, 115, 192), hsl(var(--primary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Fallback for browsers that don't support background-clip: text */
+  /* Consider adding a solid color fallback if needed, though most modern browsers support it. */
+  /* For example: @supports not (-webkit-background-clip: text) { color: hsl(var(--primary)); } */
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .marqueeText {
+    font-size: 3.5rem; /* Adjusted for medium screens */
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marqueeText {
+    font-size: 2.5rem; /* Adjusted for small screens */
+    padding-right: 20px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* Start immediately */
+  }
+  100% {
+    transform: translateX(-50%); /* Move by the width of one item */
+  }
+}

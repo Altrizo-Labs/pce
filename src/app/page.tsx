@@ -1,5 +1,6 @@
 import CompanyOverview from "@/components/home/company-overview";
 import Hero from "@/components/home/hero";
+import InfiniteMovingText from "@/components/home/InfiniteMovingText"; // Import the new component
 import KeyServicesSnapshot from "@/components/home/WhyChooseUs"; // Adapted WhyChooseUs for Key Services
 import ProjectHighlights from "@/components/projects/ProjectHighlights"; // Import ProjectHighlights
 import Testimonials from "@/components/home/Testimonials"; // Import Testimonials
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="mx-4 pt-20 lg:pt-24">
       <Hero />
+      <InfiniteMovingText />
       <CompanyOverview />
       <KeyServicesSnapshot />
       <ProjectHighlights limit={3} showViewMore />

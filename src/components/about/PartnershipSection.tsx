@@ -25,7 +25,7 @@ const PartnershipSection: React.FC = () => {
           {/* Image Column */}
           <div className="flex justify-end">
             <Image
-              src="/images/partnership.png" // Placeholder image for partnership
+              src="/images/avif/whychooseus-partnership-agreement.avif" 
               alt="Partnership with DSO"
               width={500}
               height={400}

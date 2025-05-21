@@ -3,13 +3,12 @@ import FeaturesGrid from "@/components/features/FeaturesGrid";
 import Pricing from "@/components/features/pricing";
 import HeroBanner from "@/components/HeroBanner";
 import SmartRecruitment from "@/components/features/SmartRecruitment";
-import FeatureHero from "../../../public/images/bg.svg"
 
 export default function FeaturesPage() {
   return (
     <div className="mx-4 pt-20 lg:pt-24">
       <HeroBanner
-        image={FeatureHero}
+        image="/images/avif/project-infrastructure-site.avif"
         description="Transforming Student Recruitment With Intelligent Conversations and Powerful Insights"
         title="Book a Demo"
         link="/contact"

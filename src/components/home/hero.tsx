@@ -103,7 +103,7 @@ export default function Hero() {
             className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/work.jpg"
+              src="/images/avif/project-highlight-modern-building.avif"
               alt="Engineering Excellence"
               fill
               className="object-cover"

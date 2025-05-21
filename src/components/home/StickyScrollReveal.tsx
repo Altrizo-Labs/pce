@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react"; // Added useState
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import dynamic from "next/dynamic";
@@ -9,13 +9,13 @@ import { motion } from "framer-motion";
 
 export const content = [
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-experience-planning.avif",
     title: "25+ Years of Experience",
     description: "Benefit from our extensive experience in Quantity Surveying and Cost Engineering, ensuring reliable and expert solutions.",
     icon: Award,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-standards-financials.avif",
     title: "Adherence to International Standards",
     description: "We operate under strict international business standards and practices, guaranteeing quality and professionalism.",
     icon: ShieldCheck,
@@ -27,7 +27,7 @@ export const content = [
     icon: BarChart3,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-qualified-team.avif",
     title: "Expert Team",
     description: "Our team comprises qualified and experienced professionals dedicated to delivering exceptional results.",
     icon: Users,
@@ -38,22 +38,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 function StickyScrollReveal() {
   const containerRef = useRef(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  // imageRef is not strictly needed for src update anymore but can be kept if used for other GSAP animations on the Image itself
+  const imageRef = useRef<HTMLImageElement>(null); 
+  const [currentImageSrc, setCurrentImageSrc] = useState(content[0].image); // State for current image src
 
   useEffect(() => {
     const sections = gsap.utils.toArray<HTMLElement>(".content-section");
-    const imageElement = imageRef.current;
+    // const imageElement = imageRef.current; // Not directly manipulating src anymore
 
     const updateImage = (index: number) => {
-      if (imageElement) {
-        gsap.to(imageElement, {
+      // Optional: fade out/in animation if desired, though Next/Image might handle this smoothly
+      const imageWrapper = imageRef.current?.parentElement; // Get the parent for opacity animation
+      if (imageWrapper) {
+        gsap.to(imageWrapper, { // Animate the wrapper or the Image component if ref points to it
           opacity: 0,
-          duration: 0.3,
+          duration: 0.2,
           onComplete: () => {
-            gsap.set(imageElement, { attr: { src: content[index].image } });
-            gsap.to(imageElement, { opacity: 1, duration: 0.3 });
+            setCurrentImageSrc(content[index].image);
+            gsap.to(imageWrapper, { opacity: 1, duration: 0.2, delay: 0.05 }); // Slight delay for src to update
           },
         });
+      } else {
+        setCurrentImageSrc(content[index].image); // Fallback if no wrapper for animation
       }
     };
 
@@ -108,8 +114,8 @@ function StickyScrollReveal() {
         <div className="sticky top-24 lg:top-[30%] h-[420px] flex items-center justify-center">
           <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
             <Image
-              ref={imageRef}
-              src={content[0].image}
+              ref={imageRef} // Keep ref if other direct GSAP manipulations on Image are done
+              src={currentImageSrc} // Use state variable for src
               alt="Why Choose Us"
               fill
               className="object-cover rounded-2xl transition-opacity duration-300"

@@ -21,7 +21,7 @@ const services = [
     title: "Quantity Surveying",
     description: "Comprehensive cost management and quantity surveying services for construction projects, ensuring accurate cost estimation and budget control.",
     icon: Calculator,
-    image: "/images/work.jpg",
+    image: "/images/avif/service-financial-advisory.avif",
     features: [
       "Bill of Quantities Preparation",
       "Cost Planning & Control",
@@ -34,7 +34,7 @@ const services = [
     title: "Cost Engineering",
     description: "Expert cost engineering solutions that optimize project budgets while maintaining quality standards and project objectives.",
     icon: BarChart3,
-    image: "/images/work.jpg",
+    image: "/images/avif/service-financial-advisory.avif",
     features: [
       "Cost Estimation & Analysis",
       "Value Engineering",
@@ -47,7 +47,7 @@ const services = [
     title: "Project Management",
     description: "End-to-end project management services ensuring successful delivery of construction projects on time and within budget.",
     icon: ClipboardList,
-    image: "/images/work.jpg",
+    image: "/images/avif/service-project-management-design.avif",
     features: [
       "Project Planning & Scheduling",
       "Resource Management",
@@ -60,7 +60,7 @@ const services = [
     title: "Construction Claims",
     description: "Professional assistance in preparing and defending construction claims, ensuring fair resolution of disputes.",
     icon: FileCheck,
-    image: "/images/work.jpg",
+    image: "/images/avif/service-real-estate-consulting.avif",
     features: [
       "Delay Analysis",
       "Claims Preparation",
@@ -73,7 +73,7 @@ const services = [
     title: "Building Information Modeling",
     description: "Advanced BIM services for enhanced project visualization, coordination, and cost management.",
     icon: Building2,
-    image: "/images/work.jpg",
+    image: "/images/avif/project-urban-construction.avif",
     features: [
       "3D Modeling & Visualization",
       "Clash Detection",
@@ -300,4 +300,4 @@ export default function ServicesShowcase() {
       </div>
     </section>
   );
-} 
+}

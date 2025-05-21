@@ -16,7 +16,7 @@ export interface RippleButtonProps {
 
 export interface HeroBannerProps {
   video?: string; 
-  image?: StaticImageData;
+  image?: StaticImageData | string; // Allow string for image path
   description: string;
   title: string;
   link?: string;

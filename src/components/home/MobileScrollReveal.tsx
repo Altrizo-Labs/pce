@@ -8,13 +8,13 @@ import { Award, ShieldCheck, BarChart3, Users } from "lucide-react";
 
 export const content = [
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-experience-planning.avif",
     title: "25+ Years of Experience",
     description: "Benefit from our extensive experience in Quantity Surveying and Cost Engineering, ensuring reliable and expert solutions.",
     icon: Award,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-standards-financials.avif",
     title: "Adherence to International Standards",
     description: "We operate under strict international business standards and practices, guaranteeing quality and professionalism.",
     icon: ShieldCheck,
@@ -26,7 +26,7 @@ export const content = [
     icon: BarChart3,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-qualified-team.avif",
     title: "Expert Team",
     description: "Our team comprises qualified and experienced professionals dedicated to delivering exceptional results.",
     icon: Users,

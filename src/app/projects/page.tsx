@@ -2,7 +2,6 @@ import React from 'react';
 import { Metadata } from 'next';
 import ProjectHighlights from '@/components/projects/ProjectHighlights'; // Import ProjectHighlights
 import HeroBanner from "@/components/HeroBanner"; // Import HeroBanner
-import FeatureHero from "../../../public/images/bg.svg"; // Import the image
 
 export const metadata: Metadata = {
   title: "Projects | Projects Cost Engineering (PCE) - Our Portfolio",
@@ -14,7 +13,7 @@ const ProjectsPage: React.FC = () => {
   return (
     <div className="mx-4 pt-20 lg:pt-24">
       <HeroBanner
-        image={FeatureHero}
+        image="/images/avif/project-urban-construction.avif"
         description="Showcasing Our Proven Track Record in Delivering Excellence Across Diverse Project Sectors."
         title="Discuss Your Project" // This is the button text
         link="/contact"

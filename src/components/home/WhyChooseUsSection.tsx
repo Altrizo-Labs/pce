@@ -15,14 +15,14 @@ const WhyChooseUsSection: React.FC = () => {
     {
       title: "25+ Years of Experience",
       description: "Benefit from our extensive experience in Quantity Surveying and Cost Engineering, ensuring reliable and expert solutions.",
-      image: "/images/experience.jpg",
+      image: "/images/avif/whychooseus-experience-planning.avif",
       stats: "25+",
       statLabel: "Years of Excellence"
     },
     {
       title: "Adherence to International Standards",
       description: "We operate under strict international business standards and practices, guaranteeing quality and professionalism.",
-      image: "/images/standards.jpg",
+      image: "/images/avif/whychooseus-standards-financials.avif",
       stats: "100%",
       statLabel: "Quality Assurance"
     },
@@ -36,7 +36,7 @@ const WhyChooseUsSection: React.FC = () => {
     {
       title: "Expert Team",
       description: "Our team comprises qualified and experienced professionals dedicated to delivering exceptional results.",
-      image: "/images/team.jpg",
+      image: "/images/avif/whychooseus-qualified-team.avif",
       stats: "50+",
       statLabel: "Expert Professionals"
     },

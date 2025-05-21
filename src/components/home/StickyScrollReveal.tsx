@@ -55,7 +55,7 @@ function StickyScrollReveal() {
           duration: 0.2,
           onComplete: () => {
             setCurrentImageSrc(content[index].image);
-            gsap.to(imageWrapper, { opacity: 1, duration: 0.2, delay: 0.05 }); // Slight delay for src to update
+            gsap.to(imageWrapper, { opacity: 1, duration: 0.2, delay: 0.05 });
           },
         });
       } else {
@@ -75,7 +75,7 @@ function StickyScrollReveal() {
 
       gsap.fromTo(
         section.querySelectorAll(".text-content > *"),
-        { opacity: 0, y: 20 },
+        { opacity: 20, y: 20 },
         {
           opacity: 1,
           y: 0,
@@ -118,7 +118,7 @@ function StickyScrollReveal() {
               src={currentImageSrc} // Use state variable for src
               alt="Why Choose Us"
               fill
-              className="object-cover rounded-2xl transition-opacity duration-300"
+              className="object-cover rounded-2xl"
               priority
             />
           </div>

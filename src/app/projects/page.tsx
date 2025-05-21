@@ -1,7 +1,14 @@
 import React from 'react';
+import { Metadata } from 'next';
 import ProjectHighlights from '@/components/projects/ProjectHighlights'; // Import ProjectHighlights
 import HeroBanner from "@/components/HeroBanner"; // Import HeroBanner
 import FeatureHero from "../../../public/images/bg.svg"; // Import the image
+
+export const metadata: Metadata = {
+  title: "Projects | Projects Cost Engineering (PCE) - Our Portfolio",
+  description: "View the portfolio of completed projects by Projects Cost Engineering (PCE) in Oman, showcasing our expertise in infrastructure, buildings, and more. Over 100 projects delivered.",
+  keywords: "PCE Projects, Oman Construction Projects, Infrastructure Projects Oman, Building Projects Oman, Leisure Theme Projects, Landscaping Projects, Quantity Surveying Portfolio, Cost Engineering Case Studies",
+};
 
 const ProjectsPage: React.FC = () => {
   return (

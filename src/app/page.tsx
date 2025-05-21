@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import CompanyOverview from "@/components/home/company-overview";
 import Hero from "@/components/home/hero";
 import InfiniteMovingText from "@/components/home/InfiniteMovingText"; // Import the new component
@@ -8,6 +9,12 @@ import CTASection from "@/components/CTASection";
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection"; // Import WhyChooseUsSection
 import StickyScrollReveal from "@/components/home/StickyScrollReveal";
 import ScrollReveal from "@/components/home/MobileScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Home | Projects Cost Engineering (PCE) - Expert Quantity Surveying & Cost Engineering",
+  description: "Projects Cost Engineering (PCE) offers expert quantity surveying, cost engineering, and project management services in Sri Lanka and Oman. 25+ years of experience.",
+  keywords: "Quantity Surveying Sri Lanka, Cost Engineering Oman, Project Management, Construction Cost, PCE, Projects Cost Engineering, Pre-Contract Services, Post-Contract Services",
+};
 
 export default function Home() {
   return (

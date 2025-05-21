@@ -5,6 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import RippleButton from "./RippleButton"; // Import RippleButton
 
 type CTASectionProps = {
   title: string;
@@ -44,15 +45,17 @@ const CTASection: React.FC<CTASectionProps> = ({
             <p className="text-xs md:text-sm lg:text-base text-white/90 mb-6 md:mb-8 lg:mb-10 font-ibm-plex-sans max-w-md lg:max-w-xl">
               {description}
             </p>
-            <Link href={buttonLink} legacyBehavior>
-              <a className="group inline-flex items-center gap-2 bg-white text-primary font-lato font-semibold px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
-                {buttonText}
-                <ArrowRight
-                  className="text-primary transition-transform duration-300 ease-in-out group-hover:translate-x-1"
-                  size={20}
-                />
-              </a>
-            </Link>
+            <RippleButton
+              text={buttonText}
+              url={buttonLink}
+              className="bg-white text-primary font-lato font-semibold rounded-full shadow-lg hover:shadow-xl"
+              textStyles="group-hover:text-primary" // Keep text primary on hover if not overridden by yellow
+              useYellowHover={true}
+              icon={<ArrowRight
+                className="text-primary transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                size={20}
+              />}
+            />
           </motion.div>
         </div>
       </div>

@@ -18,10 +18,7 @@ const ProjectsPage: React.FC = () => {
         title="Discuss Your Project" // This is the button text
         link="/contact"
       />
-      {/* The h1 title is removed as HeroBanner will provide the visual intro */}
-      <div className="text-center my-8 md:my-12"> {/* Added margin for spacing */}
-        <p className="text-2xl font-lato font-bold text-[#181D27]">Completed Over 100 Projects in Oman</p>
-      </div>
+    
       <ProjectHighlights />
     </div>
   );

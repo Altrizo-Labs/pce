@@ -65,11 +65,13 @@ export default function Hero() {
                 text="Explore Our Services"
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 url="/services"
+                useYellowHover={true}
               />
               <RippleButton
                 text="View Our Projects"
                 className="bg-white hover:bg-gray-50 text-gray-900 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200"
                 url="/projects"
+                useYellowHover={true}
               />
             </motion.div>
 

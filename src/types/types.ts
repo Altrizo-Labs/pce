@@ -12,6 +12,7 @@ export interface RippleButtonProps {
   yellowArrow?: React.ReactNode;
   onclick?: () => void;
   type?: "button" | "submit" | "reset";
+  useYellowHover?: boolean;
 }
 
 export interface HeroBannerProps {

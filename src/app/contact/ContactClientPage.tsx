@@ -273,6 +273,7 @@ function Contact() { // Renamed from Contact_Us to be the main export
                   className="bg-primary rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
                   type="submit"
                   yellowArrow
+                  useYellowHover={true} // Added yellow hover
                 />
                 {/* Location Map Placeholder */}
                 <div className="mb-6">

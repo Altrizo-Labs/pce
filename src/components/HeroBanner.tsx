@@ -44,7 +44,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, titl
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="absolute bottom-6 lg:bottom-12 left-4 sm:left-12 md:left-24 z-20 text-white lg:w-[70%]">
+      <div className="absolute bottom-6 lg:bottom-12 left-4 sm:left-12 md:left-24 z-20 text-white w-[90%] md:w-full lg:w-[70%]">
         {/* Description Animation */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -65,8 +65,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ video, image, description, titl
           <RippleButton
             text={title}
             url={link}
-            className="bg-white text-black hover:text-white w-52 lg:w-auto py-3 sm:py-4 px-6 sm:px-8 rounded-full font-ibm-plex-sans text-sm sm:text-base"
-            hoverColor="bg-black"
+            className="bg-white text-black hover:text-black w-52 lg:w-auto py-3 sm:py-4 px-6 sm:px-8 rounded-full font-ibm-plex-sans text-sm sm:text-base"
+            useYellowHover={true} // Apply yellow hover
           />
           {/* Uncomment and add an animation to the demo video button if needed */}
           {/* <RippleButton

@@ -23,6 +23,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   play,
   type,
   onclick,
+  useYellowHover, // New prop
 }) => {
   const xTo = useRef<(value: number) => void>();
   const yTo = useRef<(value: number) => void>();
@@ -89,7 +90,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
       >
         <div
           ref={divRef}
-          className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${hoverColor}`}
+          className={`absolute w-[550px] h-[550px] left-0 top-0 wrapperElement -z-10 pointer-events-none rounded-full ${useYellowHover ? 'bg-secondary' : hoverColor}`}
         ></div>
 
         {play && (

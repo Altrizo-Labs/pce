@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import RippleButton from '../RippleButton'; // Import RippleButton
 
 interface ProjectHighlightsProps {
   limit?: number; // Number of projects to show (if provided)
@@ -96,7 +97,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
     <section className="py-12 lg:py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-[45px] font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16">
-          Completed Projects
+          Completed Over 100 Projects in Oman
         </h2>
         {/* Project filtering */}
         {showFilter && (
@@ -148,11 +149,13 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
         </div>
         {showViewMore && (
           <div className="flex justify-center mt-10">
-            <Link href="/projects">
-              <span className="inline-block px-8 py-3 bg-primary text-white font-lato font-semibold rounded-full shadow-md hover:bg-primary-dark transition-colors duration-200 cursor-pointer">
-                View More Projects
-              </span>
-            </Link>
+            <RippleButton
+              text="View More Projects"
+              url="/projects"
+              className="bg-primary text-white font-lato font-semibold rounded-full shadow-md"
+              useYellowHover={true}
+              yellowArrow={true} // Add yellow arrow icon
+            />
           </div>
         )}
       </div>

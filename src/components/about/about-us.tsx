@@ -33,7 +33,7 @@ export default function AboutUsSection() {
             "linear-gradient(to bottom, rgba(86, 107, 167, 0.06) 0%, #FFFFFF 100%)",
         }}
       >
-        <div className="md:mb-12 sm:min-w-[460px]">
+        <div className="md:mb-12 lg:min-w-[460px]">
           {" "}
           {/* MODIFIED: Removed grid, grid-cols, and gap classes */}
           <div>

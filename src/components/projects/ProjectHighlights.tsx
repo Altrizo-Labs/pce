@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import RippleButton from '../RippleButton'; // Import RippleButton
-import { HardHat } from 'lucide-react'; // Import a construction icon
+import { CheckCircle } from 'lucide-react'; // Changed icon to CheckCircle
 
 interface ProjectHighlightsProps {
   limit?: number; // Number of projects to show (if provided)
@@ -21,6 +21,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'A state-of-the-art healthcare facility developed for the Arm Forces, focusing on advanced medical services.',
       sector: 'Healthcare',
       image: '/images/projects/Arm Force Hospital.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -31,6 +32,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'Development of the prestigious Chelrenham College campus, emphasizing modern educational infrastructure.',
       sector: 'Educational',
       image: '/images/projects/Chelrenham College.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -41,6 +43,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'Construction of the Downe House School, providing an exceptional learning environment for students.',
       sector: 'Educational',
       image: '/images/projects/Downe House School.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -51,6 +54,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'A luxurious Four Star Hotel project, designed to offer premium hospitality and guest experiences.',
       sector: 'Hospitality',
       image: '/images/projects/Four Star Hotel.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -61,6 +65,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'Establishment of a comprehensive Military College, equipped with specialized training facilities.',
       sector: 'Educational',
       image: '/images/projects/Military College.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -71,6 +76,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'The Panaroma Mall project, a major retail and entertainment destination offering diverse shopping options.',
       sector: 'Commercial',
       image: '/images/projects/Panaroma Mall.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -81,6 +87,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'The esteemed QURUM MOSQUE project, a significant religious and community landmark.',
       sector: 'Religious',
       image: '/images/projects/QURUM MOSQUE.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -91,6 +98,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'The iconic Royal Opera House Muscat (ROHM) project, a center for arts, culture, and performance.',
       sector: 'Cultural',
       image: '/images/projects/ROHM.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -101,6 +109,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       description: 'A premier VVIP Hospital, providing exclusive and high-quality healthcare services.',
       sector: 'Healthcare',
       image: '/images/projects/VVIP Hospital.avif',
+      tag: 'Oman', // Added tag
       projectValue: "[Project Value Placeholder]",
       challenges: "[Key Challenges & Solutions Placeholder]",
       pceServicesProvided: "[List of PCE Services Provided Placeholder]",
@@ -172,26 +181,28 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
                   objectFit="cover"
                   className="transition-transform duration-300 group-hover:scale-105"
                 />
-                {/* Floating Text Watermark */}
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center p-2 pointer-events-none"
-                  animate={{
-                    y: ["0%", "2%", "0%", "-2%", "0%"], // Subtle vertical float
-                  }}
-                  transition={{
-                    duration: 4, // Duration of one full float cycle
-                    ease: "easeInOut",
-                    repeat: Infinity, // Repeat indefinitely
-                    repeatType: "loop",
-                  }}
-                >
-                  <div className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm p-2 rounded-md">
-                    <HardHat className="h-5 w-5 text-white opacity-50" />
-                    <span className="text-sm font-bold text-white opacity-50 transform -rotate-6">
-                      PCE
-                    </span>
-                  </div>
-                </motion.div>
+                {/* Floating Text Watermark - Conditional */}
+                {project.tag === 'Oman' && (
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center p-2 pointer-events-none"
+                    animate={{
+                      y: ["0%", "2%", "0%", "-2%", "0%"], // Subtle vertical float
+                    }}
+                    transition={{
+                      duration: 4, // Duration of one full float cycle
+                      ease: "easeInOut",
+                      repeat: Infinity, // Repeat indefinitely
+                      repeatType: "loop",
+                    }}
+                  >
+                    <div className="flex items-center space-x-1.5 bg-black/40 backdrop-blur-sm p-1.5 rounded-md shadow-lg">
+                      <CheckCircle className="h-4 w-4 text-green-400 opacity-80" /> 
+                      <span className="text-xs font-semibold text-white opacity-80">
+                        Our Team Worked in Oman Projects
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <span 

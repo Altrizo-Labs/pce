@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import RippleButton from '../RippleButton'; // Import RippleButton
+import { HardHat } from 'lucide-react'; // Import a construction icon
 
 interface ProjectHighlightsProps {
   limit?: number; // Number of projects to show (if provided)
@@ -123,14 +124,34 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
               animate="visible"
               className="bg-white rounded-xl overflow-hidden shadow-lg flex flex-col"
             >
-              <div className="relative w-full h-52">
+              <div className="relative w-full h-52 group"> {/* Added group for potential hover effects on watermark */}
                 <Image 
                   src={project.image} 
                   alt={project.name} 
                   layout="fill"
                   objectFit="cover"
-                  className=""
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
+                {/* Floating Text Watermark */}
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center p-2 pointer-events-none"
+                  animate={{
+                    y: ["0%", "2%", "0%", "-2%", "0%"], // Subtle vertical float
+                  }}
+                  transition={{
+                    duration: 4, // Duration of one full float cycle
+                    ease: "easeInOut",
+                    repeat: Infinity, // Repeat indefinitely
+                    repeatType: "loop",
+                  }}
+                >
+                  <div className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm p-2 rounded-md">
+                    <HardHat className="h-5 w-5 text-white opacity-50" />
+                    <span className="text-sm font-bold text-white opacity-50 transform -rotate-6">
+                      PCE
+                    </span>
+                  </div>
+                </motion.div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <span 

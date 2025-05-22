@@ -17,102 +17,113 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
   const allProjects = [
     {
       id: 1,
-      name: 'Arm Force Hospital',
-      description: 'A state-of-the-art healthcare facility developed for the Arm Forces, focusing on advanced medical services.',
+      name: 'Armed Forces Hospital, Al Khoudh',
+      description: 'Extension to the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.',
       sector: 'Healthcare',
-      image: '/images/projects/Arm Force Hospital.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      image: '/images/projects/Arm Force Hospital.avif', // Updated image path
+      tag: 'Oman',
+      client: 'Ministry of Defence',
+      completionDate: '2019',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 2,
-      name: 'Chelrenham College',
-      description: 'Development of the prestigious Chelrenham College campus, emphasizing modern educational infrastructure.',
+      name: 'Cheltenham College, Al Bandar, Muscat',
+      description: 'A premium world-class public institution, providing very best British curriculum educational facilities.',
       sector: 'Educational',
-      image: '/images/projects/Chelrenham College.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      image: '/images/projects/Chelrenham College.avif', // Updated image path
+      tag: 'Oman',
+      client: 'Ministry of Defence',
+      completionDate: '2022',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 3,
-      name: 'Downe House School',
-      description: 'Construction of the Downe House School, providing an exceptional learning environment for students.',
+      name: 'Downe House School, Al Bandar, Muscat',
+      description: 'First campus outside Europe, a first premium British all-girls school.',
       sector: 'Educational',
       image: '/images/projects/Downe House School.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      tag: 'Oman',
+      client: 'Ministry of Defence',
+      completionDate: '2020',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 4,
-      name: 'Four Star Hotel',
-      description: 'A luxurious Four Star Hotel project, designed to offer premium hospitality and guest experiences.',
+      name: 'Four Star Hotel, Nizwa',
+      description: 'Hotel Building (G1 + 5 Floors), Chalets 30 Nos (1, 2 & 3 Bedrooms), Staff Accommodation (G1 + 3 Floors), Ancillary Building.',
       sector: 'Hospitality',
       image: '/images/projects/Four Star Hotel.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      tag: 'Oman',
+      client: 'Social Protection Fund',
+      completionDate: '2025',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 5,
-      name: 'Military College',
-      description: 'Establishment of a comprehensive Military College, equipped with specialized training facilities.',
+      name: 'Military College, Bait Al Falaj',
+      description: 'Academy of Strategic and Defence Studies.',
       sector: 'Educational',
       image: '/images/projects/Military College.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      tag: 'Oman',
+      client: 'Ministry of Defence',
+      completionDate: '2013',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 6,
-      name: 'Panaroma Mall',
-      description: 'The Panaroma Mall project, a major retail and entertainment destination offering diverse shopping options.',
+      name: 'Panorama Mall, Al Ghubra',
+      description: 'Exclusive place for shopping and dinining comprising middle to luxury retail brands, F&B, food court outlets, cafes and restaurants.',
       sector: 'Commercial',
-      image: '/images/projects/Panaroma Mall.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      image: '/images/projects/Panaroma Mall.avif', // Updated image path
+      tag: 'Oman',
+      client: 'Hamat Holding',
+      completionDate: '2015',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 7,
-      name: 'QURUM MOSQUE',
-      description: 'The esteemed QURUM MOSQUE project, a significant religious and community landmark.',
+      name: 'Qurum Mosque',
+      description: 'A gleaming , majestic mosque with vast prayer halls for 1500 prayers.',
       sector: 'Religious',
-      image: '/images/projects/QURUM MOSQUE.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      image: '/images/projects/Qurum Mosque.avif', // Corrected casing
+      tag: 'Oman',
+      client: 'Ministry of Awqaf & Religious Affairs',
+      completionDate: '2010',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 8,
-      name: 'ROHM',
-      description: 'The iconic Royal Opera House Muscat (ROHM) project, a center for arts, culture, and performance.',
+      name: 'Royal Opera House, Azaiba',
+      description: 'The Opera House complex consists of concert theatre, auditorium, formal landscaped gardens, cultural market with retail, luxury restaurants and an art centre for musical, theatrical and operatic productions.',
       sector: 'Cultural',
-      image: '/images/projects/ROHM.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      image: '/images/projects/ROHM.avif', // Updated to full name
+      tag: 'Oman',
+      client: 'Diwan of Royal Court',
+      completionDate: '2016',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
     {
       id: 9,
-      name: 'VVIP Hospital',
-      description: 'A premier VVIP Hospital, providing exclusive and high-quality healthcare services.',
+      name: 'VVIP Hospital, Al Khoudh',
+      description: 'Expansion of the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.',
       sector: 'Healthcare',
       image: '/images/projects/VVIP Hospital.avif',
-      tag: 'Oman', // Added tag
-      projectValue: "[Project Value Placeholder]",
-      challenges: "[Key Challenges & Solutions Placeholder]",
-      pceServicesProvided: "[List of PCE Services Provided Placeholder]",
+      tag: 'Oman',
+      client: 'Ministry of Defence',
+      completionDate: '2020',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
+    },
+    {
+      id: 10,
+      name: 'Oman Investment Authority Head Office, Azaiba',
+      description: 'The brand new building comprise internal finishes, fittings, furnishing and equipment.',
+      sector: 'Commercial', // Or 'Office'
+      image: '/images/projects/Oman Investment Authority.avif', // Updated to full name, ensure this image exists
+      tag: 'Oman',
+      client: 'Oman Investment Authority',
+      completionDate: '2024',
+      pceServicesProvided: 'Cost / Quantity Surveying Consultancy',
     },
   ];
 
@@ -212,8 +223,8 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
                 </span>
                 <h3 className="text-xl font-lato font-semibold text-gray-800 mb-2">{project.name}</h3>
                 <p className="text-gray-600 text-sm font-ibm-plex-sans mb-4 flex-grow">{project.description}</p> 
-                <p className="text-gray-500 text-xs font-ibm-plex-sans">Value: {project.projectValue}</p>
-                <p className="text-gray-500 text-xs font-ibm-plex-sans">Challenges: {project.challenges}</p>
+                <p className="text-gray-500 text-xs font-ibm-plex-sans">Client: {project.client}</p>
+                <p className="text-gray-500 text-xs font-ibm-plex-sans">Completion: {project.completionDate}</p>
                 <p className="text-gray-500 text-xs font-ibm-plex-sans">PCE Services: {project.pceServicesProvided}</p>
               </div>
             </motion.div>

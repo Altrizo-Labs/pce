@@ -5,11 +5,11 @@ import RippleButton from "../RippleButton";
 
 export default function Hero() {
   return (
-    <div className="relative h-auto overflow-hidden">
+    <div className="py-10">
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

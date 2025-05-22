@@ -21,7 +21,7 @@ export const content = [
     icon: ShieldCheck,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-experience-planning.avif",
     title: "Proven Track Record in Oman",
     description: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capabilities and expertise.",
     icon: BarChart3,
@@ -111,7 +111,7 @@ function StickyScrollReveal() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-12">
         {/* Sticky Image Section */}
-        <div className="sticky top-24 lg:top-[30%] h-[420px] flex items-center justify-center">
+        <div className="sticky top-24 lg:top-[20%] h-[420px] flex items-center justify-center">
           <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
             <Image
               ref={imageRef} // Keep ref if other direct GSAP manipulations on Image are done

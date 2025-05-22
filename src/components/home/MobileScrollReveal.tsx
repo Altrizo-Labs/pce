@@ -20,7 +20,7 @@ export const content = [
     icon: ShieldCheck,
   },
   {
-    image: "/images/work.jpg",
+    image: "/images/avif/whychooseus-experience-planning.avif",
     title: "Proven Track Record in Oman",
     description: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capabilities and expertise.",
     icon: BarChart3,
@@ -70,8 +70,8 @@ const ScrollReveal: React.FC = () => {
       <div ref={containerRef} className="flex overflow-hidden">
         {content.map((item, index) => (
           <div key={index} className="card-section min-w-full px-4">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 border border-primary/20 min-h-[520px] flex flex-col">
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 border border-primary/20 min-h-[520px] md:min-h-[600px] flex flex-col">
+              <div className="relative h-48 md:h-full mb-6 md:mb-8 rounded-lg overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -80,15 +80,15 @@ const ScrollReveal: React.FC = () => {
               </div>
               
               <div className="flex-1 flex flex-col">
-                <div className="flex flex-col items-start mb-6">
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary mb-4 shadow">
-                    <item.icon className="w-6 h-6" />
+                <div className="flex flex-col items-start mb-6"> {/* Adjusted parent mb if needed, but focusing on elements below for now */}
+                  <span className="inline-flex items-center justify-center w-10 md:w-12 h-10 md:h-12 rounded-full bg-primary/10 text-primary mb-4 md:mb-5 shadow">
+                    <item.icon className="w-6 md:w-7 h-6 md:h-7" />
                   </span>
-                  <h2 className="text-xl lato mb-4 font-bold text-primary">
+                  <h2 className="text-xl md:text-2xl lato mb-4 md:mb-5 font-bold text-primary">
                     {item.title}
                   </h2>
                 </div>
-                <p className="text-base ibm-plex-sans font-medium text-gray-700">
+                <p className="text-base md:text-lg ibm-plex-sans font-medium text-gray-700">
                   {item.description}
                 </p>
               </div>

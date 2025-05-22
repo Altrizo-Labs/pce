@@ -127,7 +127,7 @@ function Contact() { // Renamed from Contact_Us to be the main export
     <div className="py-12">
       <Toaster position="bottom-right" reverseOrder={false} />
       <div className="relative lg:pt-24 pt-20 mx-2 md:mx-12 lg:mx-20 pb-12">
-        <div className="min-h-screen text-white flex flex-col justify-center items-center">
+        <div className="text-white flex flex-col justify-center items-center">
           {/* Top Container */}
           <div className="container mx-auto px-6 flex flex-col lg:items-center text-left lg:text-center mb-24 lg:mb-36">
             {/* Heading */}

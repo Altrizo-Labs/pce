@@ -8,7 +8,7 @@ const PartnershipSection: React.FC = () => {
         <h2 className="text-3xl md:text-[40px] font-lato font-bold text-[#181D27] text-start mb-8">
           Our Core Partnership with DSO
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           
           {/* Text Column */}
           <div className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base md:text-left">
@@ -23,12 +23,12 @@ const PartnershipSection: React.FC = () => {
           </div>
 
           {/* Image Column */}
-          <div className="flex justify-end">
+          <div className="flex justify-center items-center">
             <Image
               src="/images/avif/whychooseus-partnership-agreement.avif" 
               alt="Partnership with DSO"
               width={500}
-              height={400}
+              height={500}
               className="rounded-lg shadow-lg"
             />
             </div>

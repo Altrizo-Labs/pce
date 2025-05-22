@@ -177,8 +177,8 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
                 <Image 
                   src={project.image} 
                   alt={project.name} 
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }}
                   className="transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Floating Text Watermark - Conditional */}

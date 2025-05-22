@@ -5,6 +5,7 @@ import TeamSection from "@/components/about/team-section";
 import DirectorProfile from "@/components/about/DirectorProfile"; // Import DirectorProfile
 import PartnershipSection from "@/components/about/PartnershipSection"; // Import PartnershipSection
 import CTASection from "@/components/CTASection"; // Import CTASection
+import HeroBanner from '@/components/HeroBanner';
 
 export const metadata: Metadata = {
   title: "About Us | Projects Cost Engineering (PCE) - Our Story & Expertise",
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-4 pt-20 lg:pt-24">
+      <HeroBanner
+        image="/images/avif/service-project-management-design.avif"
+        description="Get to know Projects Cost Engineering (PCE)."
+        title="Discover Our Journey" // This is the button text
+        link="/contact"
+      />
       <AboutUsSection />
       <DirectorProfile />
       <PartnershipSection />

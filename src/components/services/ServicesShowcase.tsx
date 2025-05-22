@@ -132,7 +132,7 @@ export default function ServicesShowcase() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 font-lato">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -242,7 +242,7 @@ export default function ServicesShowcase() {
             onTouchEnd={onTouchEnd}
           >
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
-              <div className="relative h-72 flex-shrink-0">
+              <div className="relative h-72 lg:h-80 flex-shrink-0">
                 <Image
                   src={activeService.image}
                   alt={activeService.title}

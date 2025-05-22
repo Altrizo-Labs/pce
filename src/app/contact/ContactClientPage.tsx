@@ -219,68 +219,73 @@ function Contact() { // Renamed from Contact_Us to be the main export
               </div>
             </div>
 
-            {/* Right Column: Form */}
-            <div ref={formContainerRef} className="opacity-0 bg-[#F3F4F6] p-8 lg:p-16 rounded-[20px]">
-              <h3 className="text-4xl font-ibm-plex-sans font-medium text-[#181D27] mb-2">Send us a Message</h3>
-              <p className="text-gray-600 font-ibm-plex-sans text-xl mb-8">Fill out the form below to get in touch with us.</p>
+            <div ref={formContainerRef} className="relative opacity-0 font-lato p-8 lg:p-16 rounded-[20px]">
+              {/* Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0 rounded-[20px]" />
+              {/* TODO: Add dot pattern overlay if specified by user */}
+              
+              {/* Form Content Wrapper */}
+              <div className="relative z-10">
+                <h3 className="text-4xl font-lato font-semibold text-white mb-2">Send us a Message</h3>
+                <p className="text-gray-200 font-lato text-xl mb-8">Fill out the form below to get in touch with us.</p>
 
-              <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
-                {/* Full Name */}
-                <div>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Full Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
-                    required
+                <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
+                  {/* Full Name */}
+                  <div>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Full Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full p-3 bg-transparent border-b border-white/50 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                      required
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full p-3 bg-transparent border-b border-white/50 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                      required
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="w-full p-3 bg-transparent border-b border-white/50 text-white placeholder-gray-300 focus:outline-none focus:border-white"
+                      rows={4}
+                      required
+                    ></textarea>
+                  </div>
+
+                  {/* Submit Button */}
+                  <RippleButton
+                    text="Send Message"
+                    className="bg-white rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-black" 
+                    type="submit"
+                    yellowArrow
+                    useYellowHover={true} // Added yellow hover
                   />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
-                    required
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="w-full p-3 bg-transparent border-b border-gray-400 text-[#181D27] focus:outline-none focus:border-[#3B5998]"
-                    rows={4}
-                    required
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <RippleButton
-                  text="Send Message"
-                  className="bg-primary rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-white"
-                  type="submit"
-                  yellowArrow
-                  useYellowHover={true} // Added yellow hover
-                />
-                {/* Location Map Placeholder */}
-                <div className="mb-6">
-                  <p className="mb-4 text-[#535862] text-xl font-semibold">Our Location.</p>
-                  <div className="h-64 w-full rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.397101429008!2d79.83505006867067!3d6.902210820520063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25910819377c9%3A0x2cfa587377993903!2sPort%20City%20Colombo!5e0!3m2!1sen!2slk!4v1678886"
+                  {/* Location Map Placeholder */}
+                  <div className="mb-6">
+                    <p className="mb-4 text-gray-200 text-xl font-semibold">Our Location.</p>
+                    <div className="h-64 w-full rounded-lg overflow-hidden">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.397101429008!2d79.83505006867067!3d6.902210820520063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25910819377c9%3A0x2cfa587377993903!2sPort%20City%20Colombo!5e0!3m2!1sen!2slk!4v1678886"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -293,11 +298,12 @@ function Contact() { // Renamed from Contact_Us to be the main export
                 </div>
               </form>
             </div>
+            </div>
           </div>
         </div>
       </div>
-    </div >
-  );
+    </div>
+  )
 }
 
 export default Contact;

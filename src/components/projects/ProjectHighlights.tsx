@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import RippleButton from '../RippleButton'; // Import RippleButton
-import { CheckCircle } from 'lucide-react'; // Changed icon to CheckCircle
+import RippleButton from '../RippleButton'; 
+import { CheckCircle } from 'lucide-react'; 
 
 interface ProjectHighlightsProps {
   limit?: number; // Number of projects to show (if provided)
@@ -20,7 +20,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       name: 'Armed Forces Hospital, Al Khoudh',
       description: 'Extension to the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.',
       sector: 'Healthcare',
-      image: '/images/projects/Arm Force Hospital.avif', // Updated image path
+      image: '/images/projects/Arm Force Hospital.avif', 
       tag: 'Oman',
       client: 'Ministry of Defence',
       completionDate: '2019',
@@ -31,7 +31,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       name: 'Cheltenham College, Al Bandar, Muscat',
       description: 'A premium world-class public institution, providing very best British curriculum educational facilities.',
       sector: 'Educational',
-      image: '/images/projects/Chelrenham College.avif', // Updated image path
+      image: '/images/projects/Chelrenham College.avif', 
       tag: 'Oman',
       client: 'Ministry of Defence',
       completionDate: '2022',
@@ -75,7 +75,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       name: 'Panorama Mall, Al Ghubra',
       description: 'Exclusive place for shopping and dinining comprising middle to luxury retail brands, F&B, food court outlets, cafes and restaurants.',
       sector: 'Commercial',
-      image: '/images/projects/Panaroma Mall.avif', // Updated image path
+      image: '/images/projects/Panaroma Mall.avif',
       tag: 'Oman',
       client: 'Hamat Holding',
       completionDate: '2015',
@@ -86,7 +86,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       name: 'Qurum Mosque',
       description: 'A gleaming , majestic mosque with vast prayer halls for 1500 prayers.',
       sector: 'Religious',
-      image: '/images/projects/Qurum Mosque.avif', // Corrected casing
+      image: '/images/projects/Qurum Mosque.avif', 
       tag: 'Oman',
       client: 'Ministry of Awqaf & Religious Affairs',
       completionDate: '2010',
@@ -97,7 +97,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       name: 'Royal Opera House, Azaiba',
       description: 'The Opera House complex consists of concert theatre, auditorium, formal landscaped gardens, cultural market with retail, luxury restaurants and an art centre for musical, theatrical and operatic productions.',
       sector: 'Cultural',
-      image: '/images/projects/ROHM.avif', // Updated to full name
+      image: '/images/projects/ROHM.avif', 
       tag: 'Oman',
       client: 'Diwan of Royal Court',
       completionDate: '2016',
@@ -118,8 +118,8 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
       id: 10,
       name: 'Oman Investment Authority Head Office, Azaiba',
       description: 'The brand new building comprise internal finishes, fittings, furnishing and equipment.',
-      sector: 'Commercial', // Or 'Office'
-      image: '/images/projects/Oman Investment Authority.avif', // Updated to full name, ensure this image exists
+      sector: 'Commercial',
+      image: '/images/projects/Oman Investment Authority.avif', 
       tag: 'Oman',
       client: 'Oman Investment Authority',
       completionDate: '2024',
@@ -237,7 +237,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({ limit, showViewMo
               url="/projects"
               className="bg-primary text-white font-lato font-semibold rounded-full shadow-md"
               useYellowHover={true}
-              yellowArrow={true} // Add yellow arrow icon
+              yellowArrow={true} 
             />
           </div>
         )}

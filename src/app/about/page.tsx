@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <div className="mx-4 pt-20 lg:pt-24">
       <HeroBanner
-        image="/images/avif/service-project-management-design.avif"
+        image="/images/avif/about-team.avif"
         description="Get to know Projects Cost Engineering (PCE)."
         title="Discover Our Journey" 
         link="/contact"

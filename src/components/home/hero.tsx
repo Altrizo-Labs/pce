@@ -84,8 +84,8 @@ export default function Hero() {
                 <div className="text-sm font-ibm-plex-sans text-gray-600">Projects Completed</div>
               </div>
               <div>
-                <div className="text-3xl font-lato font-bold text-primary">50+</div>
-                <div className="text-sm font-ibm-plex-sans text-gray-600">Expert Team</div>
+                <div className="text-3xl font-lato font-bold text-primary">10+</div>
+                <div className="text-sm font-ibm-plex-sans text-gray-600">Services</div>
               </div>
             </motion.div>
           </motion.div>

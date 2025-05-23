@@ -31,13 +31,13 @@ const Footer = () => {
           </div>
 
           {/* Right column */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0">
+          <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-0">
             {footerLinks
               .filter((section) =>
                 ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT
               )
               .map((section) => (
-                <div key={section.title}>
+                <div key={section.title} className={section.title === "CONTACT" ? "md:hidden lg:block" : ""}>
                   <h3 className="font-medium text-[16px] mb-4 font-lato">
                     {section.title}
                   </h3>
@@ -65,47 +65,10 @@ const Footer = () => {
 
         {/* Middle section - Social and Contact */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32 mt-12">
-          {/* Social Links */}
-          <div className="self-end mb-4">
-            <div className="flex flex-wrap gap-4">
-              {["Facebook", "Instagram", "Twitter"].map((platform) => (
-                <a
-                  key={platform}
-                  href="#" // Placeholder link
-                  aria-label={platform}
-                  className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"
-                >
-                  {platform === "Facebook" && (
-                    <Image
-                      src={fb}
-                      className="w-6 h-6 text-white"
-                      alt="Facebook icon"
-                    />
-                  )}
-                  {platform === "Instagram" && (
-                    <Image
-                      src={instagram}
-                      className="w-6 h-6 text-white"
-                      alt="Instagram icon"
-                    />
-                  )}
-                  {platform === "Twitter" && (
-                    <Image
-                      src={twitter}
-                      className="w-6 h-6 text-white"
-                      alt="Twitter icon"
-                    />
-                  )}
-                </a>
-              ))}
-            </div>
-          </div>
-
+          
           <div className="md:hidden grid grid-cols-2 gap-8 lg:gap-0">
             {footerLinks
-              .filter((section) =>
-                ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT
-              )
+              .filter((section) => section.title === "QUICK LINKS") // Filter for QUICK LINKS only
               .map((section) => (
                 <div key={section.title}>
                   <h3 className="font-medium text-[16px] mb-4 font-lato">
@@ -138,37 +101,9 @@ const Footer = () => {
               .filter((section) => section.title === "CONTACT")
               .map((section) => (
                 <div key={section.title}>
-                  <h3 className="font-medium text-[16px] mb-4 font-lato">
+                  <h3 className="lg:hidden font-medium text-[16px] mb-4 font-lato">
                     {section.title}
                   </h3>
-
-                  {/* Desktop */}
-                  <ul className="hidden lg:grid grid-cols-3 items-start self-start gap-12 text-[14px] font-ibm-plex-sans">
-                    {section.links.map((link, index) => (
-                      <li key={link.name}>
-                        {index === 0 ? (
-                          <span
-                            className={`text-gray-300/50 hover:text-gray-300 ${section.style}`}
-                          >
-                            {link.name}
-                          </span>
-                        ) : (
-                          <a
-                            href={
-                              index === 1
-                                ? `tel:${link.href ?? ''}`
-                                : index === 2
-                                ? `mailto:${link.href ?? ''}`
-                                : link.href ?? '#'
-                            }
-                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
-                          >
-                            {link.name}
-                          </a>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
 
                   {/* Mobile */}
                   <ul className="lg:hidden grid grid-rows-2 gap-4 font-ibm-plex-sans text-[14px]">
@@ -206,6 +141,21 @@ const Footer = () => {
                 </div>
               ))}
           </div>
+        </div>
+
+        {/* Altrizo Labs attribution */}
+        <div className="mt-12 pt-8 border-t border-white/20 text-center">
+          <p className="text-sm text-gray-300/70">
+            Designed and developed by{" "}
+            <a
+              href="https://www.altrizolabs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition duration-200"
+            >
+              Altrizo Labs
+            </a>
+          </p>
         </div>
       </div>
     </footer>

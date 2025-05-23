@@ -20,7 +20,7 @@ export const content = [
     icon: ShieldCheck,
   },
   {
-    image: "/images/avif/whychooseus-experience-planning.avif",
+    image: "/images/avif/service-real-estate-consulting.avif",
     title: "Proven Track Record in Oman",
     description: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capabilities and expertise.",
     icon: BarChart3,

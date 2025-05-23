@@ -54,7 +54,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-sm sm:text-base">
-                To be a leading provider of Quantity Surveying and Cost Engineering services, recognized for our expertise, integrity, and commitment to international standards. (Placeholder Vision)
+                We believe that the best design and financial advice is independent, unrestricted, and tailored to the projects. With many years experience, our advisers aim to look at all possible options in order to find the most suitable effective sustainable design and cost for your projects.
               </p>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                To deliver exceptional Quantity Surveying and Cost Engineering solutions that provide value and certainty to our clients' projects, adhering to the highest professional and ethical standards. (Placeholder Mission)
+                Our mission is to empower the satisfaction of our Clients by providing expert knowledge, guidance and innovative solutions for the projects. We are committed to helping our Clients succeed and thrive to meet their requirements in today's competitive marketplace.
               </p>
             </div>
           </div>

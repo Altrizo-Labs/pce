@@ -14,19 +14,14 @@ export const footerLinks = [
     title: "CONTACT",
     links: [
       {
-        name: "[PCE Physical Address Placeholder]",
+        name: "No. 126, Postal Code-32300, Main Street, Kalmunai, Sri Lanka",
         href: null,
         display: null
       },
       {
-        name: "[PCE Phone Number Placeholder]",
-        href: "",
-        display: "[PCE Phone Number Placeholder]"
-      },
-      {
-        name: "[PCE Email Address Placeholder]",
-        href: "",
-        display: "[PCE Email Address Placeholder]"
+        name: "mubarak5990@gmail.com",
+        href: "mubarak5990@gmail.com",
+        display: "mubarak5990@gmail.com"
       }
     ],
     style: ""

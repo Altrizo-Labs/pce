@@ -21,7 +21,7 @@ export const content = [
     icon: ShieldCheck,
   },
   {
-    image: "/images/avif/whychooseus-experience-planning.avif", // Note: This image is repeated, consider if unique images are intended for each point
+    image: "/images/avif/service-real-estate-consulting.avif", // Note: This image is repeated, consider if unique images are intended for each point
     title: "Proven Track Record in Oman",
     description: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capabilities and expertise.",
     icon: BarChart3,

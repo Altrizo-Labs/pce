@@ -168,19 +168,19 @@ function Contact() { // Renamed from Contact_Us to be the main export
                 {/* Email */}
                 <div className="mb-12 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Email:</p>
-                  <p className="text-[#181D27] text-lg">[PCE Email Address Placeholder]</p>
+                  <p className="text-[#181D27] text-lg">mubarak5990@gmail.com</p>
                 </div>
 
                 {/* Phone */}
                  <div className="mb-12 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Phone:</p>
-                  <p className="text-[#181D27] text-lg">[PCE Phone Number Placeholder]</p>
+                  <p className="text-[#181D27] text-lg">+968 99151717 / +94 774145493 / +94 672057707</p>
                 </div>
 
                 {/* Address */}
                  <div className="mb-12 lg:mb-16">
                   <p className="mb-1 text-[#535862] text-xl font-semibold">Address:</p>
-                  <p className="text-[#181D27] text-lg">[PCE Physical Address Placeholder]</p>
+                  <p className="text-[#181D27] text-lg">No. 126, Postal Code-32300, Main Street, Kalmunai, Sri Lanka</p>
                 </div>
 
 

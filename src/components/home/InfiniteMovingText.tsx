@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './InfiniteMovingText.module.css';
 
 const InfiniteMovingText: React.FC = () => {
-  const companyName = "PROJECT COST ENGINEERING";
+  const companyName = "PROJECTS COST ENGINEERING";
   const service1 = "Cost Control and Monitoring";
   const service2 = "Value Engineering";
   const fullText = `${companyName} • ${service1} • ${service2}`;

@@ -13,6 +13,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import Image from "next/image";
+// Link import removed as it's not used
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const services = [

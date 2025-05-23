@@ -146,7 +146,7 @@ const Footer = () => {
         {/* Altrizo Labs attribution */}
         <div className="mt-12 pt-8 border-t border-white/20 text-center">
           <p className="text-sm text-gray-300/70">
-            Designed and developed by{" "}
+            Developed by{" "}
             <a
               href="https://www.altrizolabs.com/"
               target="_blank"

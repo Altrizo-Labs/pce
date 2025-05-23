@@ -103,7 +103,7 @@ function StickyScrollReveal() {
   }, []);
 
   return (
-    <section className="relative max-w-7xl mx-auto py-20 px-2 md:px-8 ">
+    <section className="relative max-w-7xl mx-auto py-10 px-3">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

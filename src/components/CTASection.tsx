@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import clsx from "clsx";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import RippleButton from "./RippleButton"; // Import RippleButton
@@ -20,7 +18,6 @@ const CTASection: React.FC<CTASectionProps> = ({
   description,
   buttonText,
   buttonLink,
-  imagePosition = "right",
 }) => {
   return (
     <motion.section
@@ -49,7 +46,7 @@ const CTASection: React.FC<CTASectionProps> = ({
               text={buttonText}
               url={buttonLink}
               className="bg-white text-primary font-lato font-semibold rounded-full shadow-lg hover:shadow-xl"
-              textStyles="group-hover:text-primary" // Keep text primary on hover if not overridden by yellow
+              textStyles="group-hover:text-primary"
               useYellowHover={true}
               icon={<ArrowRight
                 className="text-primary transition-transform duration-300 ease-in-out group-hover:translate-x-1"

@@ -9,8 +9,12 @@ import {
   ClipboardList, 
   FileText, 
   Lightbulb, 
-  Scale 
+  Scale,
+  ArrowRight
+  // Link from lucide-react is not needed, will use Next.js Link
 } from "lucide-react";
+import NextLink from "next/link"; // Import Next.js Link
+import RippleButton from "../RippleButton"; // Import RippleButton
 
 const KeyServicesSnapshot: React.FC = () => {
   const services = [
@@ -53,17 +57,27 @@ const KeyServicesSnapshot: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 lg:py-16 lg:max-w-6xl mx-auto font-ibm-plex-sans overflow-x-hidden">
+    <section className="py-12 lg:py-16 lg:max-w-7xl mx-auto font-ibm-plex-sans overflow-x-hidden">
       <div className="container w-full items-center mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[45px] justify-center font-lato font-bold text-[#181D27] text-center mb-12 md:mb-16"
-        >
-          Our Key Services
-        </motion.h2>
+        <div className="flex justify-between items-center mb-12 md:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-[45px] font-lato font-bold text-[#181D27] text-start" // Removed mb and justify-center
+          >
+            Our Key Services
+          </motion.h2>
+          {/* View More Button - Moved here */}
+          <RippleButton
+            text="Explore Our Services"
+            url="/services" // Assuming RippleButton handles NextLink internally via 'url' prop
+            className="bg-primary text-white font-lato font-semibold rounded-full shadow-md" // Adjust styling as needed
+            useYellowHover={true}
+            yellowArrow={true} 
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -88,6 +102,7 @@ const KeyServicesSnapshot: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        
       </div>
     </section>
   );

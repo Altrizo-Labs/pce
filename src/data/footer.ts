@@ -14,7 +14,7 @@ export const footerLinks = [
     title: "CONTACT",
     links: [
       {
-        name: "No. 126, Postal Code-32300, Main Street, Kalmunai,\nSri Lanka",
+        name: "No. 126, Postal Code - 32300,\nMain Street, Kalmunai,\nSri Lanka.",
         href: null,
         display: null
       },

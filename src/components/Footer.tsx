@@ -13,7 +13,7 @@ const Footer = () => {
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {/* Left column */}
           <div className="flex flex-col gap-6">
             <Link href="/">
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           {/* Right column */}
-          <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
+          <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-6">
             {footerLinks
               .filter((section) =>
                 ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT
@@ -42,12 +42,12 @@ const Footer = () => {
                         {link.href ? (
                           <Link
                             href={link.href}
-                            className={`text-gray-300/50 hover:text-gray-300 transition duration-200 ${section.style}`}
+                            className={`text-gray-300/80 hover:text-gray-300 transition duration-200 ${section.style}`}
                           >
                             {link.name}
                           </Link>
                         ) : (
-                          <span className="text-gray-300/50">{link.name}</span>
+                          <span className="text-gray-300/80 whitespace-pre-line">{link.name}</span>
                         )}
                       </li>
                     ))}
@@ -103,7 +103,7 @@ const Footer = () => {
                   <ul className="lg:hidden grid grid-rows-2 gap-4 font-ibm-plex-sans text-[14px]">
                     {/* First row - centered item (address) */}
                     <li className="row-start-1 col-span-1 text-gray-300/50 hover:text-gray-300 transition duration-200">
-                      <span className={section.style}>
+                      <span className={`${section.style} whitespace-pre-line` }>
                         {section.links[0].name}
                       </span>
                     </li>

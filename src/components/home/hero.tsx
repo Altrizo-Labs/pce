@@ -98,7 +98,7 @@ export default function Hero() {
             className="relative h-[600px] rounded-2xl overflow-hidden"
           >
             <Image
-              src="/images/avif/project-highlight-modern-building.avif"
+              src="/images/avif/whychooseus-qualified-team.avif"
               alt="Engineering Excellence"
               fill
               className="object-cover"

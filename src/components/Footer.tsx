@@ -1,12 +1,6 @@
 import { footerLinks } from "@/data/footer";
 import Link from "next/link";
-import Image from "next/image";
 
-import fb from "../../public/images/facebook.svg";
-import instagram from "../../public/images/instagram.svg";
-import twitter from "../../public/images/twitter.svg";
-
-import logo from "../../public/images/footer_logo.png";
 
 const Footer = () => {
   return (
@@ -31,7 +25,7 @@ const Footer = () => {
           </div>
 
           {/* Right column */}
-          <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-0">
+          <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-12">
             {footerLinks
               .filter((section) =>
                 ["QUICK LINKS", "CONTACT"].includes(section.title) // Filter for QUICK LINKS and CONTACT

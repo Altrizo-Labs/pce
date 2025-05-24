@@ -8,7 +8,8 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import RippleButton from "../../components/RippleButton";
 
-function Contact() { // Renamed from Contact_Us to be the main export
+function Contact() {
+  // Renamed from Contact_Us to be the main export
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -108,7 +109,7 @@ function Contact() { // Renamed from Contact_Us to be the main export
     });
 
     return () => {
-      window.removeEventListener("scroll", () => { });
+      window.removeEventListener("scroll", () => {});
     };
   }, []);
 
@@ -143,7 +144,8 @@ function Contact() { // Renamed from Contact_Us to be the main export
               ref={introTextRef}
               className="text-base font-ibm-plex-sans opacity-0 text-[#181D27] max-w-4xl"
             >
-              We are ready to discuss your project needs and provide expert Quantity Surveying and Cost Engineering solutions.
+              We are ready to discuss your project needs and provide expert
+              Quantity Surveying and Cost Engineering solutions.
             </p>
           </div>
 
@@ -161,32 +163,36 @@ function Contact() { // Renamed from Contact_Us to be the main export
 
               {/* New Paragraph */}
               <p className="lg:text-xl text-lg lg:text-left font-ibm-plex-sans text-gray-600 mb-6 max-w-lg">
-                Feel free to reach out to us through the contact form or using the details below.
+                Feel free to reach out to us through the contact form or using
+                the details below.
               </p>
 
               <div className="gap-y-24">
                 {/* Email */}
                 <div className="mb-12 lg:mb-16">
-                  <p className="mb-1 text-[#535862] text-xl font-semibold">Email:</p>
-                  <p className="text-[#181D27] text-lg">mubarak5990@gmail.com</p>
-                </div>
-
-                {/* Phone */}
-                 <div className="mb-12 lg:mb-16">
-                  <p className="mb-1 text-[#535862] text-xl font-semibold">Phone:</p>
-                  <p className="text-[#181D27] text-lg">+968 99151717 / +94 774145493 / +94 672057707</p>
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">
+                    Email:
+                  </p>
+                  <p className="text-[#181D27] text-lg">
+                    mubarak5990@gmail.com
+                  </p>
                 </div>
 
                 {/* Address */}
-                 <div className="mb-12 lg:mb-16">
-                  <p className="mb-1 text-[#535862] text-xl font-semibold">Address:</p>
-                  <p className="text-[#181D27] text-lg">No. 126, Postal Code-32300, Main Street, Kalmunai, Sri Lanka</p>
+                <div className="mb-12 lg:mb-16">
+                  <p className="mb-1 text-[#535862] text-xl font-semibold">
+                    Address:
+                  </p>
+                  <p className="text-[#181D27] text-lg">
+                    No. 126, Postal Code-32300, Main Street, Kalmunai, Sri Lanka
+                  </p>
                 </div>
 
-
                 {/* Social Icons */}
-                <div className="mb-6">
-                  <p className="mb-4 text-[#535862] text-xl font-semibold">Social Network.</p>
+                {/* <div className="mb-6">
+                  <p className="mb-4 text-[#535862] text-xl font-semibold">
+                    Social Network.
+                  </p>
                   <div className="flex space-x-4 text-2xl text-[#1E3A8A]">
                     <a
                       href="#" // Placeholder link
@@ -213,23 +219,32 @@ function Contact() { // Renamed from Contact_Us to be the main export
                       <FaLinkedin />
                     </a>
                   </div>
-                </div>
-
-                
+                </div> */}
               </div>
             </div>
 
-            <div ref={formContainerRef} className="relative opacity-0 font-lato p-8 lg:p-16 rounded-[20px]">
+            <div
+              ref={formContainerRef}
+              className="relative opacity-0 font-lato p-8 lg:p-16 rounded-[20px]"
+            >
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/85 to-primary z-0 rounded-[20px]" />
               {/* TODO: Add dot pattern overlay if specified by user */}
-              
+
               {/* Form Content Wrapper */}
               <div className="relative z-10">
-                <h3 className="text-4xl font-lato font-semibold text-white mb-2">Send us a Message</h3>
-                <p className="text-gray-200 font-lato text-xl mb-8">Fill out the form below to get in touch with us.</p>
+                <h3 className="text-4xl font-lato font-semibold text-white mb-2">
+                  Send us a Message
+                </h3>
+                <p className="text-gray-200 font-lato text-xl mb-8">
+                  Fill out the form below to get in touch with us.
+                </p>
 
-                <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
+                <form
+                  className="space-y-6"
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                >
                   {/* Full Name */}
                   <div>
                     <input
@@ -275,35 +290,37 @@ function Contact() { // Renamed from Contact_Us to be the main export
                   {/* Submit Button */}
                   <RippleButton
                     text="Send Message"
-                    className="bg-white rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-black" 
+                    className="bg-white rounded-[12px] w-full text-lg lg:w-auto py-3 lg:py-3 md:px-6 lg:px-6 whitespace-nowrap mt-6 text-black"
                     type="submit"
                     yellowArrow
                     useYellowHover={true} // Added yellow hover
                   />
                   {/* Location Map Placeholder */}
-                  <div className="mb-6">
-                    <p className="mb-4 text-gray-200 text-xl font-semibold">Our Location.</p>
+                  {/* <div className="mb-6">
+                    <p className="mb-4 text-gray-200 text-xl font-semibold">
+                      Our Location.
+                    </p>
                     <div className="h-64 w-full rounded-lg overflow-hidden">
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.397101429008!2d79.83505006867067!3d6.902210820520063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25910819377c9%3A0x2cfa587377993903!2sPort%20City%20Colombo!5e0!3m2!1sen!2slk!4v1678886"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Colombo Port City Location"
-                    ></iframe>
-                  </div>
-                </div>
-              </form>
-            </div>
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Colombo Port City Location"
+                      ></iframe>
+                    </div>
+                  </div> */}
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Contact;

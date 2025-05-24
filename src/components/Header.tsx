@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { HEADER } from "@/data/header";
 import RippleButton from "./RippleButton";
 import { AnimatePresence, motion } from "framer-motion";

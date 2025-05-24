@@ -25,13 +25,7 @@ export const content = [
     title: "Proven Track Record in Oman",
     description: "We have successfully completed over 100 projects in Oman across diverse sectors, demonstrating our capabilities and expertise.",
     icon: BarChart3,
-  },
-  {
-    image: "/images/avif/whychooseus-qualified-team.avif",
-    title: "Expert Team",
-    description: "Our team comprises qualified and experienced professionals dedicated to delivering exceptional results.",
-    icon: Users,
-  },
+  }
 ];
 
 gsap.registerPlugin(ScrollTrigger);

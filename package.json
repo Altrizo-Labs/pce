@@ -1,5 +1,5 @@
 {
-  "name": "edusight",
+  "name": "pce",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,11 +15,11 @@
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "edusight": "file:",
     "framer-motion": "^12.9.4",
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "next": "^14.2.25",
+    "pce": "file:",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import AboutUsSection from "@/components/about/about-us";
 import DirectorProfile from "@/components/about/DirectorProfile"; // Import DirectorProfile
-import PartnershipSection from "@/components/about/PartnershipSection"; // Import PartnershipSection
 import CTASection from "@/components/CTASection"; // Import CTASection
 import HeroBanner from '@/components/HeroBanner';
 
@@ -22,7 +21,7 @@ export default function AboutPage() {
       />
       <AboutUsSection />
       <DirectorProfile />
-      <PartnershipSection />
+      {/* <PartnershipSection /> */}
       <CTASection
         title="Partner with PCE for Your Next Project"
         description="Discover how our expertise, experience, and commitment to international standards can bring value to your construction projects. Let's build the future together."

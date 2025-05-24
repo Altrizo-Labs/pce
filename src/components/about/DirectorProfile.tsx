@@ -20,7 +20,7 @@ const DirectorProfile: React.FC = () => {
             Meet Our Director
           </h2>
           <h3 className="text-xl font-lato font-medium text-gray-700 mb-4">
-            [Director's Name Placeholder], Director
+            [Director&apos;s Name Placeholder], Director
           </h3>
           <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base">
             [Detailed biography of the Director, highlighting 25 years of experience in the Middle East and expertise in Quantity Surveying and Cost Engineering. Placeholder text.]

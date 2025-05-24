@@ -9,7 +9,7 @@ export default function CompanyOverview() {
 
       {/* Corrected font class */}
       <p className="mb-6 text-[14px] lg:text-[16px] text-[#535862] font-ibm-plex-sans lg:w-[80%]">
-        Founded in 2024 in Sri Lanka, PCE benefits from the Director's 25 years of experience in the Middle East. The company operates under strict international business standards and practices and is manned by a team of qualified and experienced professionals who worked with the Director in Daan Shaaban Office (DSO) in Oman, our core partner.
+        Founded in 2024 in Sri Lanka, PCE benefits from the Director&apos;s 25 years of experience in the Middle East. The company operates under strict international business standards and practices and is manned by a team of qualified and experienced professionals who worked with the Director in Daan Shaaban Office (DSO) in Oman, our core partner.
       </p>
 
       <RippleButton

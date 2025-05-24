@@ -13,7 +13,7 @@ const PartnershipSection: React.FC = () => {
           {/* Text Column */}
           <div className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base md:text-left">
             <p className="mb-4">
-              [Detailed information about the partnership with Daan Shaaban Office (DSO) in Oman. Highlight the history of collaboration and how the partnership strengthens PCE's capabilities and service delivery. Placeholder text.]
+              [Detailed information about the partnership with Daan Shaaban Office (DSO) in Oman. Highlight the history of collaboration and how the partnership strengthens PCE&apos;s capabilities and service delivery. Placeholder text.]
               This partnership allows us to leverage combined expertise and resources to provide exceptional value to our clients.
             </p>
             <p className="font-semibold">

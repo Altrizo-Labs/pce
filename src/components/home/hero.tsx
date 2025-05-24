@@ -35,7 +35,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-lato font-bold text-gray-900 leading-tight"
             >
-              Building Tomorrow's
+              Building Tomorrow&apos;s
               <span className="block text-primary mt-2">Infrastructure Today</span>
             </motion.h1>
 

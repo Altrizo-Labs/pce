@@ -66,7 +66,7 @@ export default function AboutUsSection() {
               </h4>
               <div className="w-12 h-1 bg-gray-900"></div>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                Our mission is to empower the satisfaction of our Clients by providing expert knowledge, guidance and innovative solutions for the projects. We are committed to helping our Clients succeed and thrive to meet their requirements in today's competitive marketplace.
+                Our mission is to empower the satisfaction of our Clients by providing expert knowledge, guidance and innovative solutions for the projects. We are committed to helping our Clients succeed and thrive to meet their requirements in today&apos;s competitive marketplace.
               </p>
             </div>
           </div>

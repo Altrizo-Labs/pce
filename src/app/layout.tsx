@@ -48,12 +48,25 @@ const ibm = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Edusight",
+  title: "Projects Cost Engineering (PCE) | Expert Quantity Surveying & Cost Management",
   description:
-    "EduSight revolutionizes student recruitment and engagement through AI-powered solutions. Our intelligent chatbot platform streamlines communication, automates routine tasks, and provides personalized support for educational institutions. Transform your student experience with cutting-edge technology.",
+    "Projects Cost Engineering (PCE) offers expert quantity surveying, cost engineering, and project management services in Sri Lanka and Oman. Benefit from over 25 years of industry experience and adherence to international standards.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+    // other: [ // Example for Safari pinned tab, if you have an SVG icon
+    //   {
+    //     rel: 'mask-icon',
+    //     url: '/safari-pinned-tab.svg',
+    //     color: '#1E3A8A', // Your primary color
+    //   },
+    // ],
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

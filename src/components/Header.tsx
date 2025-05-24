@@ -265,7 +265,7 @@ const Header = () => {
                   transition={{ delay: 0.4 }}
                   className="absolute bottom-12 left-0 right-0 text-center text-sm px-8"
                 >
-                  <p>© {new Date().getFullYear()} EduSight. All rights reserved.</p>
+                  <p>© {new Date().getFullYear()} PCE. All rights reserved.</p>
                 </motion.div>
               </div>
             </motion.div>

@@ -13,7 +13,7 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
-  const [showComingSoon, setShowComingSoon] = useState(true); // Added state for "Coming Soon"
+  const [showComingSoon] = useState(true); // Removed setShowComingSoon
   const formRef = useRef<HTMLFormElement>(null);
 
   const headingRef = useRef<HTMLHeadingElement>(null);

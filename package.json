@@ -28,6 +28,7 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "shadcn-ui": "^0.9.4",
+    "sharp": "^0.34.2",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"

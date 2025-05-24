@@ -1,20 +1,14 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { 
   Calculator, 
   ClipboardList, 
   Building2, 
   FileCheck, 
-  BarChart3,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight
+  BarChart3
 } from "lucide-react";
-import Image from "next/image";
 // Link import removed as it's not used
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const services = [
   {

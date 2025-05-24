@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Award, ShieldCheck, BarChart3, Users } from "lucide-react";
+import { Award, ShieldCheck, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const content = [
@@ -46,16 +46,16 @@ function StickyScrollReveal() {
     // Set initial state for images: first visible, rest hidden
     if (imageWrapperRefs.current.length > 0) {
       gsap.set(imageWrapperRefs.current[0], { opacity: 1, zIndex: 1 });
-      imageWrapperRefs.current.slice(1).forEach((wrapper, idx) => {
+      imageWrapperRefs.current.slice(1).forEach((wrapper) => {
         gsap.set(wrapper, { opacity: 0, zIndex: 0 });
       });
     }
     
     const updateImage = (activeIndex: number) => {
-      imageWrapperRefs.current.forEach((wrapper, idx) => {
+      imageWrapperRefs.current.forEach((wrapper, i) => {
         gsap.to(wrapper, {
-          opacity: idx === activeIndex ? 1 : 0,
-          zIndex: idx === activeIndex ? 1 : 0, // Ensure active image is on top
+          opacity: i === activeIndex ? 1 : 0,
+          zIndex: i === activeIndex ? 1 : 0, // Ensure active image is on top
           duration: 0.4, // Smooth transition
           ease: "power1.inOut"
         });

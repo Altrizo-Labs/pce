@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
   Calculator, 
@@ -9,11 +8,9 @@ import {
   ClipboardList, 
   FileText, 
   Lightbulb, 
-  Scale,
-  ArrowRight
+  Scale
   // Link from lucide-react is not needed, will use Next.js Link
 } from "lucide-react";
-import NextLink from "next/link"; // Import Next.js Link
 import RippleButton from "../RippleButton"; // Import RippleButton
 
 const KeyServicesSnapshot: React.FC = () => {

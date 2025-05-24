@@ -4,7 +4,8 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import dynamic from "next/dynamic";
-import { Award, ShieldCheck, BarChart3, Users } from "lucide-react";
+import Image from "next/image"; // Import Next.js Image component
+import { Award, ShieldCheck, BarChart3 } from "lucide-react";
 
 export const content = [
   {
@@ -66,10 +67,11 @@ const ScrollReveal: React.FC = () => {
           <div key={index} className="card-section min-w-full px-4">
             <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 md:p-8 border border-primary/20 min-h-[520px] md:min-h-[600px] flex flex-col">
               <div className="relative h-48 md:h-full mb-6 md:mb-8 rounded-lg overflow-hidden">
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
                 />
               </div>
               

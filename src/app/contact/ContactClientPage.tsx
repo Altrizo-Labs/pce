@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
 import gsap from "gsap";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";

@@ -23,7 +23,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "Extension to the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.",
       sector: "Healthcare",
-      image: "/images/projects/Arm-Force-Hospital.avif",
+      image: "/images/projects/Arm Force Hospital.avif",
       tag: "Oman",
       client: "Ministry of Defence",
       completionDate: "2019",
@@ -34,7 +34,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "A premium world-class public institution, providing very best British curriculum educational facilities.",
       sector: "Educational",
-      image: "/images/projects/Chelrenham-College.avif",
+      image: "/images/projects/Chelrenham College.avif",
       tag: "Oman",
       client: "Ministry of Defence",
       completionDate: "2022",
@@ -45,7 +45,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "First campus outside Europe, a first premium British all-girls school.",
       sector: "Educational",
-      image: "/images/projects/Downe-House-School.avif",
+      image: "/images/projects/Downe House School.avif",
       tag: "Oman",
       client: "Ministry of Defence",
       completionDate: "2020",
@@ -56,7 +56,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "Hotel Building (G1 + 5 Floors), Chalets 30 Nos (1, 2 & 3 Bedrooms), Staff Accommodation (G1 + 3 Floors), Ancillary Building.",
       sector: "Hospitality",
-      image: "/images/projects/Four-Star-Hotel.avif",
+      image: "/images/projects/Four Star Hotel.avif",
       tag: "Oman",
       client: "Social Protection Fund",
       completionDate: "2025",
@@ -66,7 +66,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       name: "Military College, Bait Al Falaj",
       description: "Academy of Strategic and Defence Studies.",
       sector: "Educational",
-      image: "/images/projects/Military-College.avif",
+      image: "/images/projects/Military College.avif",
       tag: "Oman",
       client: "Ministry of Defence",
       completionDate: "2013",
@@ -77,7 +77,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "Exclusive place for shopping and dinining comprising middle to luxury retail brands, F&B, food court outlets, cafes and restaurants.",
       sector: "Commercial",
-      image: "/images/projects/Panaroma-Mall.avif",
+      image: "/images/projects/Panaroma Mall.avif",
       tag: "Oman",
       client: "Hamat Holding",
       completionDate: "2015",
@@ -110,7 +110,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "Expansion of the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.",
       sector: "Healthcare",
-      image: "/images/projects/VVIP-Hospital.avif",
+      image: "/images/projects/VVIP Hospital.avif",
       tag: "Oman",
       client: "Ministry of Defence",
       completionDate: "2020",
@@ -121,7 +121,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
       description:
         "The brand new building comprise internal finishes, fittings, furnishing and equipment.",
       sector: "Commercial",
-      image: "/images/projects/Oman-Investment-Authority.avif",
+      image: "/images/projects/Oman Investment Authority.avif",
       tag: "Oman",
       client: "Oman Investment Authority",
       completionDate: "2024",

@@ -78,11 +78,11 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   });
 
   return (
-    <Link href={url || "#"} aria-label={`Navigate to ${text}`}>
+    <Link href={url || "#"} aria-label={`Navigate to ${text}`} className="inline-block">
       <button
         ref={buttonRef}
         onClick={onclick}
-        className={`relative py-2 lg:py-4 px-6 lg:px-7 flex items-center justify-center gap-3 overflow-hidden z-0 ${className}`}
+        className={`relative py-2 lg:py-4 px-6 lg:px-7 flex items-center justify-center gap-3 overflow-hidden z-0 min-h-[48px] min-w-[48px] ${className}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}

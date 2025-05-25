@@ -4,9 +4,11 @@ import Hero from "@/components/home/hero";
 import InfiniteMovingText from "@/components/home/InfiniteMovingText"; // Import the new component
 import KeyServicesSnapshot from "@/components/home/WhyChooseUs"; // Adapted WhyChooseUs for Key Services
 import ProjectHighlights from "@/components/projects/ProjectHighlights"; // Import ProjectHighlights
-import CTASection from "@/components/CTASection";
+import dynamic from 'next/dynamic';
 import StickyScrollReveal from "@/components/home/StickyScrollReveal";
 import ScrollReveal from "@/components/home/MobileScrollReveal";
+
+const CTASection = dynamic(() => import("@/components/CTASection"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Home | Projects Cost Engineering (PCE) - Expert Quantity Surveying & Cost Engineering",

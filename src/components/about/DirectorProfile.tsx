@@ -8,7 +8,7 @@ const DirectorProfile: React.FC = () => {
         <div className="md:w-1/3">
           {/* Placeholder for Director's image */}
           <Image
-            src="/images/business_person.png" // Using a placeholder image
+            src="/images/avif/director.avif"
             alt="Director's Photo"
             width={300}
             height={350}
@@ -20,13 +20,33 @@ const DirectorProfile: React.FC = () => {
             Meet Our Director
           </h2>
           <h3 className="text-xl font-lato font-medium text-gray-700 mb-4">
-            [Director&apos;s Name Placeholder], Director
+            Mubarak Seeni Mohammed, B.Sc. QS (Hons), MRICS, Director
           </h3>
-          <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base">
-            [Detailed biography of the Director, highlighting 25 years of experience in the Middle East and expertise in Quantity Surveying and Cost Engineering. Placeholder text.]
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base mb-4">
+            Director Mubarak Seeni Mohamed is a Built Environments professional
+            specialist in Quantity Surveying/Cost Consultancy with over 25 years
+            of experience in successfully managing and delivering large scale,
+            complex building and infra-structure projects within the GCC region.
+            He is a Chartered Quantity Surveyor, and is Member of Royal
+            Institution of Chartered Surveyors (RICS-UK).
           </p>
-          {/* Add more details about experience, achievements, etc. */}
+          <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base mb-4">
+            Director has gained extensive experience in Commercial, Contract
+            Administration and design skill in his various Client, Consultant and
+            Contractor roles. His experience extends across each of the main
+            project stages (pre-contract/design phase, procurement and post
+            contract/construction phase), and covers a wide range of sectors:
+            financial institutions, airports, theatre/opera, mall, hotels, data
+            centres, residential development, industrial developments, schools,
+            marine, hospitals, mosques, roads and bridges.
+          </p>
+          <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-base">
+            Mubarak has built a sound technical, commercial and contractual
+            reputation within the construction industry. This he has done through
+            his strong work ethic, technical competence, attention to detail,
+            regimented planning, personable and flexible manner, and excellent
+            people skills.
+          </p>
         </div>
       </div>
     </section>

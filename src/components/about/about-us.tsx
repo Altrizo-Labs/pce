@@ -14,14 +14,14 @@ export default function AboutUsSection() {
           <p className="text-gray-700 font-ibm-plex-sans leading-relaxed text-sm sm:text-base">
             Projects Cost Engineering (Pvt) Ltd (PCE) was founded in 2024 in Sri Lanka. Our Director brings over 25 years of extensive experience from working in the Middle East. PCE operates under strict international business standards and practices, ensuring high-quality and reliable services. Our team comprises qualified and experienced professionals, many of whom have worked alongside the Director at Daan Shaaban Office (DSO) in Oman, our core partner. We are committed to providing expert Quantity Surveying, Cost Engineering, and related services to our clients.
           </p>
-          <div>
+          {/* <div>
             <RippleButton
               text="Our Partnership"
               className="bg-white border border-primary rounded-full text-primary font-bold font-lato w-auto py-2 lg:py-3 px-4 md:px-6 lg:px-6 whitespace-nowrap text-black text-sm md:text-base"
               url="/about#partnership" // Link to a potential partnership section
               yellowIcon
             />
-          </div>
+          </div> */}
         </div>
       </div>
 

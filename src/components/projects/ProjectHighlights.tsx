@@ -19,7 +19,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
   const allProjects = [
     {
       id: 1,
-      name: "Armed Forces Hospital, Al Khoudh",
+      name: "Armed Forces Hospital, Al Khoudh - Oman",
       description:
         "Extension to the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.",
       sector: "Healthcare",
@@ -30,7 +30,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 2,
-      name: "Cheltenham College, Al Bandar, Muscat",
+      name: "Cheltenham College, Al Bandar, Muscat - Oman",
       description:
         "A premium world-class public institution, providing very best British curriculum educational facilities.",
       sector: "Educational",
@@ -41,7 +41,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 3,
-      name: "Downe House School, Al Bandar, Muscat",
+      name: "Downe House School, Al Bandar, Muscat - Oman",
       description:
         "First campus outside Europe, a first premium British all-girls school.",
       sector: "Educational",
@@ -52,7 +52,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 4,
-      name: "Four Star Hotel, Nizwa",
+      name: "Four Star Hotel, Nizwa - Oman",
       description:
         "Hotel Building (G1 + 5 Floors), Chalets 30 Nos (1, 2 & 3 Bedrooms), Staff Accommodation (G1 + 3 Floors), Ancillary Building.",
       sector: "Hospitality",
@@ -63,7 +63,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 5,
-      name: "Military College, Bait Al Falaj",
+      name: "Military College, Bait Al Falaj - Oman",
       description: "Academy of Strategic and Defence Studies.",
       sector: "Educational",
       image: "/images/projects/Military-College.avif",
@@ -73,7 +73,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 6,
-      name: "Panorama Mall, Al Ghubra",
+      name: "Panorama Mall, Al Ghubra - Oman",
       description:
         "Exclusive place for shopping and dinining comprising middle to luxury retail brands, F&B, food court outlets, cafes and restaurants.",
       sector: "Commercial",
@@ -84,7 +84,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 7,
-      name: "Qurum Mosque",
+      name: "Qurum Mosque - Muscat - Oman",
       description:
         "A gleaming , majestic mosque with vast prayer halls for 1500 prayers.",
       sector: "Religious",
@@ -95,7 +95,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 8,
-      name: "Royal Opera House, Azaiba",
+      name: "Royal Opera House, Muscat - Oman",
       description:
         "The Opera House complex consists of concert theatre, auditorium, formal landscaped gardens, cultural market with retail, luxury restaurants and an art centre for musical, theatrical and operatic productions.",
       sector: "Cultural",
@@ -106,7 +106,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 9,
-      name: "VVIP Hospital, Al Khoudh",
+      name: "VVIP Hospital, Al Khoudh - Oman",
       description:
         "Expansion of the existing Armed Forces Hospital by constructing a new building comprising a basement level, a ground floor, 5 additional floors and service compound etc.",
       sector: "Healthcare",
@@ -117,7 +117,7 @@ const ProjectHighlights: React.FC<ProjectHighlightsProps> = ({
     },
     {
       id: 10,
-      name: "Oman Investment Authority Head Office, Azaiba",
+      name: "Oman Investment Authority Al Khuwair - Oman",
       description:
         "The brand new building comprise internal finishes, fittings, furnishing and equipment.",
       sector: "Commercial",

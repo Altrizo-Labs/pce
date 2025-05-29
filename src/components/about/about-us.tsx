@@ -1,4 +1,4 @@
-import RippleButton from "../RippleButton";
+// import RippleButton from "../RippleButton";
 
 export default function AboutUsSection() {
   return (
